@@ -1,4 +1,4 @@
-NumberUAN,82220
-Tongas,54400
-Nico,45980
-Jere,34100
+Wadeepat,82220
+Sunisa,54400
+Lakkhanan,45980
+Others,10000
