@@ -15,7 +15,6 @@ import principal.statemachine.GameStatus;
 import principal.statemachine.gamestate.GameManager;
 
 
-// Se extiende a Canvas ya que esta clase es la que puede crear el buffer Strategy por eso no hicimos un JPanel 
 public class DrawingSurface extends Canvas {
 
 	private static final long serialVersionUID = -4338850574868182269L;
@@ -37,11 +36,7 @@ public class DrawingSurface extends Canvas {
 		requestFocus();
 		floor = 237;
 	}
-	
 
-	// esto se va a usar para cuando cambie de sector asi translada la imagen al segundo sector
-	// como el juego de disney lo comentado dentro era solo para hacer debug si ejecutas esa linea
-	// la camara se va a mover hasta la punta del edificio
 	
 	public void tick() {
 		
@@ -74,10 +69,7 @@ public class DrawingSurface extends Canvas {
 		cam.setY(0);
 		floor = 237;
 	}
-	
-	// el buffer strategy lo que hace es armar un buffer de imagenes e ir reproduciendolas, es decir, antes de producir la imagen es creada y guardada
-	// en memoria (en una cola) porque en caso de que ocurra algo con el programa las imagenes van a estar dibujadas de ante mano y no va a haber problemas 
-	// ya que procesar y dibujar ni bien es creada la imagen puede causar errores de dibujo.
+
 	public void draw(GameStatus gs, long time) {
 		
 	
@@ -100,14 +92,12 @@ public class DrawingSurface extends Canvas {
 		if (GameStatus.actualState instanceof GameManager)
 			HUD.getHud().draw(g);
 		
-		// esta linea evita el screen tearing, es decir, que no se vean multiples frames a la vez coordinando los refresh rates del monitor
-		// con los frames a mostrar
+
 		Toolkit.getDefaultToolkit().sync();
 		
 		
 		g.dispose();
-		
-		// apunta a la siguiente imagen a mostrar que se encuentra en la cola
+
 		bufferStrat.show();
 	}
 

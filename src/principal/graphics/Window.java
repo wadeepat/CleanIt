@@ -23,7 +23,7 @@ public class Window extends JFrame{
 	
 
 	private void init(final DrawingSurface ds) {
-		// Agrega el canvas y lo centra con la pantalla
+
 		add(ds, BorderLayout.CENTER);
 		setSize(new Dimension(Constant.WIDTH, Constant.HEIGHT));
 		

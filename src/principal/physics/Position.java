@@ -10,7 +10,7 @@ public class Position {
 		this.y = y;
 	}
 
-	// setter y getters
+	// setter and getters
 	public float getX() {
 		return x;
 	}

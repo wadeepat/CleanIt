@@ -46,15 +46,12 @@ public class Win implements GameState{
 		}
 		
 		// Anti aliasing
-		g.setRenderingHint(
-				RenderingHints.KEY_TEXT_ANTIALIASING,
-				RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		
 		felixAnim.update(); 
 		g.drawRect(0, 0, 800, 600);
 		g.drawImage(felixAnim.getImage(0), Constant.WIDTH/2, Constant.HEIGHT/2 + 78, null);
-		g.drawImage(buildingRoof.getImage(), Constant.WIDTH/2 - buildingRoof.getWidth()/2 
-				,Constant.HEIGHT - 186, null);
+		g.drawImage(buildingRoof.getImage(), Constant.WIDTH/2 - buildingRoof.getWidth()/2,Constant.HEIGHT - 186, null);
 		
 		g.setColor(Color.WHITE);
 		g.setFont(font);

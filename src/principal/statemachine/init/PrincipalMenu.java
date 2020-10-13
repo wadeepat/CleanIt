@@ -183,6 +183,7 @@ public class PrincipalMenu implements GameState{
 			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 320, 176, 40);
 			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 370, 98, 40);
 			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 420, 70, 40);
+			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 470, 70, 40);
 			
 			g.setColor(Color.RED);
 			
@@ -197,13 +198,14 @@ public class PrincipalMenu implements GameState{
 			g.drawString("RULES", helpButton.x + 8, helpButton.y + 30);
 //			g.draw(helpButton);
 			g.drawString("Shop",shopButton.x + 8, shopButton.y +30);
+
 			g.drawString("QUIT",quitButton.x + 8, quitButton.y + 30);
 			
 			
 		}
-		g.setFont(font2);
-		g.setColor(Color.WHITE);
-		g.drawString("Powered by Bonfils, Suarez and Dominguez Vega", DISP_X, Constant.HEIGHT - 50);	
+//		g.setFont(font2);
+//		g.setColor(Color.WHITE);
+//		g.drawString("Powered by Bonfils, Suarez and Dominguez Vega", DISP_X, Constant.HEIGHT - 50);
 	}
 
 	
@@ -215,7 +217,7 @@ public class PrincipalMenu implements GameState{
 	
 	private void drawPressBar(Graphics2D g) {
 		counter++;
-		if (counter  > 3000 && !barspacePushed){
+		if (counter  > 2000 && !barspacePushed){
 			counter = 0;
 			drawString = !drawString;
 		}

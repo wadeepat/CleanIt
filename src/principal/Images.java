@@ -148,6 +148,8 @@ public class Images {
 	private final Sprite buildingRoof;
 
 	private final Sprite conan;
+	private final Sprite bgShop;
+	private final Sprite block;
 	
 	// WINDOWS & PARTS
 	private Sprite[] glasses; 
@@ -198,8 +200,6 @@ public class Images {
 		
 		buildingRoof = new Sprite(ResourceLoader.getLoader().
 				loadImage("images/sprites_sin_fondo.png"));
-
-		conan = new Sprite(ResourceLoader.getLoader().loadImage("images/conan/normal/normalLeft/0.png"));
 		
 		cloud = new Sprite(ResourceLoader.getLoader().
 				loadImage("images/entities/cloud/0.png"));
@@ -218,6 +218,12 @@ public class Images {
 		menu = new Sprite (ResourceLoader.getLoader().loadImage("images/initial_menu.png"));
 		
 		config = new Sprite(ResourceLoader.getLoader().loadImage("images/config.png"));
+
+		conan = new Sprite(ResourceLoader.getLoader().loadImage("images/shop/conan.png"));
+
+		bgShop = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgShop.jpg"));
+
+		block = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/block.png"));
 
 		// WINDOWS & PARTS
 		initGlasses();
@@ -371,8 +377,11 @@ public class Images {
 		return building;
 	}
 
-	public Sprite getConanBuy(){return  conan; }
-	
+	public Sprite getConan(){return  conan; }
+
+	public Sprite getBgShop(){return bgShop; }
+
+	public Sprite getBlock() {return  block; }
 
 	public Sprite getLife() {
 		return life;
