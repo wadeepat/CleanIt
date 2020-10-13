@@ -22,7 +22,7 @@ public class Egg extends Creature{
 
     public Egg(float x,float y,int actualSector){
         super(x,y);
-        egg = Level.getLevel().getEgg();
+        egg = Game.animations.getEgg();
 
         vel = Level.getLevel().getEggVel();
 

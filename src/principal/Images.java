@@ -106,8 +106,11 @@ public class Images {
 		"images/entities/cake/0.png",
 		"images/entities/cake/1.png"
 	};
-	
 
+	private final String[] eggPaths = {
+			"images/entities/egg/0.png",
+			"images/entities/egg/1.png"//good egg
+	};
 	
 	
 	//	Ralph Animations
@@ -146,6 +149,8 @@ public class Images {
 	private final Sprite menu;
 	private final Sprite config;
 	private final Sprite buildingRoof;
+	//////////////////////////////////////////
+	private final Animation egg;
 	
 	// WINDOWS & PARTS
 	private Sprite[] glasses; 
@@ -204,6 +209,9 @@ public class Images {
 		building = new Sprite(ResourceLoader.getLoader().loadImage("images/building/0.png"));
 		
 		brick = new Animation(brickPaths);
+
+		////////////////////////////////////////////
+		egg = new Animation(eggPaths);
 		
 		birdLeft = new Animation(birdLeftPaths);
 		birdRight = new Animation(birdRightPaths);
@@ -258,6 +266,11 @@ public class Images {
 	
 	public Animation getBrick() {
 		return brick;
+	}
+
+	///////////////////////////////////////
+	public Animation getEgg() {
+		return egg;
 	}
 	
 	
