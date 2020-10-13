@@ -1,5 +1,7 @@
 package principal;
 
+import principal.graphics.Animation;
+
 public class Level {
 
 	private int actualLevel;
@@ -8,7 +10,9 @@ public class Level {
 	private float birdVel;
 	private float brickVel;
 	private float ralphVel;
-	
+	//////////////////////////////////
+	private float eggVel;
+
 	private long ralphTime;
 	
 	private static Level level = new Level();
@@ -23,6 +27,8 @@ public class Level {
 		birdVel = 1.5f;
 		ralphVel = 0.8f;
 		ralphTime = 3000;
+		///////////////////////////////////
+		eggVel = 2.0f;
 	}
 	
 	public static Level getLevel(){
@@ -69,6 +75,11 @@ public class Level {
 		return brickVel;
 	}
 
+	////////////////////////////////////////////
+	public float getEggVel() {
+		return eggVel;
+	}
+
 
 	public long getRalphTime() {
 		return ralphTime;
@@ -82,7 +93,11 @@ public class Level {
 	public void setBrickVel(float brickVel) {
 		this.brickVel = brickVel;
 	}
-	
+
+	///////////////////////////////////////////
+	public void setEggVel(float eggVel) {
+		this.eggVel = eggVel;
+	}
 	
 	// Ralph
 	public float getRalphVel() {
@@ -161,7 +176,6 @@ public class Level {
 		}
 
 	}
-	
-	
 
+	
 }
