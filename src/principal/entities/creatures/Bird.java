@@ -21,7 +21,7 @@ public class Bird extends Creature{
 	private State state;
 	private boolean side;
 	
-	public Bird(float x, float y, boolean side){
+	public Bird(float x, float y, boolean side){//ลักษณะการเป็นอยู่ของมัน ความเร็ว มาจากด้านไหน
 		super(x,y);
 
 		vel = Level.getLevel().getBirdVel();
