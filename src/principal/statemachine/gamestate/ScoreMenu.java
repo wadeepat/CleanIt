@@ -16,11 +16,11 @@ public class ScoreMenu implements GameState{
 	private Font font;
 	private Font font1;
 	
-	public Rectangle backButton = new Rectangle(300, 450, 100, 50);
+	public Rectangle backButton = new Rectangle(300, 450, 100, 50); // 300,450
 	
 	public ScoreMenu() {
-		font = new Font("Bold", Font.BOLD,15);
-		font1 = new Font("Bold", Font.BOLD, 70);
+		font = new Font("BOLD", Font.PLAIN,15);
+		font1 = new Font("BOLD", Font.PLAIN, 70);
 	}
 	
 	@Override

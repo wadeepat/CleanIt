@@ -36,7 +36,8 @@ public class PrincipalMenu implements GameState{
 	public Rectangle scoreButton = new Rectangle(Constant.WIDTH/2 - 100/2  - 20, 320,100, 50);
 	public Rectangle helpButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 370, 100, 50);
 	public Rectangle configButton = new Rectangle(Constant.WIDTH - 50, 0, 45, 45);
-	public Rectangle quitButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 420, 100, 50);
+	public Rectangle shopButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 420, 100, 50);
+	public Rectangle quitButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 470, 100, 50);
 		
 	private boolean drawString;
 	private int counter = 0;
@@ -91,19 +92,17 @@ public class PrincipalMenu implements GameState{
 				if (playButton.contains(MouseInput.getPointer())){
 					GameManager.getGameManager().resetGameManager();
 					restart();
-				}else
-					if (scoreButton.contains(MouseInput.getPointer())){
-						GameStatus.changeState(3);
-					}else
-						if (helpButton.contains(MouseInput.getPointer())){
-							GameStatus.changeState(4);
-						}else
-							if (configButton.contains(MouseInput.getPointer())){
-									drawFrame();
-							}else
-								if (quitButton.contains(MouseInput.getPointer())) {
-									Game.quitGame();
-								}		
+				}else if (scoreButton.contains(MouseInput.getPointer())){
+					GameStatus.changeState(3);
+				}else if (helpButton.contains(MouseInput.getPointer())){
+					GameStatus.changeState(4);
+				}else if (configButton.contains(MouseInput.getPointer())){
+					drawFrame();
+				}else if(shopButton.contains(MouseInput.getPointer())){
+					GameStatus.changeState(6);
+				}else if (quitButton.contains(MouseInput.getPointer())) {
+					Game.quitGame();
+				}
 			}										
 		}
 	}
@@ -197,6 +196,7 @@ public class PrincipalMenu implements GameState{
 			
 			g.drawString("RULES", helpButton.x + 8, helpButton.y + 30);
 //			g.draw(helpButton);
+			g.drawString("Shop",shopButton.x + 8, shopButton.y +30);
 			g.drawString("QUIT",quitButton.x + 8, quitButton.y + 30);
 			
 			

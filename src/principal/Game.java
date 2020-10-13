@@ -24,7 +24,7 @@ public class Game {
 		animations = new Images();
 		inGame = true;
 		drawingSurface = new DrawingSurface();
-		window = new Window("Fix it, Felix Jr.", drawingSurface);
+		window = new Window("Clean It.", drawingSurface);
 		gameStatus = new GameStatus();	
 	}
 	
@@ -37,9 +37,7 @@ public class Game {
 		Score.getScore().readFromFile();
 		loopGame();
 	}
-	
-	
-	// todo el bucle contabilizando cada una de las iteraciones y con cuentas para saber cuando actualizar y cuando dibujar
+
 	private void loopGame() {
 		
 		int framesAmount = 0;
@@ -78,9 +76,6 @@ public class Game {
 				
 				fps = framesAmount;
 				tps = ticksAmount;
-			
-//				System.out.println("fps  "+ fps);
-//				System.out.println("tps  "+ tps);
 
 				framesAmount = 0;
 				ticksAmount = 0;
@@ -100,10 +95,6 @@ public class Game {
 		}
 	}
 
-	// se manda el game status porque sabe que dibujar en el momento indicado, ejemplo si pulso pausa
-	// el game status va a dibujar una pantalla negra con un string que diga pausa 
-	// (falta indicar en el codigo que cuando pulso escape el game status cambiara al modo pausa), si pongo game manager como status
-	// dibujara los objetos que corresponden cuando estes jugando felix, pajaros, ralph, etc.
 	
 	private void draw(long time) {
 		drawingSurface.draw(gameStatus, time);

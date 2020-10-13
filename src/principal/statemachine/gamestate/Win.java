@@ -19,7 +19,6 @@ import principal.statemachine.characterstates.felixstates.FelixWin;
 public class Win implements GameState{
 	
 	private State felixAnim = FelixWin.getFelixWin();
-	
 	private static long timing;
 	private Font font;
 	private Sprite buildingRoof;
@@ -27,7 +26,7 @@ public class Win implements GameState{
 	private Cloud[] clouds;
 	
 	public Win(){
-		font = new Font("Bold", Font.BOLD, 70);
+		font = new Font("BOLD", Font.PLAIN, 70);
 		buildingRoof = Game.animations.getBuildingRoof();
 		clouds = new Cloud[3];
 		initClouds();
