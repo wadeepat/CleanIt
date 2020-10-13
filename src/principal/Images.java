@@ -5,58 +5,58 @@ import principal.graphics.Sprite;
 import principal.util.ResourceLoader;
 
 public class Images {
-	
+	String charactor = "conan";
 	// FELIX'S PATHS
 	private String[] felixMovingLeftPaths = {
-		"images/felix/moving/movingLeft/0.png",
-		"images/felix/moving/movingLeft/1.png",
-		"images/felix/moving/movingLeft/2.png",
-		"images/felix/moving/movingLeft/3.png",
+		"images/"+charactor+"/moving/movingLeft/0.png",
+		"images/"+charactor+"/moving/movingLeft/1.png",
+		"images/"+charactor+"/moving/movingLeft/2.png",
+		"images/"+charactor+"/moving/movingLeft/3.png",
 	};
 	
 	
 	private String[] felixMovingRightPaths = {
-		"images/felix/moving/movingRight/0.png",
-		"images/felix/moving/movingRight/1.png",
-		"images/felix/moving/movingRight/2.png",
-		"images/felix/moving/movingRight/3.png",
+		"images/"+charactor+"/moving/movingRight/0.png",
+		"images/"+charactor+"/moving/movingRight/1.png",
+		"images/"+charactor+"/moving/movingRight/2.png",
+		"images/"+charactor+"/moving/movingRight/3.png",
 	};
 
 	
 	private String[] felixFixingLeftPaths = {
-		"images/felix/fixing/fixingLeft/0.png",
-		"images/felix/fixing/fixingLeft/1.png",
+		"images/"+charactor+"/fixing/fixingLeft/0.png",
+		"images/"+charactor+"/fixing/fixingLeft/1.png",
 	};
 	
 	
 	private String[] felixFixingRightPaths = {
-		"images/felix/fixing/fixingRight/0.png",
-		"images/felix/fixing/fixingRight/1.png",
+		"images/"+charactor+"/fixing/fixingRight/0.png",
+		"images/"+charactor+"/fixing/fixingRight/1.png",
 	};
 	
 	
 	private String[] felixNormalRightPaths = {
-		"images/felix/normal/normalRight/0.png",	
+		"images/"+charactor+"/normal/normalRight/0.png",
 	};
 	
 	
 	private String[] felixNormalLeftPaths = {
-		"images/felix/normal/normalLeft/0.png",	
+		"images/"+charactor+"/normal/normalLeft/0.png",
 	};
 	
 	
 	private String[] felixFallingPaths = {
-		"images/felix/falling/0.png",
-		"images/felix/falling/1.png",
+		"images/"+charactor+"/falling/0.png",
+		"images/"+charactor+"/falling/1.png",
 	};
 	
 	private String[] felixWinPaths = {
-		"images/felix/win/0.png",
-		"images/felix/win/1.png",
-		"images/felix/win/2.png",
-		"images/felix/win/3.png",
-		"images/felix/win/4.png",
-		"images/felix/win/5.png"
+		"images/"+charactor+"/win/0.png",
+		"images/"+charactor+"/win/1.png",
+		"images/"+charactor+"/win/2.png",
+		"images/"+charactor+"/win/3.png",
+		"images/"+charactor+"/win/4.png",
+		"images/"+charactor+"/win/5.png"
 	};
 	
 	

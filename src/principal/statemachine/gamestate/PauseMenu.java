@@ -32,9 +32,9 @@ public class PauseMenu implements GameState{
 	private Font font2;
 	
 	public PauseMenu() {
-		font =  new Font("arial",Font.BOLD,60);
-		font1 = new Font("arial", Font.BOLD, 20);
-		font2 = new Font("arial", Font.ITALIC, 15);
+		font =  new Font("BOLD",Font.PLAIN,60);
+		font1 = new Font("BOLD", Font.PLAIN, 20);
+		font2 = new Font("BOLD", Font.ITALIC, 15);
 
 	}
 	
@@ -44,16 +44,13 @@ public class PauseMenu implements GameState{
 			if (menuButton.contains(MouseInput.getPointer())){
 				GameManager.setChoose(false);
 				GameStatus.changeState(0);
-			}else
-				if (resumeButton.contains(MouseInput.getPointer())){
-					GameStatus.changeState(1);
-				}else
-					if (restartButton.contains(MouseInput.getPointer())){
-						restart();
-					}else
-						if (exitButton.contains(MouseInput.getPointer())){
-							Game.quitGame();
-						}
+			}else if (resumeButton.contains(MouseInput.getPointer())){
+				GameStatus.changeState(1);
+			}else if (restartButton.contains(MouseInput.getPointer())){
+				restart();
+			}else if (exitButton.contains(MouseInput.getPointer())){
+				Game.quitGame();
+			}
 		}
 		
 	}

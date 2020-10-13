@@ -27,7 +27,7 @@ public class Win implements GameState{
 	private Cloud[] clouds;
 	
 	public Win(){
-		font = new Font("Bold", Font.BOLD, 70);
+		font = new Font("BOLD", Font.PLAIN, 70);
 		buildingRoof = Game.animations.getBuildingRoof();
 		clouds = new Cloud[3];
 		initClouds();
