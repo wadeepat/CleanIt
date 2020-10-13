@@ -19,7 +19,6 @@ import principal.statemachine.characterstates.felixstates.FelixWin;
 public class Win implements GameState{
 	
 	private State felixAnim = FelixWin.getFelixWin();
-	
 	private static long timing;
 	private Font font;
 	private Sprite buildingRoof;

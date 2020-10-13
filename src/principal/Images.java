@@ -146,6 +146,8 @@ public class Images {
 	private final Sprite menu;
 	private final Sprite config;
 	private final Sprite buildingRoof;
+
+	private final Sprite conan;
 	
 	// WINDOWS & PARTS
 	private Sprite[] glasses; 
@@ -196,7 +198,8 @@ public class Images {
 		
 		buildingRoof = new Sprite(ResourceLoader.getLoader().
 				loadImage("images/sprites_sin_fondo.png"));
-		
+
+		conan = new Sprite(ResourceLoader.getLoader().loadImage("images/conan/normal/normalLeft/0.png"));
 		
 		cloud = new Sprite(ResourceLoader.getLoader().
 				loadImage("images/entities/cloud/0.png"));
@@ -367,6 +370,8 @@ public class Images {
 	public Sprite getBuilding() {
 		return building;
 	}
+
+	public Sprite getConanBuy(){return  conan; }
 	
 
 	public Sprite getLife() {
