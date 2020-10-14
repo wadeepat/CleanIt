@@ -278,7 +278,7 @@ public class Images {
 		return brick;
 	}
 
-	public Animation getBrickEgg() {
+	public Animation getEgg() {
 		return egg;
 	}
 	
