@@ -5,59 +5,80 @@ import principal.graphics.Sprite;
 import principal.util.ResourceLoader;
 
 public class Images {
-	String charactor = "conan";
-	// FELIX'S PATHS
-	private String[] felixMovingLeftPaths = {
-		"images/"+charactor+"/moving/movingLeft/0.png",
-		"images/"+charactor+"/moving/movingLeft/1.png",
-		"images/"+charactor+"/moving/movingLeft/2.png",
-		"images/"+charactor+"/moving/movingLeft/3.png",
-	};
-	
-	
-	private String[] felixMovingRightPaths = {
-		"images/"+charactor+"/moving/movingRight/0.png",
-		"images/"+charactor+"/moving/movingRight/1.png",
-		"images/"+charactor+"/moving/movingRight/2.png",
-		"images/"+charactor+"/moving/movingRight/3.png",
-	};
 
-	
-	private String[] felixFixingLeftPaths = {
-		"images/"+charactor+"/fixing/fixingLeft/0.png",
-		"images/"+charactor+"/fixing/fixingLeft/1.png",
-	};
-	
-	
-	private String[] felixFixingRightPaths = {
-		"images/"+charactor+"/fixing/fixingRight/0.png",
-		"images/"+charactor+"/fixing/fixingRight/1.png",
-	};
-	
-	
-	private String[] felixNormalRightPaths = {
-		"images/"+charactor+"/normal/normalRight/0.png",
-	};
-	
-	
-	private String[] felixNormalLeftPaths = {
-		"images/"+charactor+"/normal/normalLeft/0.png",
-	};
-	
-	
-	private String[] felixFallingPaths = {
-		"images/"+charactor+"/falling/0.png",
-		"images/"+charactor+"/falling/1.png",
-	};
-	
-	private String[] felixWinPaths = {
-		"images/"+charactor+"/win/0.png",
-		"images/"+charactor+"/win/1.png",
-		"images/"+charactor+"/win/2.png",
-		"images/"+charactor+"/win/3.png",
-		"images/"+charactor+"/win/4.png",
-		"images/"+charactor+"/win/5.png"
-	};
+//	public static String charactor="felix";
+	private static String charactor = "felix";
+	// FELIX'S PATHS
+//	public static void selectChar(int n){
+//		if(n==0)charactor = "conan";
+//		else if(n==1)charactor = "sonic";
+//		else charactor = "felix";
+//	}
+	public void recharactor(){
+		felixMoveLeft = new Animation(felixMovingLeftPaths);
+		felixMoveRight = new Animation (felixMovingRightPaths);
+
+		felixNormalRight = new Animation(felixNormalRightPaths);
+		felixNormalLeft = new Animation(felixNormalLeftPaths);
+
+		felixFixingLeft = new Animation(felixFixingLeftPaths);
+		felixFixingRight = new Animation(felixFixingRightPaths);
+
+		felixFalling = new Animation(felixFallingPaths);
+
+		felixWin = new Animation(felixWinPaths);
+	}
+//	private String[] felixMovingLeftPaths = {
+//		"images/"+charactor+"/moving/movingLeft/0.png",
+//		"images/"+charactor+"/moving/movingLeft/1.png",
+//		"images/"+charactor+"/moving/movingLeft/2.png",
+//		"images/"+charactor+"/moving/movingLeft/3.png",
+//	};
+//
+//
+//	private String[] felixMovingRightPaths = {
+//		"images/"+charactor+"/moving/movingRight/0.png",
+//		"images/"+charactor+"/moving/movingRight/1.png",
+//		"images/"+charactor+"/moving/movingRight/2.png",
+//		"images/"+charactor+"/moving/movingRight/3.png",
+//	};
+//
+//
+//	private String[] felixFixingLeftPaths = {
+//		"images/"+charactor+"/fixing/fixingLeft/0.png",
+//		"images/"+charactor+"/fixing/fixingLeft/1.png",
+//	};
+//
+//
+//	private String[] felixFixingRightPaths = {
+//		"images/"+charactor+"/fixing/fixingRight/0.png",
+//		"images/"+charactor+"/fixing/fixingRight/1.png",
+//	};
+//
+//
+//	private String[] felixNormalRightPaths = {
+//		"images/"+charactor+"/normal/normalRight/0.png",
+//	};
+//
+//
+//	private String[] felixNormalLeftPaths = {
+//		"images/"+charactor+"/normal/normalLeft/0.png",
+//	};
+//
+//
+//	private String[] felixFallingPaths = {
+//		"images/"+charactor+"/falling/0.png",
+//		"images/"+charactor+"/falling/1.png",
+//	};
+//
+//	private String[] felixWinPaths = {
+//		"images/"+charactor+"/win/0.png",
+//		"images/"+charactor+"/win/1.png",
+//		"images/"+charactor+"/win/2.png",
+//		"images/"+charactor+"/win/3.png",
+//		"images/"+charactor+"/win/4.png",
+//		"images/"+charactor+"/win/5.png"
+//	};
 	
 	
 	// RALPH'S ANIMATIONS
@@ -163,7 +184,7 @@ public class Images {
 	private Sprite[] semicircular;
 	private Sprite[] door;
 	
-	public Images() {
+	public Images(String charactor) {
 		
 		// Ralph's Animations
 		
@@ -174,7 +195,7 @@ public class Images {
 		ralphMove = new Animation(ralphMovePath);
 		
 		// Felix's Animations
-		
+		this.charactor = charactor;
 		felixMoveLeft = new Animation(felixMovingLeftPaths);
 		felixMoveRight = new Animation (felixMovingRightPaths);
 		
@@ -240,7 +261,57 @@ public class Images {
 		initSemicircular();
 		initDoor();
 	}
-	
+	private String[] felixMovingLeftPaths = {
+			"images/"+charactor+"/moving/movingLeft/0.png",
+			"images/"+charactor+"/moving/movingLeft/1.png",
+			"images/"+charactor+"/moving/movingLeft/2.png",
+			"images/"+charactor+"/moving/movingLeft/3.png",
+	};
+
+
+	private String[] felixMovingRightPaths = {
+			"images/"+charactor+"/moving/movingRight/0.png",
+			"images/"+charactor+"/moving/movingRight/1.png",
+			"images/"+charactor+"/moving/movingRight/2.png",
+			"images/"+charactor+"/moving/movingRight/3.png",
+	};
+
+
+	private String[] felixFixingLeftPaths = {
+			"images/"+charactor+"/fixing/fixingLeft/0.png",
+			"images/"+charactor+"/fixing/fixingLeft/1.png",
+	};
+
+
+	private String[] felixFixingRightPaths = {
+			"images/"+charactor+"/fixing/fixingRight/0.png",
+			"images/"+charactor+"/fixing/fixingRight/1.png",
+	};
+
+
+	private String[] felixNormalRightPaths = {
+			"images/"+charactor+"/normal/normalRight/0.png",
+	};
+
+
+	private String[] felixNormalLeftPaths = {
+			"images/"+charactor+"/normal/normalLeft/0.png",
+	};
+
+
+	private String[] felixFallingPaths = {
+			"images/"+charactor+"/falling/0.png",
+			"images/"+charactor+"/falling/1.png",
+	};
+
+	private String[] felixWinPaths = {
+			"images/"+charactor+"/win/0.png",
+			"images/"+charactor+"/win/1.png",
+			"images/"+charactor+"/win/2.png",
+			"images/"+charactor+"/win/3.png",
+			"images/"+charactor+"/win/4.png",
+			"images/"+charactor+"/win/5.png"
+	};
 	
 	private void initGlasses() {
 		glasses = new Sprite[7];

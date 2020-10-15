@@ -21,7 +21,7 @@ public class Game {
 	private static Game game = new Game();
 	
 	private Game() {
-		animations = new Images();
+		animations = new Images("felix");
 		inGame = true;
 		drawingSurface = new DrawingSurface();
 		window = new Window("Clean It.", drawingSurface);
