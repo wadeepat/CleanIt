@@ -101,7 +101,6 @@ public class Images {
 	private final Sprite config;
 	private final Sprite buildingRoof;
 
-	private final Sprite conan;
 	private final Sprite bgShop;
 	private final Sprite block;
 
@@ -181,7 +180,6 @@ public class Images {
 		
 		config = new Sprite(ResourceLoader.getLoader().loadImage("images/config.png"));
 
-		conan = new Sprite(ResourceLoader.getLoader().loadImage("images/shop/conan.png"));
 
 		bgShop = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgShop.jpg"));
 
@@ -399,7 +397,7 @@ public class Images {
 		return building;
 	}
 
-	public Sprite getConan(){return  conan; }
+
 
 	public Sprite getBgShop(){return bgShop; }
 
