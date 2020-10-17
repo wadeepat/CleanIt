@@ -6,81 +6,11 @@ import principal.util.ResourceLoader;
 
 public class Images {
 
-//	public static String charactor="felix";
+
 	private static String charactor = "felix";
-	// FELIX'S PATHS
-//	public static void selectChar(int n){
-//		if(n==0)charactor = "conan";
-//		else if(n==1)charactor = "sonic";
-//		else charactor = "felix";
-//	}
-	public void recharactor(){
-		felixMoveLeft = new Animation(felixMovingLeftPaths);
-		felixMoveRight = new Animation (felixMovingRightPaths);
 
-		felixNormalRight = new Animation(felixNormalRightPaths);
-		felixNormalLeft = new Animation(felixNormalLeftPaths);
 
-		felixFixingLeft = new Animation(felixFixingLeftPaths);
-		felixFixingRight = new Animation(felixFixingRightPaths);
 
-		felixFalling = new Animation(felixFallingPaths);
-
-		felixWin = new Animation(felixWinPaths);
-	}
-//	private String[] felixMovingLeftPaths = {
-//		"images/"+charactor+"/moving/movingLeft/0.png",
-//		"images/"+charactor+"/moving/movingLeft/1.png",
-//		"images/"+charactor+"/moving/movingLeft/2.png",
-//		"images/"+charactor+"/moving/movingLeft/3.png",
-//	};
-//
-//
-//	private String[] felixMovingRightPaths = {
-//		"images/"+charactor+"/moving/movingRight/0.png",
-//		"images/"+charactor+"/moving/movingRight/1.png",
-//		"images/"+charactor+"/moving/movingRight/2.png",
-//		"images/"+charactor+"/moving/movingRight/3.png",
-//	};
-//
-//
-//	private String[] felixFixingLeftPaths = {
-//		"images/"+charactor+"/fixing/fixingLeft/0.png",
-//		"images/"+charactor+"/fixing/fixingLeft/1.png",
-//	};
-//
-//
-//	private String[] felixFixingRightPaths = {
-//		"images/"+charactor+"/fixing/fixingRight/0.png",
-//		"images/"+charactor+"/fixing/fixingRight/1.png",
-//	};
-//
-//
-//	private String[] felixNormalRightPaths = {
-//		"images/"+charactor+"/normal/normalRight/0.png",
-//	};
-//
-//
-//	private String[] felixNormalLeftPaths = {
-//		"images/"+charactor+"/normal/normalLeft/0.png",
-//	};
-//
-//
-//	private String[] felixFallingPaths = {
-//		"images/"+charactor+"/falling/0.png",
-//		"images/"+charactor+"/falling/1.png",
-//	};
-//
-//	private String[] felixWinPaths = {
-//		"images/"+charactor+"/win/0.png",
-//		"images/"+charactor+"/win/1.png",
-//		"images/"+charactor+"/win/2.png",
-//		"images/"+charactor+"/win/3.png",
-//		"images/"+charactor+"/win/4.png",
-//		"images/"+charactor+"/win/5.png"
-//	};
-	
-	
 	// RALPH'S ANIMATIONS
 	private String[] ralphDemolishing = {
 		"images/ralph/Demolishing/0.png",	
@@ -105,7 +35,7 @@ public class Images {
 		"images/entities/bird/birdLeft/0.png",
 		"images/entities/bird/birdLeft/1.png"
 	};
-	
+
 	
 	private final String[] birdRightPaths = {
 		"images/entities/bird/birdRight/0.png",
@@ -133,7 +63,7 @@ public class Images {
 			"images/entities/egg/0.png",
 			"images/entities/egg/1.png"//good egg
 	};
-	
+
 	//	Ralph Animations
 	private Animation ralphClimbing;
 	private Animation ralphDemolition;
@@ -175,6 +105,7 @@ public class Images {
 	private final Sprite bgShop;
 	private final Sprite block;
 
+
 	///////////////////////////////////////////////
 	private final Animation egg;
 	
@@ -183,6 +114,7 @@ public class Images {
 	private Sprite[] doubleDoor;
 	private Sprite[] semicircular;
 	private Sprite[] door;
+	private Sprite[] shopchar;
 	
 	public Images(String charactor) {
 		
@@ -260,7 +192,9 @@ public class Images {
 		initDoubleDoor();
 		initSemicircular();
 		initDoor();
+		initshopchar();
 	}
+
 	private String[] felixMovingLeftPaths = {
 			"images/"+charactor+"/moving/movingLeft/0.png",
 			"images/"+charactor+"/moving/movingLeft/1.png",
@@ -332,8 +266,7 @@ public class Images {
 	private void initSemicircular() {
 		semicircular = new Sprite[5];
 		for (int i = 0; i < semicircular.length; i++){
-			semicircular[i] = new Sprite(ResourceLoader.getLoader().
-					loadImage("images/window/semicircular/bigwindow/"+ i+".png"));
+			semicircular[i] = new Sprite(ResourceLoader.getLoader().loadImage("images/window/semicircular/bigwindow/"+ i+".png"));
 		}
 	}
 	
@@ -344,7 +277,15 @@ public class Images {
 					loadImage("images/window/semicircular/door/"+ i+".png"));
 		}
 	}
-	
+
+	private void initshopchar(){
+		shopchar = new Sprite[15];
+		for (int i=0;i<shopchar.length;i++){
+			shopchar[i] = new Sprite(ResourceLoader.getLoader().loadImage("images/shop/"+i+".png"));
+		}
+
+	}
+
 	public Animation getBrick() {
 		return brick;
 	}
@@ -367,10 +308,7 @@ public class Images {
 		return ralphMove;
 	}
 	
-	
-	
-	
-	
+
 	
 	// FELIX'S ANIMATION
 	public Animation getFelixMoveLeft(){
@@ -467,6 +405,7 @@ public class Images {
 
 	public Sprite getBlock() {return  block; }
 
+
 	public Sprite getLife() {
 		return life;
 	}
@@ -500,7 +439,9 @@ public class Images {
 		return door;
 	}
 
-
+	public Sprite[] getShopchar(){
+		return shopchar;
+	}
 
 	public Animation getFelixWin(){
 		return felixWin;

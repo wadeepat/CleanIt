@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class Shop implements GameState {
     private Font font;
-    private Sprite conan;
+    private Sprite[] shopchar;
     private Sprite bg;
     private Sprite block;
     private Font PixelMplus;
@@ -23,7 +23,7 @@ public Rectangle selectButton[] = new Rectangle[15];
     public boolean selected = false;
     public Shop(){
 
-        conan = Game.animations.getConan();
+        shopchar = Game.animations.getShopchar();
         bg = Game.animations.getBgShop();
         block = Game.animations.getBlock();
 //        for(int i=0;i<15;i++){
@@ -50,7 +50,7 @@ public Rectangle selectButton[] = new Rectangle[15];
         for (int y=70 ;y<=390;y+=155){ //draw block
             for(int x=60;x<=630;x+=140){
                 g.drawImage(block.getImage(),x,y,null);
-                g.drawImage(conan.getImage(),x+20,y+20,null);
+                g.drawImage(shopchar[i].getImage(),x+20,y+20,null);
                 selectButton[i] = new Rectangle(x+30,y+110,35,15);
                 g.drawString("select",x+30,y+120);
                 i++;
