@@ -13,6 +13,7 @@ import principal.entities.ID;
 import principal.graphics.Animation;
 import principal.statemachine.characterstates.State;
 import principal.statemachine.characterstates.bird.BirdMoving;
+import principal.statemachine.characterstates.ralphstates.Demolishing;
 import principal.statemachine.gamestate.GameManager;
 import principal.util.Random;
 
@@ -20,7 +21,8 @@ public class Bird extends Creature{
 
 	private State state;
 	private boolean side;
-	
+	private long time = System.currentTimeMillis();
+
 	public Bird(float x, float y, boolean side){//ลักษณะการเป็นอยู่ของมัน ความเร็ว มาจากด้านไหน
 		super(x,y);
 
@@ -29,15 +31,24 @@ public class Bird extends Creature{
 
 		this.side = side;
 		side();
-		
+
 		state = BirdMoving.getMoving();
-		
+
 		Handler.add(this);
+
+//		if (System.currentTimeMillis()-time >= 5) {
+//
+//			time = System.currentTimeMillis();
+//			state = BirdMoving.getMoving();
+//			throwBrick();
+//		}
+//		elapsedTime - time > brickTime
 	}
-	
+
+
 	private void side(){
-		
-		
+
+
 		if (side){
 			setX(0 - 30);
 			directionX = 1;
@@ -46,14 +57,14 @@ public class Bird extends Creature{
 			directionX = -1;
 		}
 	}
-	
-	
+
+
 	@Override
 	public String getName() {
 		return "Bird";
 	}
 
-	
+
 	@Override
 	public void draw(Graphics2D g, long elapsedTime) {
 		state.update();
@@ -63,11 +74,27 @@ public class Bird extends Creature{
 
 	}
 
+		private void throwBrick() {
+			Handler.addBrick(getX()+25, getY() + 70);
+			Handler.addBrick(getX()+50, getY() + 70);
+	//		int actualSector = Building.getBuilding().getIndexActualSector();
+	//		Brick brick = new Brick((int)getX() + 25, (int)getY()+ 70, actualSector);
+	//		Handler.add(brick);
+	//		Brick brick1 = new Brick((int)getX() + 50, (int)getY() + 70, actualSector);
+	//		Handler.add(brick1);
+		}
 
 	@Override
 	public void tick(ArrayList<Entity> objects, long beforeTime) {
-		
+
+		if ((System.currentTimeMillis()-time)/1000 >= 5) {
+			time = System.currentTimeMillis();
+			state = BirdMoving.getMoving();
+			throwBrick();
+		}
+
 //		System.out.println("Bird: " + vel);
+
 		setX(getX() + getDx());
 		if (side) {
 			setDx(vel);
@@ -81,36 +108,37 @@ public class Bird extends Creature{
 			}
 			directionX = -1;
 		}
-		
+
 	}
 
-	
+
+
 	public void setVelocity(float vel) {}
-	
+
 	@Override
 	public Rectangle getBounds() {
 		return new Rectangle((int)getX(), (int)getY(), 30, 20);
 	}
 
-	
+
 	@Override
 	public Rectangle getTopBounds() {
 		return new Rectangle(0,0,0,0);
 	}
 
-	
+
 	@Override
 	public Rectangle getLeftBounds() {
 		return new Rectangle(0,0,0,0);
 	}
 
-	
+
 	@Override
 	public Rectangle getRightBounds() {
 		return new Rectangle(0,0,0,0);
 	}
 
-	
+
 	@Override
 	public Rectangle getBotBounds() {
 		return new Rectangle(0,0,0,0);

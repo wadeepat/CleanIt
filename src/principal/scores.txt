@@ -1,4 +1,4 @@
+Lakkhanan,999999999
 Wadeepat,82220
 Sunisa,54400
-Lakkhanan,45980
 Others,10000

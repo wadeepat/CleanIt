@@ -11,10 +11,10 @@ public class BirdMoving extends State{
 
 
 	private static BirdMoving moving = new BirdMoving();
-	
-	
+
 	private BirdMoving() {
 		animUpdate = 300;
+		animation = Game.animations.getBirdMove();
 	}
 	
 	public static BirdMoving getMoving(){
@@ -30,7 +30,7 @@ public class BirdMoving extends State{
 			animation = Game.animations.getRightBird();
 		return animation.getActualFrame();
 	}
-	
+
 	
 	
 

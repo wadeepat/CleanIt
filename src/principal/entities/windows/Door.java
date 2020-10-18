@@ -59,7 +59,7 @@ public class Door extends Window{
 	
 	@Override
 	public void tick(ArrayList<Entity> objects, long beforeTime) {	
-		System.out.println(strokesRequired);
+//		System.out.println(strokesRequired);
 		initWindows();
 		
 	}
