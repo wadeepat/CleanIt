@@ -73,7 +73,7 @@ public Rectangle selectButton[] = new Rectangle[15];
                 Game.animations = new Images("sonic");
             }else if (selectButton[2].contains(MouseInput.getPointer())){
                 System.out.println("selected 2");
-                Game.animations = new Images("felix");
+                Game.animations = new Images("red");
             }else if (selectButton[3].contains(MouseInput.getPointer())){
                 System.out.println("selected 3");
             }else if (selectButton[4].contains(MouseInput.getPointer())){
