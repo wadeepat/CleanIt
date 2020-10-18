@@ -68,6 +68,7 @@ public Rectangle selectButton[] = new Rectangle[15];
                 Game.animations = new Images("zombie");
             }else if (selectButton[4].contains(MouseInput.getPointer())){
                 System.out.println("selected 4");
+                Game.animations = new Images("lama");
             }else if (selectButton[5].contains(MouseInput.getPointer())){
                 System.out.println("selected 5");
             }else if (selectButton[6].contains(MouseInput.getPointer())){
