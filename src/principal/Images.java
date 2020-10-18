@@ -444,6 +444,10 @@ public class Images {
 	public Animation getFelixWin(){
 		return felixWin;
 	}
+
+	public Animation getBirdMove() {
+		return birdLeft;
+	}
 	
 	
 	
