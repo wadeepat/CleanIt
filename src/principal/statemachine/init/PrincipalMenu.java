@@ -172,7 +172,7 @@ public class PrincipalMenu implements GameState{
 	
 		drawPressBar(g);
 
-		g.drawImage(menu.getImage(), Constant.WIDTH/2 - menu.getWidth()/2 + 13,
+		g.drawImage(menu.getImage(), Constant.WIDTH/2 - menu.getWidth()/2,
 				Constant.HEIGHT/2 - menu.getHeight()/2 - 100,null);
 		if (barspacePushed){
 			

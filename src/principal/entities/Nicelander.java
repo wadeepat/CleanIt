@@ -16,7 +16,7 @@ public class Nicelander extends Entity  {
 	
 	public Nicelander(float x, float y) {
 		super(x,y);
-		leaveCake = true;
+//		leaveCake = true;
 		state = NicelanderAnimation.getNicelander();
 		actionsDelay = System.currentTimeMillis();
 		Handler.add(this);
