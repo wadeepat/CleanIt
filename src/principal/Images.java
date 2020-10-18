@@ -61,7 +61,6 @@ public class Images {
 	//////////////////////////////////////////
 	private final String[] eggPaths= {
 			"images/entities/egg/0.png",
-			"images/entities/egg/1.png"//good egg
 	};
 
 	//	Ralph Animations
