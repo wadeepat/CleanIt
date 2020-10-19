@@ -11,7 +11,7 @@ public abstract class Window extends Entity{
 	protected boolean hasFlowerPot;
 	protected boolean hasRoof;
 	
-	protected Nicelander nicelander;
+	//protected Nicelander nicelander;
 	
 	public Window(float x, float y) {
 		super(x, y);

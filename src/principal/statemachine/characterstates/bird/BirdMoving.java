@@ -31,8 +31,6 @@ public class BirdMoving extends State{
 		return animation.getActualFrame();
 	}
 
-	
-	
 
 }
 	
