@@ -61,8 +61,7 @@ public class Animation{
 	public void tick() {
 		if (actualFrame == framesAmount - 1)
 			actualFrame = -1;
-		actualFrame++;
-	}
+		actualFrame++;	}
 	
 	
 	public ArrayList<Sprite> getAnimation(){

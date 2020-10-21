@@ -31,7 +31,7 @@ public abstract class Sector {
 	public abstract void draw(Graphics2D g, long time);
 	
 	public abstract boolean  hasBirds();
-	public abstract boolean  hasNicelanders();
+	public abstract boolean hasBadlander();
 	
 	public abstract Rectangle getTopBounds();
 	public abstract Rectangle getBotBounds();

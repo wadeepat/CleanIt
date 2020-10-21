@@ -11,12 +11,10 @@ import principal.statemachine.characterstates.nicelander.BadlanderAnimation;
 public class badlander extends Entity  {
 	
 	private long actionsDelay;
-	private boolean isattack;
 	private Attack attack;
 
 	public badlander(float x, float y) {
-		super(x,y);
-		isattack = true;
+		super(x-10,y+20);
 		state = BadlanderAnimation.getBadlander();
 		actionsDelay = System.currentTimeMillis();
 		Handler.add(this);

@@ -119,13 +119,13 @@ public class Building extends Entity{
 	
 	
 	private void initNicePosition(Window w, long beforeTime) {
-		if (getActualSector().hasNicelanders()) {
+		if (getActualSector().hasBadlander()) {
 			if (beforeTime - nicelanderDelay > waitForNice) {
 				waitForNice -= 1500;
 				if (w.getStrokesRequired() >= 2 && w.getStrokesRequired() <= 4 && w.getID() != ID.DoubleDoor) {
 						if (Random.boolValue(5)) {
 							waitForNice = 10000;
-							badlander = new badlander(w.getX() + 8, w.getY() + 30);
+							badlander = new badlander(w.getX()+10,w.getY()-20);
 							w.setBadlander(badlander);
 							spawnNicelander = false;
 						}// boolValue

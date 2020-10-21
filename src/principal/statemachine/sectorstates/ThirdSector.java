@@ -110,7 +110,7 @@ public class ThirdSector extends Sector{
 	}
 
 	@Override
-	public boolean hasNicelanders() {
+	public boolean hasBadlander() {
 		return true;
 	}
 	

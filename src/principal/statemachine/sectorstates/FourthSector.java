@@ -127,7 +127,7 @@ public class FourthSector extends Sector{
 	}
 
 	@Override
-	public boolean hasNicelanders() {
+	public boolean hasBadlander() {
 		return true;
 	}
 
