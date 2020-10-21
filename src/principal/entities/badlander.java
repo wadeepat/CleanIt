@@ -5,24 +5,24 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import principal.Handler;
-import principal.statemachine.characterstates.nicelander.NicelanderAnimation;
+import principal.statemachine.characterstates.nicelander.BadlanderAnimation;
 
 
-public class Nicelander extends Entity  {
+public class badlander extends Entity  {
 	
 	private long actionsDelay;
-	private boolean leaveCake;
-	private Cake cake;
-	
-	public Nicelander(float x, float y) {
+	private boolean isattack;
+	private Attack attack;
+
+	public badlander(float x, float y) {
 		super(x,y);
-//		leaveCake = true;
-		state = NicelanderAnimation.getNicelander();
+		isattack = true;
+		state = BadlanderAnimation.getBadlander();
 		actionsDelay = System.currentTimeMillis();
 		Handler.add(this);
 	}
-	
-	
+
+
 	@Override
 	public void draw(Graphics2D g, long time) {
 		state.update();
@@ -33,12 +33,14 @@ public class Nicelander extends Entity  {
 	@Override
 	public void tick(ArrayList<Entity> objects, long beforeTime) {
 		if (beforeTime - actionsDelay > 1150) {
-			if (leaveCake) {
-				cake = new Cake((int)getX(), (int)getY());
-				leaveCake = false;
+				attack = new Attack((int)getX(),(int)getY());
 				Handler.remove(this);
-			}
 		}
+		//			if (leaveCake) {
+////				cake = new Cake((int)getX(), (int)getY());
+////				leaveCake = false;
+//				Handler.remove(this);
+//			}
 	}
 
 	
@@ -74,7 +76,7 @@ public class Nicelander extends Entity  {
 	
 	@Override
 	public String getName() {
-		return "Nicelander";
+		return "Badlander";
 	}
 	
 }

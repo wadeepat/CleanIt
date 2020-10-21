@@ -2,7 +2,7 @@ package principal.entities.windows;
 
 import principal.Handler;
 import principal.entities.Entity;
-import principal.entities.Nicelander;
+import principal.entities.badlander;
 
 public abstract class Window extends Entity{
 
@@ -11,11 +11,11 @@ public abstract class Window extends Entity{
 	protected boolean hasFlowerPot;
 	protected boolean hasRoof;
 	
-	//protected Nicelander nicelander;
+	protected badlander badlander;
 	
 	public Window(float x, float y) {
 		super(x, y);
-		nicelander = null;
+		badlander = null;
 	}
 
 	public int getStrokesRequired(){
@@ -47,14 +47,14 @@ public abstract class Window extends Entity{
 	}
 		
 	
-	public void setNicelander(Nicelander nicelander){
-		this.nicelander = nicelander;
+	public void setBadlander(badlander badlander){
+		this.badlander = badlander;
 	}
 	
 	
 	public void removeNicelander(){
-		if (nicelander != null){
-			Handler.remove(nicelander);
+		if (badlander != null){
+			Handler.remove(badlander);
 		}
 	}
 

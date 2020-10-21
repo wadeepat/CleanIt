@@ -11,7 +11,7 @@ public enum ID {
 	DoubleDoor(),
 	TwoPanels(),
 	Window(),
-	Cake(),
+	Attack(),
 	/////////////////////////////////
 	Egg();
 }

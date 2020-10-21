@@ -13,8 +13,6 @@ import principal.entities.Entity;
 import principal.entities.ID;
 import principal.entities.windows.Window;
 import principal.input.KeyBoard;
-import principal.physics.Position;
-import principal.statemachine.GameStatus;
 import principal.statemachine.characterstates.felixstates.Falling;
 import principal.statemachine.characterstates.felixstates.Fixing;
 import principal.statemachine.characterstates.felixstates.Immune;
@@ -158,10 +156,10 @@ public class Felix extends Creature {
 		
 		for (int i = 0; i < ent.size(); i++) {
 			Entity e = ent.get(i);
-			ralphCollision(e);
+//			ralphCollision(e);
 			brickCollision(e, beforeTime);
 			birdCollision(e, beforeTime);
-			cakeCollision(e, beforeTime);
+			attackCollision(e, beforeTime);
 		}
 	}
 	
@@ -171,8 +169,7 @@ public class Felix extends Creature {
 		Window[] windows = Building.getBuilding().getActualWindows();
 		for (int i = 0; i < windows.length; i++) {
 			Window w = windows[i];
-			
-			// 300 ms entre cada golpe de delay para coordinarlo con el arreglo
+
 			if(w.getBounds().contains(getBounds()) && KeyBoard.fix && beforeTime - movDelay > 300) {
 				movDelay = System.currentTimeMillis();
 				w.removeNicelander();
@@ -265,23 +262,26 @@ public class Felix extends Creature {
 	}
 
 	
-
-	private void ralphCollision(Entity e) {
-//		if (e.getID() == ID.Ralph){
-		if (e instanceof Ralph)
-			if (getTopBounds().intersects(e.getBounds())) {
-				setY(e.getY() + 82);
-				max_jump = MAX_JUMP;
-			}
-//		}
-	}
+//
+//	private void ralphCollision(Entity e) {
+////		if (e.getID() == ID.Ralph){
+//		if (e instanceof Ralph)
+//			if (getTopBounds().intersects(e.getBounds())) {
+//				setY(e.getY() + 82);
+//				max_jump = MAX_JUMP;
+//			}
+////		}
+//	}
 
 	
-	private void cakeCollision(Entity e, long beforeTime) {
-		if (e.getID() == ID.Cake) { 
+	private void attackCollision(Entity e, long beforeTime) {
+		if (e.getID() == ID.Attack) {
 			if (getAllBounds().intersects(e.getBounds())) {
-				setImmune(IMMUNE_CAKE);
+				setY(getY());
+				savePosition(e);
+				decLife(beforeTime);
 				Handler.remove(e);
+				setImmune(IMMUNE_DEATH);
 			}
 		}
 	}

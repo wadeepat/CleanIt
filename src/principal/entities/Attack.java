@@ -5,31 +5,25 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import principal.Handler;
-import principal.statemachine.characterstates.cake.CakeAnimation;
-import principal.statemachine.gamestate.GameManager;
 
-public class Cake extends Entity{
+public class Attack extends Entity{
 
-	private long cakeTime;
+	private long attackTime;
 	
-	public Cake(float x, float y) {
+	public Attack(float x, float y) {
 		super(x, y);
-		id = ID.Cake;
+		id = ID.Attack;
 		Handler.add(this);
-		cakeTime = System.currentTimeMillis();
-		state = CakeAnimation.getCake();
+		attackTime = System.currentTimeMillis();
 	}
 
 	@Override
 	public void draw(Graphics2D g, long time) {
-		state.update();
-		g.drawImage(state.getImage(0), (int)getX(), (int)getY(), null);
-//		g.draw(getBounds());
 	}
 
 	@Override
 	public void tick(ArrayList<Entity> objects, long beforeTime) {
-		if (beforeTime - cakeTime > 5000){
+		if (beforeTime - attackTime > 1000){
 			Handler.remove(this);
 		}
 	}

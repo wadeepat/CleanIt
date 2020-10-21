@@ -48,9 +48,10 @@ public class Images {
 		"images/entities/brick/1.png"
 	};
 	
-	private final String[] nicelanderPaths = {
+	private final String[] badlanderPaths = {
 		"images/entities/nicelander/0.png",
-		"images/entities/nicelander/1.png"
+		"images/entities/nicelander/1.png",
+			"images/entities/nicelander/2.png",
 	};
 	
 	private final String[] cakePaths= {
@@ -90,7 +91,7 @@ public class Images {
 	private final Animation brick;
 	private final Animation birdLeft;
 	private final Animation birdRight;
-	private final Animation nicelander;
+	private final Animation badlander;
 	private final Animation cake;
 	private final Sprite life;
 	private final Sprite bush;
@@ -171,7 +172,7 @@ public class Images {
 		birdLeft = new Animation(birdLeftPaths);
 		birdRight = new Animation(birdRightPaths);
 		
-		nicelander = new Animation(nicelanderPaths);
+		badlander = new Animation(badlanderPaths);
 		
 		cake = new Animation(cakePaths);
 		
@@ -368,8 +369,8 @@ public class Images {
 	}
 
 	
-	public Animation getNicelander() {
-		return nicelander;
+	public Animation getBadlander() {
+		return badlander;
 	}
 
 	

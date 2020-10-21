@@ -12,7 +12,7 @@ import principal.Score;
 import principal.entities.Building;
 import principal.entities.creatures.Cloud;
 import principal.entities.creatures.Felix;
-import principal.entities.creatures.Ralph;
+//import principal.entities.creatures.Ralph;
 import principal.graphics.DrawingSurface;
 import principal.graphics.Sprite;
 import principal.input.KeyBoard;
@@ -28,7 +28,7 @@ public class GameManager implements GameState {
 	private Building b;
 	
 	private Felix felix;
-	private Ralph ralph;
+//	private Ralph ralph;
 
 	private Sprite bush;
 	
@@ -55,7 +55,7 @@ public class GameManager implements GameState {
 
 		chooseLevel = false;
 		
-		ralph = new Ralph(300 ,240);
+//		ralph = new Ralph(300 ,240);
 	
 		bush = Game.animations.getBush();
 		
@@ -127,7 +127,7 @@ public class GameManager implements GameState {
 			Level.getLevel().resetGame();
 		}
 		
-		ralph.reset(300 ,240);
+//		ralph.reset(300 ,240);
 		felix.resetAll(Constant.WIDTH/2 , Constant.HEIGHT - 100);
 		HUD.getHud().setFelix(felix);
 		DrawingSurface.resetSurface();
@@ -137,12 +137,12 @@ public class GameManager implements GameState {
 	
 	public void nextLevel(){
 		b.resetBuilding();
-		ralph.reset(300 ,240);
+//		ralph.reset(300 ,240);
 		felix.resetAll(Constant.WIDTH/2 , Constant.HEIGHT -100);
 		DrawingSurface.resetSurface();
 		Level.getLevel().levelUp();
-		ralph.setVelocity(Level.getLevel().getRalphVel());
-		ralph.setBrickTime(Level.getLevel().getRalphTime());
+//		ralph.setVelocity(Level.getLevel().getRalphVel());
+//		ralph.setBrickTime(Level.getLevel().getRalphTime());
 		HUD.getHud().reset();
 		Handler.removeAll();
 	}

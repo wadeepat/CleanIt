@@ -17,7 +17,6 @@ import principal.entities.creatures.Bird;
 import principal.entities.windows.Window;
 import principal.graphics.Sprite;
 import principal.util.Random;
-import principal.util.ResourceLoader;
 
 public class Building extends Entity{ 
 	
@@ -29,7 +28,7 @@ public class Building extends Entity{
 	
 	private boolean globalMovement = false;
 	
-	private Nicelander nicelander;
+	private badlander badlander;
 	private boolean spawnNicelander;
 	private long nicelanderDelay;
 	private long waitForNice;
@@ -126,8 +125,8 @@ public class Building extends Entity{
 				if (w.getStrokesRequired() >= 2 && w.getStrokesRequired() <= 4 && w.getID() != ID.DoubleDoor) {
 						if (Random.boolValue(5)) {
 							waitForNice = 10000;
-							nicelander = new Nicelander(w.getX() + 8, w.getY() + 30);
-							w.setNicelander(nicelander);
+							badlander = new badlander(w.getX() + 8, w.getY() + 30);
+							w.setBadlander(badlander);
 							spawnNicelander = false;
 						}// boolValue
 				}// strokesRequired
