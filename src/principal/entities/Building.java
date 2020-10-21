@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
-import principal.statemachine.characterstates.bird.BirdMoving;
 import principal.statemachine.gamestate.GameManager;
 import principal.statemachine.sectorstates.*;
 
@@ -32,9 +31,8 @@ public class Building extends Entity{
 	private boolean globalMovement = false;
 	
 	private badlander badlander;
-	private boolean spawnNicelander;
 	private long nicelanderDelay;
-	private long waitForNice;
+	private long waitForBad;
 	
 	private boolean birdInit;
 	private Bird bird;
@@ -55,8 +53,7 @@ public class Building extends Entity{
 		id = ID.Building;
 		
 		birdInit = true;
-		spawnNicelander = true;
-		waitForNice = 7000;
+		waitForBad = 7000;
 		
 		sectors = new Sector[Constant.SECTORS];
 		
@@ -88,7 +85,7 @@ public class Building extends Entity{
 		sectors[actualSector].tick(beforeTime);
 		if(isChangingSector()) globalMovement = true;		
 		generateBird();
-		generateNicelander(beforeTime);
+		generateBadlander(beforeTime);
 	}
 
 	
@@ -108,47 +105,34 @@ public class Building extends Entity{
 	}
 	
 	
-	private void generateNicelander(long beforeTime) {
+	private void generateBadlander(long beforeTime) {
 		Window[] windows = getActualWindows();
 		Window w;
-
-		if (spawnNicelander) {
-			if ((System.currentTimeMillis()-time)/1000 >= 5) {
-				for (int i = 0; i < windows.length; i++) {
-					w = windows[i];
-					initNicePosition(w, beforeTime);
-					spawnNicelander = false;
-					time = System.currentTimeMillis();
-				}
-			}
-		}else {if ((System.currentTimeMillis()-time)/1000 >= 5) {
+		if ((System.currentTimeMillis()-time)/1000 >= 5) {
 			for (int i = 0; i < windows.length; i++) {
 				w = windows[i];
 				initNicePosition(w, beforeTime);
-				spawnNicelander = true;
 				time = System.currentTimeMillis();
 			}
 		}
 
-		}
 	}
 	
 	
 	private void initNicePosition(Window w, long beforeTime) {
 		if (getActualSector().hasBadlander()) {
-			if (beforeTime - nicelanderDelay > waitForNice) {
-				waitForNice -= 1500;
+			if (beforeTime - nicelanderDelay > waitForBad) {
+				waitForBad -= 1500;
 				if (w.getStrokesRequired() >= 2 && w.getStrokesRequired() <= 4 && w.getID() != ID.DoubleDoor) {
 						if (Random.boolValue(5)) {
-							waitForNice = 10000;
-							badlander = new badlander(w.getX()+10,w.getY()-20);
+							waitForBad = 10000;
+							badlander = new badlander(w.getX(),w.getY());
 							w.setBadlander(badlander);
-							spawnNicelander = true;
-						}// boolValue
-				}// strokesRequired
-			}// delay time
-		}// actualSector
-	}// void
+						}
+				}
+			}
+		}
+	}
 	
 	public void draw(Graphics2D g, long time) {
 		g.drawImage(sprite.getImage(), POS_X, POS_Y, null);
@@ -172,7 +156,6 @@ public class Building extends Entity{
 	public void changeSector() {
 		previousSector = actualSector;
 		actualSector++;
-		spawnNicelander = true;
 		nicelanderDelay = System.currentTimeMillis();
 		Score.getScore().nextSector();
 	}
@@ -224,10 +207,6 @@ public class Building extends Entity{
 		return sectors[actualSector].getBotBounds();
 	}
 
-	
-	public String getName() {
-		return "Building";
-	}
 
 	
 	public boolean isChangingSector() {

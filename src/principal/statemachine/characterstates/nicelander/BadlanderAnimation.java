@@ -17,7 +17,7 @@ public class BadlanderAnimation extends State{
 	private static BadlanderAnimation badlander = new BadlanderAnimation();
 	
 	private BadlanderAnimation() {
-		animUpdate = 3800;
+		animUpdate = 800;
 		animation = new Animation(badlanderPaths);
 	}
 	

@@ -157,9 +157,7 @@ public class PrincipalMenu implements GameState{
 		clean(g);
 		
 		// Anti aliasing
-		g.setRenderingHint(
-		        RenderingHints.KEY_TEXT_ANTIALIASING,
-		        RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		
 		cloud.draw(g, beforeTime);
 		cloud1.draw(g, beforeTime);		

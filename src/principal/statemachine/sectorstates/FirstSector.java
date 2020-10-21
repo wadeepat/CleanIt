@@ -17,8 +17,6 @@ public class FirstSector extends Sector {
 	
 	
 	private void initWindows() {
-		// diferencia x = 49
-		// diferencia y = -74
 		int posX = 283;
 		int posY = 488;
 		int i = 0;
