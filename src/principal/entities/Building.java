@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+import principal.statemachine.characterstates.bird.BirdMoving;
 import principal.statemachine.gamestate.GameManager;
 import principal.statemachine.sectorstates.*;
 
@@ -25,7 +26,9 @@ public class Building extends Entity{
 	
 	public final static int POS_X = Constant.WIDTH/2 - BUILDING_WIDTH/2;
 	public final static int POS_Y = Constant.HEIGHT - BUILDING_HEIGHT + 10;
-	
+
+	private long time = System.currentTimeMillis();
+
 	private boolean globalMovement = false;
 	
 	private badlander badlander;
@@ -52,7 +55,7 @@ public class Building extends Entity{
 		id = ID.Building;
 		
 		birdInit = true;
-		spawnNicelander = false;
+		spawnNicelander = true;
 		waitForNice = 7000;
 		
 		sectors = new Sector[Constant.SECTORS];
@@ -108,12 +111,25 @@ public class Building extends Entity{
 	private void generateNicelander(long beforeTime) {
 		Window[] windows = getActualWindows();
 		Window w;
+
 		if (spawnNicelander) {
+			if ((System.currentTimeMillis()-time)/1000 >= 5) {
+				for (int i = 0; i < windows.length; i++) {
+					w = windows[i];
+					initNicePosition(w, beforeTime);
+					spawnNicelander = false;
+					time = System.currentTimeMillis();
+				}
+			}
+		}else {if ((System.currentTimeMillis()-time)/1000 >= 5) {
 			for (int i = 0; i < windows.length; i++) {
 				w = windows[i];
 				initNicePosition(w, beforeTime);
-				if (!spawnNicelander) break;
+				spawnNicelander = true;
+				time = System.currentTimeMillis();
 			}
+		}
+
 		}
 	}
 	
@@ -127,7 +143,7 @@ public class Building extends Entity{
 							waitForNice = 10000;
 							badlander = new badlander(w.getX()+10,w.getY()-20);
 							w.setBadlander(badlander);
-							spawnNicelander = false;
+							spawnNicelander = true;
 						}// boolValue
 				}// strokesRequired
 			}// delay time

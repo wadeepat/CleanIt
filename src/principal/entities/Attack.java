@@ -23,7 +23,7 @@ public class Attack extends Entity{
 
 	@Override
 	public void tick(ArrayList<Entity> objects, long beforeTime) {
-		if (beforeTime - attackTime > 1000){
+		if (beforeTime - attackTime > 500){
 			Handler.remove(this);
 		}
 	}
