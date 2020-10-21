@@ -14,7 +14,7 @@ public class badlander extends Entity  {
 	private Attack attack;
 
 	public badlander(float x, float y) {
-		super(x-10,y+20);
+		super(x,y);
 		state = BadlanderAnimation.getBadlander();
 		actionsDelay = System.currentTimeMillis();
 		Handler.add(this);
@@ -30,7 +30,7 @@ public class badlander extends Entity  {
 	
 	@Override
 	public void tick(ArrayList<Entity> objects, long beforeTime) {
-		if (beforeTime - actionsDelay > 3000) {
+		if (beforeTime - actionsDelay > 4000) {
 				attack = new Attack((int)getX(),(int)getY());
 				Handler.remove(this);
 		}
@@ -70,11 +70,6 @@ public class badlander extends Entity  {
 	public Rectangle getBotBounds() {
 		return new Rectangle (0,0,0,0);
 	}
-	
-	
-	@Override
-	public String getName() {
-		return "Badlander";
-	}
+
 	
 }

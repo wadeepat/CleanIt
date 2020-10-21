@@ -71,7 +71,7 @@ public class Felix extends Creature {
 		isImmune = false;
 		
 		directionX = 1;
-		id = ID.Felix;
+		id = ID.Player;
 		
 		width = 20;
 		height = 50;

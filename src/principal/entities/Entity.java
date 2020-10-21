@@ -24,7 +24,7 @@ public abstract class Entity {
 	public abstract void draw(Graphics2D g, long time);
 	public abstract void tick(ArrayList<Entity> objects, long beforeTime);
 	
-	// Limites
+
 	public abstract Rectangle getBounds();
 	public abstract Rectangle getTopBounds();
 	public abstract Rectangle getLeftBounds();
@@ -75,8 +75,7 @@ public abstract class Entity {
 		setX(x);
 		setY(y);
 	}
-	
-	public abstract String getName();
+
 
 
 }

@@ -2,16 +2,12 @@ package principal.entities;
 
 public enum ID {
 
-	Felix(),
-	Ralph(), 
+	Player(),
 	Bird(), 
 	Brick(),
-	Molding(),
 	Building(),
 	DoubleDoor(),
-	TwoPanels(),
 	Window(),
 	Attack(),
-	/////////////////////////////////
 	Egg();
 }
