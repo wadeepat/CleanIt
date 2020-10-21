@@ -13,7 +13,7 @@ public class BirdMoving extends State{
 	private static BirdMoving moving = new BirdMoving();
 
 	private BirdMoving() {
-		animUpdate = 300;
+		animUpdate = 1000;
 		animation = Game.animations.getBirdMove();
 	}
 	
