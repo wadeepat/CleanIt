@@ -33,7 +33,6 @@ public class Egg extends Creature{
         Handler.add(this);
     }
 
-    public String getName() {return "Egg";}
 
     public void draw(Graphics2D g, long time){
         egg.tick();

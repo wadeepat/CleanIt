@@ -19,7 +19,6 @@ import principal.Game;
 import principal.Level;
 import principal.Score;
 import principal.entities.Building;
-import principal.entities.creatures.Cloud;
 import principal.graphics.DrawingSurface;
 import principal.graphics.Sprite;
 import principal.input.KeyBoard;
@@ -52,9 +51,6 @@ public class PrincipalMenu implements GameState{
 	
 	private boolean barspacePushed;
 	
-	private Cloud cloud;
-	private Cloud cloud1;
-	
 	private Sprite config;
 	
 	public PrincipalMenu() {
@@ -68,10 +64,7 @@ public class PrincipalMenu implements GameState{
 		
 		building = Building.getBuilding();
 		config = Game.animations.getConfig();
-		
-		cloud = new Cloud(Constant.WIDTH/2, 300);
-		cloud1 = new Cloud(0, 150);
-		
+
 		levels = new String[10];
 	}
 	
@@ -85,8 +78,6 @@ public class PrincipalMenu implements GameState{
 	
 	@Override
 	public void tick(long beforeTime) {
-		cloud.tick(null, beforeTime);
-		cloud1.tick(null, beforeTime);
 		if (barspacePushed){
 			if (MouseInput.leftClick) {
 				if (playButton.contains(MouseInput.getPointer())){
@@ -140,8 +131,6 @@ public class PrincipalMenu implements GameState{
 	}
 	
 	
-	
-
 
 
 	private void restart() {
@@ -158,9 +147,7 @@ public class PrincipalMenu implements GameState{
 		
 		// Anti aliasing
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-		
-		cloud.draw(g, beforeTime);
-		cloud1.draw(g, beforeTime);		
+
 		
 		building.draw(g, beforeTime);
 
@@ -201,9 +188,6 @@ public class PrincipalMenu implements GameState{
 			
 			
 		}
-//		g.setFont(font2);
-//		g.setColor(Color.WHITE);
-//		g.drawString("Powered by Bonfils, Suarez and Dominguez Vega", DISP_X, Constant.HEIGHT - 50);
 	}
 
 	

@@ -22,8 +22,7 @@ public abstract class Creature extends Entity{
 		displacement = new Displacement();
 		
 	}
-	
-	// Setters y getters
+
 	public float getDx(){
 		return displacement.getDx();
 	}
@@ -39,31 +38,9 @@ public abstract class Creature extends Entity{
 	public void setDy(float dy){
 		displacement.setDy(dy);
 	}
-	
-	public int getDirectionX() {
-		return directionX;
-	}
 
-	public void setDirectionX(int directionX) {
-		this.directionX = directionX;
-	}
-
-	public int getDirectionY() {
-		return directionY;
-	}
-
-	public void setDirectionY(int directionY) {
-		this.directionY = directionY;
-	}
-	
 	public void setVelocity(float vel) {
 		this.vel = vel;
 	}
-	
-	public float getVel(){
-		return vel;
-	}
-	
-	public abstract String getName();
 
 }

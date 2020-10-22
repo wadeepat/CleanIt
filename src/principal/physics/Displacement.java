@@ -10,7 +10,6 @@ public class Displacement {
 		dy = 0;
 	}
 
-	// getters y setters
 	public float getDx() {
 		return dx;
 	}

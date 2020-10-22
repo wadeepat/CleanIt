@@ -20,24 +20,14 @@ import principal.statemachine.characterstates.felixstates.Moving;
 import principal.statemachine.characterstates.felixstates.Normal;
 
 public class Felix extends Creature {
-	
-	/*
-	 * Diferentes estados:
-	 * 		Normal.getNormal() 	 
-	 * 		Moving.getMoving()
-	 * 		Fixing.getFixing()
-	 * 		Jumping.getJumping()
-	 * 		Immune.getImmune()
-	 */
-	
+
 	private final float JUMP_SPEED = -10f;
-	private final float MAX_JUMP = -80;//   la velocidad de salto es negativa y la gravedad positiva
+	private final float MAX_JUMP = -80;
 	
 	private final float VEL = 3f;
 	
 	private final long IMMUNE_DEATH = 2000;
-	private final long IMMUNE_CAKE = 7000;
-		
+
 	private long immuneDuration;
 	
 	private long movDelay = System.currentTimeMillis();
@@ -61,7 +51,6 @@ public class Felix extends Creature {
 	
 	public Felix(float x, float y) {
 		super(x, y);
-		
 		life = 3;
 		state = Normal.getNormal();
 			
@@ -79,8 +68,6 @@ public class Felix extends Creature {
 		Handler.add(this);
 	}	
 
-	
-	
 	public void tick(ArrayList<Entity> ent, long beforeTime) {
 		
 		if (!dying){
@@ -95,12 +82,8 @@ public class Felix extends Creature {
 				reset(death_x,death_y);
 			}
 		}
-			
 		checkStates();
-		
 	}
-
-
 
 	private void checkButtons(ArrayList<Entity> ent, long beforeTime) {
 		setDx(getInputX(ent));
@@ -120,10 +103,6 @@ public class Felix extends Creature {
 		}
 	}
 
-		
-		
-// 		setX(e.getX() + 17);
-// 		setX(e.getX() + 269);
 		
 	private void checkStates() {
 		
@@ -156,7 +135,7 @@ public class Felix extends Creature {
 		
 		for (int i = 0; i < ent.size(); i++) {
 			Entity e = ent.get(i);
-//			ralphCollision(e);
+			ralphCollision(e);
 			brickCollision(e, beforeTime);
 			birdCollision(e, beforeTime);
 			attackCollision(e, beforeTime);
@@ -197,11 +176,7 @@ public class Felix extends Creature {
 			  onGround = true;
 			  onObstacle = true;
 		  }
-		  
-//		  if(getTopBounds().intersects(w.getBotBounds()) && w.hasFlowerPot()){
-//			  setY(w.getY() + 77);
-//		  }
-		  
+
 		  if(getBotBounds().intersects(w.getBotBounds()) && w.hasFlowerPot()){
 			  
 			  onGround = true;
@@ -236,7 +211,6 @@ public class Felix extends Creature {
 	
 	
 	private void brickCollision(Entity e, long beforeTime) {
-//		if (e.getID() == ID.Brick) {
 		if (e instanceof Brick) {
 			if(getTopBounds().intersects(e.getBounds()) && !isImmune) {
 				setY(getY());
@@ -249,7 +223,6 @@ public class Felix extends Creature {
 	}
 
 	private void birdCollision(Entity e, long beforeTime) {
-//		if (e.getID() == ID.Bird) {
 		if (e instanceof Bird) {
 			if(getAllBounds().intersects(e.getBounds()) && !isImmune) {	
 				setY(getY());
@@ -261,17 +234,14 @@ public class Felix extends Creature {
 		}
 	}
 
-	
-//
-//	private void ralphCollision(Entity e) {
-////		if (e.getID() == ID.Ralph){
-//		if (e instanceof Ralph)
-//			if (getTopBounds().intersects(e.getBounds())) {
-//				setY(e.getY() + 82);
-//				max_jump = MAX_JUMP;
-//			}
-////		}
-//	}
+	private void ralphCollision(Entity e) {
+		if (e instanceof Ralph){
+			if (getTopBounds().intersects(e.getBounds())) {
+				setY(e.getY() + 82);
+				max_jump = MAX_JUMP;
+			}
+		}
+	}
 
 	
 	private void attackCollision(Entity e, long beforeTime) {
@@ -333,19 +303,15 @@ public class Felix extends Creature {
 	
 	
 	private float getInputX(ArrayList<Entity> ent) {
-		
-		// Mover derecha
 		if (KeyBoard.right && !KeyBoard.fix) {
 			directionX = 1;
 			return VEL;
 		}
-		
-		// Mover izquierda
+
 		if (KeyBoard.left && !KeyBoard.fix){
 			directionX = -1;
 			return -VEL;
 		}
-			
 		return 0;
 	}
 		
@@ -353,21 +319,18 @@ public class Felix extends Creature {
 		
 	private float getInputY(ArrayList<Entity> ent, long beforeTime) {
 
-		// Mover arriba
 		if (KeyBoard.up && !falling && max_jump > MAX_JUMP && beforeTime - movDelay > 150) {
 			directionY = -1;
 			max_jump += JUMP_SPEED;
 				
 			return JUMP_SPEED;
 		}
-				
-		// Mover abajo
+
 		if (KeyBoard.down && onGround && !onObstacle && getY() < 503 && beforeTime - movDelay > 100
 				&& !getBotBounds().intersects(Building.getBuilding().getBotBounds())) {
-			
 			movDelay = System.currentTimeMillis();
 			directionY = 1; 
-				
+
 			return Constant.GRAVITY;
 		}
 			
@@ -377,20 +340,17 @@ public class Felix extends Creature {
 			onObstacle = false;
 			return Constant.GRAVITY;	
 		}
-			
 		return 0;
 	}
 		
-		
-	
+
 	private void  stopFalling() {
 		if(onGround && falling) {
 			falling = false;
 			max_jump = 0;
 		}
 	}
-		
-	
+
 	
 	private void decLife(long beforeTime) {
 		dying = true;
@@ -399,58 +359,35 @@ public class Felix extends Creature {
 				delay = System.currentTimeMillis();
 				life--;
 				if (life > 0)	
-					Score.getScore().loseHP();	
-
+					Score.getScore().loseHP();
 			}
 		}
 	}
 
-		
-	
 	@Override
 	public void draw(Graphics2D g, long time) {
 		state.update();
 		g.drawImage(state.getImage(directionX), (int)getX(), (int)getY(), null);
-		
-		g.setColor(Color.RED);
-//		g.draw(getBounds());
-		g.setColor(Color.GREEN);
-//		g.draw(getBotBounds());
-//		g.draw(getLeftBounds());
-//		g.draw(getRightBounds());
-//		g.draw(getTopBounds());
-//		g.draw(getAllBounds());
-	}
-
-	
-	@Override
-	public String getName() {
-		return "Felix";
 	}
 
 	public int getLife() {
 		return life;
 	}
-	
-	
-	// limites
+
 	@Override
 	public Rectangle getTopBounds() {
 		return new Rectangle((int)getX() + 12, (int)getY(), 15, 3);
 	}
-
 
 	@Override
 	public Rectangle getLeftBounds() {
 		return new Rectangle((int)getX() + 7 ,(int)getY() + 6 , 3, 39);
 	}
 
-
 	@Override
 	public Rectangle getRightBounds() {
 		return new Rectangle((int)getX() + 15, (int)getY() + 6, 3, 39);
 	}
-
 
 	@Override
 	public Rectangle getBotBounds() {
@@ -477,7 +414,6 @@ public class Felix extends Creature {
 		return new Rectangle((int)getX() + 26, (int)getY() + 30, 7, 7);
 	}
 
-
 	public void resetAll(float x, float y){
 		setXY(x,y);
 		life = 3;
@@ -485,10 +421,8 @@ public class Felix extends Creature {
 		dying = false;
 	}
 
-
 	public void reset(float x, float y) {
 		setXY(x,y);
 	}
-
 	
 }

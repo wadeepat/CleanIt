@@ -23,22 +23,13 @@ public class Brick extends Creature {
 	public Brick(float x, float y, int actualSector) {
 		super(x,y);
 		brick = Game.animations.getBrick();
-		
 		vel = Level.getLevel().getBrickVel();
-		
-//		System.out.println( "brick: " + Level.getLevel().getBrickVel());
-		
 		this.actualSector = actualSector;
 		id = ID.Brick;
 		brick = Game.animations.getBrick();
-		
 		Handler.add(this);
 	}
 
-	@Override
-	public String getName() {
-		return "Brick";
-	}
 
 	@Override
 	public void draw(Graphics2D g, long time) {

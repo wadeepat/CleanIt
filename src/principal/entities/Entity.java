@@ -31,7 +31,7 @@ public abstract class Entity {
 	public abstract Rectangle getRightBounds();
 	public abstract Rectangle getBotBounds();
 	
-	// Getters and setters
+
 	public int getWidth() {
 		return width;
 	}
@@ -68,9 +68,7 @@ public abstract class Entity {
 		return id;
 	}
 	
-	
-	
-	
+
 	public void setXY(float x, float y){
 		setX(x);
 		setY(y);

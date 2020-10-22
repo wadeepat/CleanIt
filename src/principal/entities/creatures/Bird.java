@@ -25,32 +25,17 @@ public class Bird extends Creature{
 
 	public Bird(float x, float y, boolean side){//ลักษณะการเป็นอยู่ของมัน ความเร็ว มาจากด้านไหน
 		super(x,y);
-
 		vel = Level.getLevel().getBirdVel();
 		id = ID.Bird;
-
 		this.side = side;
 		side();
-
 		state = BirdMoving.getMoving();
-
 		Handler.add(this);
-
-//		if (System.currentTimeMillis()-time >= 5) {
-//
-//			time = System.currentTimeMillis();
-//			state = BirdMoving.getMoving();
-//			throwBrick();
-//		}
-//		elapsedTime - time > brickTime
 	}
 
-
 	private void side(){
-
-
 		if (side){
-			setX(0 - 30);
+			setX(-30);
 			directionX = 1;
 		}else{
 			setX(Constant.WIDTH);
@@ -58,30 +43,14 @@ public class Bird extends Creature{
 		}
 	}
 
-
-	@Override
-	public String getName() {
-		return "Bird";
-	}
-
-
 	@Override
 	public void draw(Graphics2D g, long elapsedTime) {
 		state.update();
-
 		g.drawImage(state.getImage(directionX), (int)getX(), (int)getY(), null);
-//		g.draw(getBounds());
-
 	}
-
 		private void throwBrick() {
 			Handler.addBrick(getX()+25, getY() + 70);
 			Handler.addBrick(getX()+50, getY() + 70);
-	//		int actualSector = Building.getBuilding().getIndexActualSector();
-	//		Brick brick = new Brick((int)getX() + 25, (int)getY()+ 70, actualSector);
-	//		Handler.add(brick);
-	//		Brick brick1 = new Brick((int)getX() + 50, (int)getY() + 70, actualSector);
-	//		Handler.add(brick1);
 		}
 
 	@Override
@@ -93,8 +62,6 @@ public class Bird extends Creature{
 			throwBrick();
 		}
 
-//		System.out.println("Bird: " + vel);
-
 		setX(getX() + getDx());
 		if (side) {
 			setDx(vel);
@@ -102,7 +69,7 @@ public class Bird extends Creature{
 			directionX = 1;
 		}else{
 			setDx(-vel);
-			if (getX() < 0 - 20) {
+			if (getX() < -20) {
 				side = !side;
 				setY(Random.value(Building.getBuilding().getBotBounds().y, Building.getBuilding().getTopBounds().y));
 			}
