@@ -40,8 +40,8 @@ public class GameStatus implements GameState{
 	
 	
 	@Override
-	public void tick(long time) {
-		actualState.tick(time);
+	public void update(long time) {
+		actualState.update(time);
 	}
 
 

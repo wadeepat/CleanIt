@@ -77,7 +77,7 @@ public class PrincipalMenu implements GameState{
 	
 	
 	@Override
-	public void tick(long beforeTime) {
+	public void update(long beforeTime) {
 		if (barspacePushed){
 			if (MouseInput.leftClick) {
 				if (playButton.contains(MouseInput.getPointer())){

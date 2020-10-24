@@ -6,6 +6,6 @@ public interface GameState {
 	
 	void draw(final Graphics2D g,long time);
 
-	void tick(long time);
+	void update(long time);
 	
 }

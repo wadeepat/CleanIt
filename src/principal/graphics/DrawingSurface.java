@@ -38,7 +38,7 @@ public class DrawingSurface extends Canvas {
 	}
 
 	
-	public void tick() {
+	public void update() {
 		
 		inputKeys.tick();
 		mouse.tick();

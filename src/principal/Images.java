@@ -7,25 +7,23 @@ import principal.util.ResourceLoader;
 public class Images {
 
 
-	private static String charactor = "felix";
-
-
+	private String character= "lama";
 
 	// RALPH'S ANIMATIONS
-	private String[] ralphDemolishing = {
+	private final String[] ralphDemolishing = {
 		"images/ralph/Demolishing/0.png",	
 		"images/ralph/Demolishing/1.png",
 
 	};
 	
 	
-	private String[] ralphClimbingPath = {
+	private final String[] ralphClimbingPath = {
 		"images/ralph/Climbing/0.png",
 		"images/ralph/Climbing/1.png",
 	};
 
 	
-	String[] ralphMovePath = {
+	private final String[] ralphMovePath = {
 		"images/ralph/Moving/0.png",
 		"images/ralph/Moving/1.png",
 	};
@@ -53,36 +51,30 @@ public class Images {
 		"images/entities/nicelander/1.png",
 			"images/entities/nicelander/2.png",
 	};
-	
-	private final String[] cakePaths= {
-		"images/entities/cake/0.png",
-		"images/entities/cake/1.png"
-	};
-	
-	//////////////////////////////////////////
+
 	private final String[] eggPaths= {
 			"images/entities/egg/0.png",
 	};
 
 	//	Ralph Animations
-	private Animation ralphClimbing;
-	private Animation ralphDemolition;
-	private Animation ralphMove;
+	private final Animation ralphClimbing;
+	public final Animation ralphDemolition;
+	public final Animation ralphMove;
 	
 	
 	// Felix Animations
-	private Animation felixMoveLeft;
-	private Animation felixMoveRight;
-	
-	private Animation felixNormalRight;
-	private Animation felixNormalLeft;
-	
-	private Animation felixFixingRight;
-	private Animation felixFixingLeft;
-	
-	private Animation felixFalling;
-	
-	private Animation felixWin;
+	public final Animation felixMoveLeft;
+	private final Animation felixMoveRight;
+
+	private final Animation felixNormalRight;
+	private final Animation felixNormalLeft;
+
+	private final Animation felixFixingRight;
+	private final Animation felixFixingLeft;
+
+	private final Animation felixFalling;
+
+	private final Animation felixWin;
 	
 	// OBJECTS
 	private final Sprite flowerPot;
@@ -92,7 +84,6 @@ public class Images {
 	private final Animation birdLeft;
 	private final Animation birdRight;
 	private final Animation badlander;
-	private final Animation cake;
 	private final Sprite life;
 	private final Sprite bush;
 	private final Sprite cloud;
@@ -114,9 +105,9 @@ public class Images {
 	private Sprite[] door;
 	private Sprite[] shopchar;
 	
-	public Images(String charactor) {
+	public Images(String character) {
 		
-		// Ralph's Animations
+		// Monster's Animations
 		
 		ralphDemolition = new Animation (ralphDemolishing);
 		
@@ -124,8 +115,8 @@ public class Images {
 		
 		ralphMove = new Animation(ralphMovePath);
 		
-		// Felix's Animations
-		this.charactor = charactor;
+		// Player's Animations
+		this.character = character;
 		felixMoveLeft = new Animation(felixMovingLeftPaths);
 		felixMoveRight = new Animation (felixMovingRightPaths);
 		
@@ -173,7 +164,7 @@ public class Images {
 		
 		badlander = new Animation(badlanderPaths);
 		
-		cake = new Animation(cakePaths);
+
 		
 		menu = new Sprite (ResourceLoader.getLoader().loadImage("images/initial_menu.png"));
 		
@@ -192,56 +183,56 @@ public class Images {
 		initshopchar();
 	}
 
-	private String[] felixMovingLeftPaths = {
-			"images/"+charactor+"/moving/movingLeft/0.png",
-			"images/"+charactor+"/moving/movingLeft/1.png",
-			"images/"+charactor+"/moving/movingLeft/2.png",
-			"images/"+charactor+"/moving/movingLeft/3.png",
+	private final String[] felixMovingLeftPaths = {
+			"images/"+character+"/moving/movingLeft/0.png",
+			"images/"+character+"/moving/movingLeft/1.png",
+			"images/"+character+"/moving/movingLeft/2.png",
+			"images/"+character+"/moving/movingLeft/3.png",
 	};
 
 
-	private String[] felixMovingRightPaths = {
-			"images/"+charactor+"/moving/movingRight/0.png",
-			"images/"+charactor+"/moving/movingRight/1.png",
-			"images/"+charactor+"/moving/movingRight/2.png",
-			"images/"+charactor+"/moving/movingRight/3.png",
+	private final String[] felixMovingRightPaths = {
+			"images/"+character+"/moving/movingRight/0.png",
+			"images/"+character+"/moving/movingRight/1.png",
+			"images/"+character+"/moving/movingRight/2.png",
+			"images/"+character+"/moving/movingRight/3.png",
 	};
 
 
-	private String[] felixFixingLeftPaths = {
-			"images/"+charactor+"/fixing/fixingLeft/0.png",
-			"images/"+charactor+"/fixing/fixingLeft/1.png",
+	private final String[] felixFixingLeftPaths = {
+			"images/"+character+"/fixing/fixingLeft/0.png",
+			"images/"+character+"/fixing/fixingLeft/1.png",
 	};
 
 
 	private String[] felixFixingRightPaths = {
-			"images/"+charactor+"/fixing/fixingRight/0.png",
-			"images/"+charactor+"/fixing/fixingRight/1.png",
+			"images/"+character+"/fixing/fixingRight/0.png",
+			"images/"+character+"/fixing/fixingRight/1.png",
 	};
 
 
 	private String[] felixNormalRightPaths = {
-			"images/"+charactor+"/normal/normalRight/0.png",
+			"images/"+character+"/normal/normalRight/0.png",
 	};
 
 
 	private String[] felixNormalLeftPaths = {
-			"images/"+charactor+"/normal/normalLeft/0.png",
+			"images/"+character+"/normal/normalLeft/0.png",
 	};
 
 
 	private String[] felixFallingPaths = {
-			"images/"+charactor+"/falling/0.png",
-			"images/"+charactor+"/falling/1.png",
+			"images/"+character+"/falling/0.png",
+			"images/"+character+"/falling/1.png",
 	};
 
 	private String[] felixWinPaths = {
-			"images/"+charactor+"/win/0.png",
-			"images/"+charactor+"/win/1.png",
-			"images/"+charactor+"/win/2.png",
-			"images/"+charactor+"/win/3.png",
-			"images/"+charactor+"/win/4.png",
-			"images/"+charactor+"/win/5.png"
+			"images/"+character+"/win/0.png",
+			"images/"+character+"/win/1.png",
+			"images/"+character+"/win/2.png",
+			"images/"+character+"/win/3.png",
+			"images/"+character+"/win/4.png",
+			"images/"+character+"/win/5.png"
 	};
 	
 	private void initGlasses() {
@@ -372,10 +363,6 @@ public class Images {
 		return badlander;
 	}
 
-	
-	public Animation getCake() {
-		return cake;
-	}
 
 	public Sprite getTwoPanels() {
 		return twoPanels;
@@ -449,7 +436,6 @@ public class Images {
 	public Animation getBirdMove() {
 		return birdLeft;
 	}
-	
-	
+
 	
 }

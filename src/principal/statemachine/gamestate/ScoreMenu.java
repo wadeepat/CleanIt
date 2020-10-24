@@ -24,7 +24,7 @@ public class ScoreMenu implements GameState{
 	}
 	
 	@Override
-	public void tick(long time) {
+	public void update(long time) {
 		if (MouseInput.leftClick){
 			if (backButton.contains(MouseInput.getPointer())){
 				GameStatus.changeState(0);

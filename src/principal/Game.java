@@ -6,7 +6,7 @@ import principal.statemachine.GameStatus;
 public class Game {
 
 	public static boolean inGame;
-	
+
 	private Window window;
 	private DrawingSurface drawingSurface;
 	private GameStatus gameStatus;
@@ -21,7 +21,7 @@ public class Game {
 	private static Game game = new Game();
 	
 	private Game() {
-		animations = new Images("felix");
+		animations = new Images("lama");
 		inGame = true;
 		drawingSurface = new DrawingSurface();
 		window = new Window("Clean It.", drawingSurface);
@@ -44,7 +44,7 @@ public class Game {
 		int ticksAmount = 0;
 		
 		int NS_PER_SECOND = 1000000000;
-		int TPS_OBJ = 60; // este numero es el que maneja la cantidad de Ticks por segundo.
+		int TPS_OBJ = 60;
 		int NS_PER_TICK = NS_PER_SECOND/TPS_OBJ;
 		
 		long counterReference = System.nanoTime();
@@ -64,12 +64,12 @@ public class Game {
 			delta += elapsedTime/NS_PER_TICK;
 			
 			while (delta >= 1){
-				tick(time);
+				update(time);
 				ticksAmount++;
 				delta--;
 			}
 			
-			draw(time);
+			render(time);
 			framesAmount++;
 			
 			if (System.nanoTime() - counterReference > NS_PER_SECOND){
@@ -87,16 +87,16 @@ public class Game {
 	}
 
 
-	private void tick(long time) {
+	private void update(long time) {
 		gameStatus.getActualState();
 		if(!Score.getScore().askName()){
-			gameStatus.tick(time);
-			drawingSurface.tick();
+			gameStatus.update(time);
+			drawingSurface.update();
 		}
 	}
 
 	
-	private void draw(long time) {
+	private void render(long time) {
 		drawingSurface.render(gameStatus, time);
 	}
 	

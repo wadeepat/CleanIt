@@ -61,7 +61,7 @@ public class GameManager implements GameState {
 	
 	
 	@Override
-	public void tick(long time) {	
+	public void update(long time) {
 		
 		if (b.canChangeLevel()) {
 			Win.setTiming(time);

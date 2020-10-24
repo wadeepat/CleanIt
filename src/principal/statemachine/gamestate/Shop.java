@@ -52,7 +52,7 @@ public Rectangle selectButton[] = new Rectangle[15];
     }
 
     @Override
-    public void tick(long time) {
+    public void update(long time) {
         if (MouseInput.leftClick){ //select character
             if (selectButton[0].contains(MouseInput.getPointer())){
                 System.out.println("selected 0");

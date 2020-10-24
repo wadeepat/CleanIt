@@ -44,7 +44,7 @@ public class Win implements GameState{
 	}
 
 	@Override
-	public void tick(long beforeTime) {
+	public void update(long beforeTime) {
 		if (beforeTime - timing > 5000){
 			GameStatus.changeState(1);
 		}

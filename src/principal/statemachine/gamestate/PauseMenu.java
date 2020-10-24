@@ -39,7 +39,7 @@ public class PauseMenu implements GameState{
 	}
 	
 	@Override
-	public void tick(long time) {
+	public void update(long time) {
 		if (MouseInput.leftClick){
 			if (menuButton.contains(MouseInput.getPointer())){
 				GameManager.setChoose(false);

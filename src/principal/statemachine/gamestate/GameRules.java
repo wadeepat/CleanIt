@@ -20,7 +20,7 @@ public class GameRules implements GameState{
 	}
 	
 	@Override
-	public void tick(long time) {
+	public void update(long time) {
 		if (MouseInput.leftClick) {
 			if (backButton.contains(MouseInput.getPointer())){
 				GameStatus.changeState(0);
@@ -43,10 +43,10 @@ public class GameRules implements GameState{
 		rules = "Esquiva todos los ladrillos y aves que cruces en tu camino.";
 		g.drawString(rules,100,250);
 		
-		rules = "Los nicelander te ofrecen pasteles ¡cuidado no los golpees con el martillo!.";
+		rules = "Los nicelander te ofrecen pasteles ï¿½cuidado no los golpees con el martillo!.";
 		g.drawString(rules,100,300);
 		
-		rules = "También podes elegir el nivel en el que quieras empezar a jugar.";
+		rules = "Tambiï¿½n podes elegir el nivel en el que quieras empezar a jugar.";
 		g.drawString(rules,100,350);
 		
 		g.drawString("Back",backButton.x + 19, backButton.y+ 30);
