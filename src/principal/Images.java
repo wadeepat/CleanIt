@@ -103,9 +103,8 @@ public class Images {
 
 	private final Sprite bgShop;
 	private final Sprite block;
+	private final Sprite icon;
 
-
-	///////////////////////////////////////////////
 	private final Animation egg;
 	
 	// WINDOWS & PARTS
@@ -182,8 +181,8 @@ public class Images {
 
 
 		bgShop = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgShop.jpg"));
-
 		block = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/block.png"));
+		icon = new Sprite(ResourceLoader.getLoader().loadImage("images/icon.png"));
 
 		// WINDOWS & PARTS
 		initGlasses();
@@ -402,6 +401,8 @@ public class Images {
 	public Sprite getBgShop(){return bgShop; }
 
 	public Sprite getBlock() {return  block; }
+
+	public Sprite getIcon(){return icon;}
 
 
 	public Sprite getLife() {

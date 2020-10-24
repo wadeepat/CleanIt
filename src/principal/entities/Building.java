@@ -31,7 +31,7 @@ public class Building extends Entity{
 	private boolean globalMovement = false;
 	
 	private badlander badlander;
-	private long nicelanderDelay;
+	private long badlanderDelay;
 	private long waitForBad;
 	
 	private boolean birdInit;
@@ -81,7 +81,7 @@ public class Building extends Entity{
 	
 	
 	@Override
-	public void tick(ArrayList<Entity> creat, long beforeTime) {
+	public void tick(ArrayList<Entity> creature, long beforeTime) {
 		sectors[actualSector].tick(beforeTime);
 		if(isChangingSector()) globalMovement = true;		
 		generateBird();
@@ -121,7 +121,7 @@ public class Building extends Entity{
 	
 	private void initNicePosition(Window w, long beforeTime) {
 		if (getActualSector().hasBadlander()) {
-			if (beforeTime - nicelanderDelay > waitForBad) {
+			if (beforeTime - badlanderDelay > waitForBad) {
 				waitForBad -= 1500;
 				if (w.getStrokesRequired() >= 2 && w.getStrokesRequired() <= 4 && w.getID() != ID.DoubleDoor) {
 						if (Random.boolValue(5)) {
@@ -156,7 +156,7 @@ public class Building extends Entity{
 	public void changeSector() {
 		previousSector = actualSector;
 		actualSector++;
-		nicelanderDelay = System.currentTimeMillis();
+		badlanderDelay = System.currentTimeMillis();
 		Score.getScore().nextSector();
 	}
 	
@@ -174,9 +174,9 @@ public class Building extends Entity{
 		return sectors[actualSector].getWindows();
 	}
 	
-	public Window[] getPreviousWindows() {
-		return sectors[previousSector].getWindows();
-	}
+//	public Window[] getPreviousWindows() {
+//		return sectors[previousSector].getWindows();
+//	}
 	
 	
 	public Rectangle getBounds(){

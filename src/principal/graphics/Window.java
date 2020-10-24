@@ -26,16 +26,14 @@ public class Window extends JFrame{
 
 		add(ds, BorderLayout.CENTER);
 		setSize(new Dimension(Constant.WIDTH, Constant.HEIGHT));
-		
-		// Deja de procesar al cerrar la ventana
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		// Inicia la ventana en el medio 
+
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setVisible(true);
 		setTitle(title);
-		setIconImage(Game.animations.getLife().getImage());
+		setIconImage(Game.animations.getIcon().getImage());
 	}
 
 	

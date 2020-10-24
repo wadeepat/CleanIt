@@ -3,8 +3,6 @@ package principal.input;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import principal.entities.creatures.Felix;
-
 public class KeyBoard extends KeyAdapter{
 
 	private final int keysAmount = 256; 

@@ -43,9 +43,9 @@ public class Animation{
 
 	
 	
-	public int getIndexAnimation() {
-		return actualFrame;
-	}
+//	public int getIndexAnimation() {
+//		return actualFrame;
+//	}
 	
 	
 	public Image getActualFrame() {
@@ -68,18 +68,18 @@ public class Animation{
 		return sprites;
 	}
 	
-	
-	public Sprite getIanimation(int i){
-		return sprites.get(i);
-	}
+//
+//	public Sprite getIanimation(int i){
+//		return sprites.get(i);
+//	}
 	
 	public void setAnimation(ArrayList<Sprite> sprites){
 		this.sprites = sprites;
 	}
 	
-	public int getFramesAmount(){
-		return framesAmount;
-	}
+//	public int getFramesAmount(){
+//		return framesAmount;
+//	}
 	
 }
     

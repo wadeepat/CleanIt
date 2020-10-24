@@ -9,7 +9,7 @@ import principal.Handler;
 import principal.Level;
 import principal.Score;
 import principal.entities.Building;
-import principal.entities.creatures.Felix;
+import principal.entities.creatures.Player;
 //import principal.entities.creatures.Ralph;
 import principal.entities.creatures.Ralph;
 import principal.graphics.DrawingSurface;
@@ -26,7 +26,7 @@ public class GameManager implements GameState {
 	
 	private Building b;
 	
-	private Felix felix;
+	private Player player;
 	private Ralph ralph;
 
 	private Sprite bush;
@@ -42,9 +42,9 @@ public class GameManager implements GameState {
 		
 		b = Building.getBuilding();
 
-		felix = new Felix(Constant.WIDTH/2 , Constant.HEIGHT -100);
+		player = new Player(Constant.WIDTH/2 , Constant.HEIGHT -100);
 
-		HUD.getHud().setFelix(felix);
+		HUD.getHud().setFelix(player);
 
 		chooseLevel = false;
 		
@@ -75,10 +75,10 @@ public class GameManager implements GameState {
 		
 		
 		
-		if (felix.getLife() == 0) {
+		if (player.getLife() == 0) {
 			Score.getScore().saveScore();
 			GameStatus.changeState(3);
-			felix.resetAll(Constant.WIDTH/2 , Constant.HEIGHT -100);
+			player.resetAll(Constant.WIDTH/2 , Constant.HEIGHT -100);
 		}
 		
 		
@@ -119,8 +119,8 @@ public class GameManager implements GameState {
 		}
 		
 		ralph.reset(300 ,240);
-		felix.resetAll(Constant.WIDTH/2 , Constant.HEIGHT - 100);
-		HUD.getHud().setFelix(felix);
+		player.resetAll(Constant.WIDTH/2 , Constant.HEIGHT - 100);
+		HUD.getHud().setFelix(player);
 		DrawingSurface.resetSurface();
 		Handler.removeAll();
 	}
@@ -129,7 +129,7 @@ public class GameManager implements GameState {
 	public void nextLevel(){
 		b.resetBuilding();
 		ralph.reset(300 ,240);
-		felix.resetAll(Constant.WIDTH/2 , Constant.HEIGHT -100);
+		player.resetAll(Constant.WIDTH/2 , Constant.HEIGHT -100);
 		DrawingSurface.resetSurface();
 		Level.getLevel().levelUp();
 		ralph.setVelocity(Level.getLevel().getRalphVel());

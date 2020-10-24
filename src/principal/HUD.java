@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
-import principal.entities.creatures.Felix;
+import principal.entities.creatures.Player;
 import principal.graphics.Sprite;
 import principal.util.Timer;
 
@@ -15,7 +15,7 @@ public class HUD {
 	private int lifeAmount;
 	private Font font;
 	private Timer clock;
-	private Felix felix;
+	private Player player;
 	
 	private static HUD hud = new HUD();
 	
@@ -26,8 +26,8 @@ public class HUD {
 	}
 	
 	
-	public void setFelix(Felix felix){
-		this.felix = felix;
+	public void setFelix(Player player){
+		this.player = player;
 	}
 
 
@@ -82,8 +82,8 @@ public class HUD {
 		clock.reset(); 
 	}
 	
-	public void tick() {
-		lifeAmount = felix.getLife();
+	public void update() {
+		lifeAmount = player.getLife();
 		clock.tick();
 	}
 	

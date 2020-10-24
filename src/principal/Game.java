@@ -97,7 +97,7 @@ public class Game {
 
 	
 	private void draw(long time) {
-		drawingSurface.draw(gameStatus, time);
+		drawingSurface.render(gameStatus, time);
 	}
 	
 	

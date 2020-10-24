@@ -8,7 +8,7 @@ import principal.Handler;
 
 public class Attack extends Entity{
 
-	private long attackTime;
+	private final long attackTime;
 	
 	public Attack(float x, float y) {
 		super(x, y);

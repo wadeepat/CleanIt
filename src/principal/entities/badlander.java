@@ -10,7 +10,7 @@ import principal.statemachine.characterstates.nicelander.BadlanderAnimation;
 
 public class badlander extends Entity  {
 	
-	private long actionsDelay;
+	private final long actionsDelay;
 	private Attack attack;
 
 	public badlander(float x, float y) {
@@ -34,11 +34,6 @@ public class badlander extends Entity  {
 				attack = new Attack((int)getX(),(int)getY());
 				Handler.remove(this);
 		}
-		//			if (leaveCake) {
-////				cake = new Cake((int)getX(), (int)getY());
-////				leaveCake = false;
-//				Handler.remove(this);
-//			}
 	}
 
 	

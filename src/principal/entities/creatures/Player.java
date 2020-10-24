@@ -1,6 +1,4 @@
 package principal.entities.creatures;
-
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.ArrayList;
@@ -19,7 +17,7 @@ import principal.statemachine.characterstates.felixstates.Immune;
 import principal.statemachine.characterstates.felixstates.Moving;
 import principal.statemachine.characterstates.felixstates.Normal;
 
-public class Felix extends Creature {
+public class Player extends Creature {
 
 	private final float JUMP_SPEED = -10f;
 	private final float MAX_JUMP = -80;
@@ -49,7 +47,7 @@ public class Felix extends Creature {
 	private int life;
 	
 	
-	public Felix(float x, float y) {
+	public Player(float x, float y) {
 		super(x, y);
 		life = 3;
 		state = Normal.getNormal();
@@ -99,7 +97,6 @@ public class Felix extends Creature {
 			if (beforeTime - inmTime > immuneDuration) {
 				isImmune = false;
 			}
-				
 		}
 	}
 
@@ -113,7 +110,7 @@ public class Felix extends Creature {
 		if (KeyBoard.fix && onGround && !dying) {
 			state = Fixing.getFixing();
 		}
-		
+
 		if (isImmune && !KeyBoard.fix && !dying){
 			state = Immune.getImmune();
 		}

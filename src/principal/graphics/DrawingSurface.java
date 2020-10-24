@@ -22,7 +22,7 @@ public class DrawingSurface extends Canvas {
 	private KeyBoard inputKeys; 
 	private MouseInput mouse;
 	private static Camera cam;
-	private static boolean prevGM = false;
+	private static boolean prevGM = false; //previous GameManager
 	private static int floor;
 	
 	public DrawingSurface() {
@@ -43,7 +43,7 @@ public class DrawingSurface extends Canvas {
 		inputKeys.tick();
 		mouse.tick();
 		if (GameStatus.actualState instanceof GameManager){
-			HUD.getHud().tick();
+			HUD.getHud().update();
 		}
 		
 		
@@ -70,7 +70,7 @@ public class DrawingSurface extends Canvas {
 		floor = 237;
 	}
 
-	public void draw(GameStatus gs, long time) {
+	public void render(GameStatus gs, long time) {
 		
 	
 		BufferStrategy bufferStrat = getBufferStrategy();
@@ -80,7 +80,7 @@ public class DrawingSurface extends Canvas {
 		}
 		Graphics2D g = (Graphics2D) bufferStrat.getDrawGraphics();
 		
-		clean(g);
+		clear(g);
 		
 		if (GameStatus.actualState instanceof GameManager)
 			g.translate(0, cam.getY());
@@ -102,7 +102,7 @@ public class DrawingSurface extends Canvas {
 	}
 
 
-	private void clean(Graphics2D g) {
+	private void clear(Graphics2D g) {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Constant.WIDTH, Constant.HEIGHT);
 	}

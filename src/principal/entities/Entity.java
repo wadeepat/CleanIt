@@ -70,8 +70,8 @@ public abstract class Entity {
 	
 
 	public void setXY(float x, float y){
-		setX(x);
-		setY(y);
+		position.setX(x);
+		position.setY(y);
 	}
 
 
