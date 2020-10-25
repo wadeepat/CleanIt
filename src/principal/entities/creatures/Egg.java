@@ -4,7 +4,6 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
-import principal.Constant;
 import principal.Game;
 import principal.Handler;
 import principal.Level;
@@ -12,7 +11,6 @@ import principal.entities.Building;
 import principal.entities.Entity;
 import principal.entities.ID;
 import principal.graphics.Animation;
-import principal.statemachine.gamestate.GameManager;
 
 public class Egg extends Creature{
 
@@ -35,7 +33,7 @@ public class Egg extends Creature{
 
 
     public void draw(Graphics2D g, long time){
-        egg.tick();
+        egg.update();
         g.drawImage(egg.getActualFrame(),(int)getX(),(int)getY(),null);
     }
 

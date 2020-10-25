@@ -9,11 +9,9 @@ import principal.Level;
 import principal.entities.Building;
 import principal.entities.Entity;
 import principal.entities.ID;
-import principal.statemachine.characterstates.State;
-import principal.statemachine.characterstates.ralphstates.Climbing;
-import principal.statemachine.characterstates.ralphstates.Demolishing;
-import principal.statemachine.characterstates.ralphstates.Move;
-import principal.util.Random;
+import principal.statemachine.characterstates.monsterstates.Climbing;
+import principal.statemachine.characterstates.monsterstates.Demolishing;
+import principal.statemachine.characterstates.monsterstates.Move;
 
 public class Ralph extends Creature {
 

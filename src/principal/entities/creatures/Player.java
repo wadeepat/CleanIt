@@ -11,11 +11,11 @@ import principal.entities.Entity;
 import principal.entities.ID;
 import principal.entities.windows.Window;
 import principal.input.KeyBoard;
-import principal.statemachine.characterstates.felixstates.Falling;
-import principal.statemachine.characterstates.felixstates.Fixing;
-import principal.statemachine.characterstates.felixstates.Immune;
-import principal.statemachine.characterstates.felixstates.Moving;
-import principal.statemachine.characterstates.felixstates.Normal;
+import principal.statemachine.characterstates.playerstates.Falling;
+import principal.statemachine.characterstates.playerstates.Cleaning;
+import principal.statemachine.characterstates.playerstates.Immune;
+import principal.statemachine.characterstates.playerstates.Moving;
+import principal.statemachine.characterstates.playerstates.Normal;
 
 public class Player extends Creature {
 
@@ -108,7 +108,7 @@ public class Player extends Creature {
 		}
 		
 		if (KeyBoard.fix && onGround && !dying) {
-			state = Fixing.getFixing();
+			state = Cleaning.getFixing();
 		}
 
 		if (isImmune && !KeyBoard.fix && !dying){

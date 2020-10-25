@@ -4,7 +4,6 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
-import principal.Constant;
 import principal.Game;
 import principal.Handler;
 import principal.Level;
@@ -12,7 +11,6 @@ import principal.entities.Building;
 import principal.entities.Entity;
 import principal.entities.ID;
 import principal.graphics.Animation;
-import principal.statemachine.gamestate.GameManager;
 
 public class Brick extends Creature {
 	
@@ -33,7 +31,7 @@ public class Brick extends Creature {
 
 	@Override
 	public void draw(Graphics2D g, long time) {
-		brick.tick();
+		brick.update();
 		g.drawImage(brick.getActualFrame(), (int)getX(), (int)getY(), null);
 		
 //		g.draw(getBounds());

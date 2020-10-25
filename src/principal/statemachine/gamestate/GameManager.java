@@ -27,7 +27,7 @@ public class GameManager implements GameState {
 	private Building b;
 	
 	private Player player;
-	private Ralph ralph;
+	private Ralph monster;
 
 	private Sprite bush;
 	
@@ -48,7 +48,7 @@ public class GameManager implements GameState {
 
 		chooseLevel = false;
 		
-		ralph = new Ralph(300,240);
+		monster = new Ralph(300,240);
 	
 		bush = Game.animations.getBush();
 		
@@ -82,7 +82,7 @@ public class GameManager implements GameState {
 		}
 		
 		
-		handler.tick(time);
+		handler.update(time);
 		
 
 		
@@ -118,7 +118,7 @@ public class GameManager implements GameState {
 			Level.getLevel().resetGame();
 		}
 		
-		ralph.reset(300 ,240);
+		monster.reset(300 ,240);
 		player.resetAll(Constant.WIDTH/2 , Constant.HEIGHT - 100);
 		HUD.getHud().setFelix(player);
 		DrawingSurface.resetSurface();
@@ -128,12 +128,12 @@ public class GameManager implements GameState {
 	
 	public void nextLevel(){
 		b.resetBuilding();
-		ralph.reset(300 ,240);
+		monster.reset(300 ,240);
 		player.resetAll(Constant.WIDTH/2 , Constant.HEIGHT -100);
 		DrawingSurface.resetSurface();
 		Level.getLevel().levelUp();
-		ralph.setVelocity(Level.getLevel().getRalphVel());
-		ralph.setBrickTime(Level.getLevel().getRalphTime());
+		monster.setVelocity(Level.getLevel().getRalphVel());
+		monster.setBrickTime(Level.getLevel().getRalphTime());
 		HUD.getHud().reset();
 		Handler.removeAll();
 	}

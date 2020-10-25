@@ -10,11 +10,8 @@ import principal.Level;
 import principal.entities.Building;
 import principal.entities.Entity;
 import principal.entities.ID;
-import principal.graphics.Animation;
 import principal.statemachine.characterstates.State;
 import principal.statemachine.characterstates.bird.BirdMoving;
-import principal.statemachine.characterstates.ralphstates.Demolishing;
-import principal.statemachine.gamestate.GameManager;
 import principal.util.Random;
 
 public class Bird extends Creature{

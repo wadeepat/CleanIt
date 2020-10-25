@@ -17,7 +17,7 @@ public abstract class State {
 	public void update(){
 		animationTickCounter++;
 		if (animationTickCounter % animUpdate == 0) {
-			animation.tick();
+			animation.update();
 			animationTickCounter = 0;
 		}	
 	}

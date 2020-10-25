@@ -53,7 +53,7 @@ public class Handler {
 		}
 	}
 	
-	public void tick(long time){
+	public void update(long time){
 		building.tick(null, time);
 		for (int i = 0; i < objects.size(); i++) {
 			tempObject = objects.get(i);

@@ -1,4 +1,4 @@
-package principal.statemachine.characterstates.felixstates;
+package principal.statemachine.characterstates.playerstates;
 
 import java.awt.Image;
 

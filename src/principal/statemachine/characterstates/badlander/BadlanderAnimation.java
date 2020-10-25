@@ -1,4 +1,4 @@
-package principal.statemachine.characterstates.nicelander;
+package principal.statemachine.characterstates.badlander;
 
 import java.awt.Image;
 

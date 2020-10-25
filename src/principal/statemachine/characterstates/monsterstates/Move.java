@@ -1,4 +1,4 @@
-package principal.statemachine.characterstates.ralphstates;
+package principal.statemachine.characterstates.monsterstates;
 
 import java.awt.Image;
 

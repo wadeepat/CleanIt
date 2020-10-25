@@ -1,4 +1,4 @@
-package principal.statemachine.characterstates.felixstates;
+package principal.statemachine.characterstates.playerstates;
 
 import java.awt.Image;
 
@@ -6,21 +6,21 @@ import principal.Game;
 import principal.statemachine.characterstates.State;
 
 
-public class Fixing extends State{
+public class Cleaning extends State{
 	
-	private final static Fixing fixing = new Fixing();
+	private final static Cleaning CLEANING = new Cleaning();
 	
 //	private String[] paths = {
 //		"images/felix/fixing/0.png",
 //		"images/felix/fixing/1.png"
 //	};
 	
-	private Fixing() {
+	private Cleaning() {
 		animUpdate = 300;
 	}
 	
-	public static Fixing getFixing(){
-		return fixing;
+	public static Cleaning getFixing(){
+		return CLEANING;
 	}
 	
 		

@@ -12,11 +12,11 @@ import principal.graphics.Sprite;
 import principal.statemachine.GameState;
 import principal.statemachine.GameStatus;
 import principal.statemachine.characterstates.State;
-import principal.statemachine.characterstates.felixstates.FelixWin;
+import principal.statemachine.characterstates.playerstates.playerWin;
 
 public class Win implements GameState{
 	
-	private State felixAnim = FelixWin.getFelixWin();
+	private State playerAnim = playerWin.getPlayerWin();
 	private static long timing;
 	private Font font;
 	private Sprite buildingRoof;
@@ -33,9 +33,9 @@ public class Win implements GameState{
 
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		
-		felixAnim.update(); 
+		playerAnim.update();
 		g.drawRect(0, 0, 800, 600);
-		g.drawImage(felixAnim.getImage(0), Constant.WIDTH/2, Constant.HEIGHT/2 + 78, null);
+		g.drawImage(playerAnim.getImage(0), Constant.WIDTH/2, Constant.HEIGHT/2 + 78, null);
 		g.drawImage(buildingRoof.getImage(), Constant.WIDTH/2 - buildingRoof.getWidth()/2,Constant.HEIGHT - 186, null);
 		
 		g.setColor(Color.WHITE);

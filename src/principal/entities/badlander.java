@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import principal.Handler;
-import principal.statemachine.characterstates.nicelander.BadlanderAnimation;
+import principal.statemachine.characterstates.badlander.BadlanderAnimation;
 
 
 public class badlander extends Entity  {
