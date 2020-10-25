@@ -51,19 +51,14 @@ public class Shop implements GameState {
     public void update(long time) {
         if (MouseInput.leftClick){ //select character
             if (selectButton[0].contains(MouseInput.getPointer())){
-                System.out.println("selected 0");
                 Game.animations = new Images("conan");
             }else if (selectButton[1].contains(MouseInput.getPointer())){
-                System.out.println("select 1");
                 Game.animations = new Images("sonic");
             }else if (selectButton[2].contains(MouseInput.getPointer())){
-                System.out.println("selected 2");
                 Game.animations = new Images("red");
             }else if (selectButton[3].contains(MouseInput.getPointer())){
-                System.out.println("selected 3");
                 Game.animations = new Images("zombie");
             }else if (selectButton[4].contains(MouseInput.getPointer())) {
-                System.out.println("selected 4");
                 Game.animations = new Images("lama");
             }
             if(backButton.contains(MouseInput.getPointer())){ //if pressed back button go to menu
