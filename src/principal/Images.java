@@ -148,7 +148,7 @@ public class Images {
 		bgShop = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgShop.jpg"));
 		block = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/block.png"));
 		icon = new Sprite(ResourceLoader.getLoader().loadImage("images/icon.png"));
-		bgScore = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgScore.jpg"));
+		bgScore = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgScore.png"));
 
 		// WINDOWS & PARTS
 		initGlasses();
