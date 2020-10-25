@@ -6,7 +6,9 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 import principal.Constant;
+import principal.Game;
 import principal.Score;
+import principal.graphics.Sprite;
 import principal.input.MouseInput;
 import principal.statemachine.GameState;
 import principal.statemachine.GameStatus;
@@ -15,12 +17,14 @@ public class ScoreMenu implements GameState{
 	
 	private Font font;
 	private Font font1;
+	private Sprite bg;
 	
 	public Rectangle backButton = new Rectangle(300, 450, 100, 50); // 300,450
 	
 	public ScoreMenu() {
 		font = new Font("BOLD", Font.PLAIN,15);
 		font1 = new Font("BOLD", Font.PLAIN, 70);
+		bg = Game.animations.getBgScore();
 	}
 	
 	@Override
@@ -41,6 +45,7 @@ public class ScoreMenu implements GameState{
 	
 		g.setFont(font1);
 		g.drawString("HIGHSCORES", 30,  100);
+		g.drawImage(bg.getImage(),0,0,null);
 		
 		g.setFont(font);	
 		for (int i = 0; i < Score.MAX_SCORE_AMOUNT; i++){

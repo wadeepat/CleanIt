@@ -86,6 +86,7 @@ public class Images {
 	private final Sprite bgShop;
 	private final Sprite block;
 	private final Sprite icon;
+	private final Sprite bgScore;
 
 	private final Animation egg;
 	
@@ -147,6 +148,7 @@ public class Images {
 		bgShop = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgShop.jpg"));
 		block = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/block.png"));
 		icon = new Sprite(ResourceLoader.getLoader().loadImage("images/icon.png"));
+		bgScore = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgScore.jpg"));
 
 		// WINDOWS & PARTS
 		initGlasses();
@@ -348,6 +350,8 @@ public class Images {
 	public Sprite getBlock() {return  block; }
 
 	public Sprite getIcon(){return icon;}
+
+	public Sprite getBgScore() {return bgScore;}
 
 
 	public Sprite getLife() {
