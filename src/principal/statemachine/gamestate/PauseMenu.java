@@ -66,7 +66,7 @@ public class PauseMenu implements GameState{
 
 
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		Building.getBuilding().draw(g, time);
 		g.setRenderingHint(
 		        RenderingHints.KEY_TEXT_ANTIALIASING,

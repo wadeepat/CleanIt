@@ -1,4 +1,5 @@
-Lakkhanan,999999999
-Wadeepat,82220
-Sunisa,54400
-Others,10000
+wadeepat,1700
+a,3
+b,2
+c,1
+null,0

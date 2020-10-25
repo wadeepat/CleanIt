@@ -94,7 +94,7 @@ public class GameManager implements GameState {
 
 	
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		drawBushes(g);
 		handler.draw(g, time);
 	}

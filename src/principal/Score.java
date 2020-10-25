@@ -20,14 +20,15 @@ import javax.swing.JTextField;
 
 public class Score {
 
-	private String[] scoreNames = new String[4];
-	private int[] scorePoints = new int[4];
+
 	private JTextField userName;
 	private JFrame frame;
 	private boolean asking = false;
 	private int bestScore;
 	private int actualScore;
-	private int MAX_SCORE_AMOUNT = 4;
+	public static final int MAX_SCORE_AMOUNT = 5;
+	private String[] scoreNames = new String[MAX_SCORE_AMOUNT];
+	private int[] scorePoints = new int[MAX_SCORE_AMOUNT];
 	private static Score score = new Score();
 	
 	private Score () {
@@ -78,7 +79,7 @@ public class Score {
 		
         
         String content = "";
-        
+
         for(int i=0;i< scorePoints.length;i++){
         	content = content + scoreNames[i]+","+scorePoints[i]+"\n";
 		}
@@ -113,8 +114,7 @@ public class Score {
 			System.out.println(scoreNames[i]+", "+scorePoints[i]);
 		}
 	}
-		
-	//Agrega el score a la lista en la pos correcta
+
 	public void add(Integer score, String name) {
 		for (int i = 0 ; i < MAX_SCORE_AMOUNT ; i++) {
 			if(scorePoints[i] < score) {
@@ -132,11 +132,10 @@ public class Score {
 	
 	public void saveScore(){
 		asking = true;
-		// botonera
 		frame = new JFrame();
 		JPanel newPanel = new JPanel();
 		
-		JLabel label = new JLabel("Enter use rname:");
+		JLabel label = new JLabel("Enter your name:");
 		label.setForeground(Color.WHITE);
 		
 		userName = new JTextField(20);
@@ -159,7 +158,6 @@ public class Score {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// pone el ultimo score con el nombre indicado
 				add(actualScore, userName.getText());
 				frame.setVisible(false);
 				asking = false;

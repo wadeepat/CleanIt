@@ -46,8 +46,8 @@ public class GameStatus implements GameState{
 
 
 	@Override
-	public void draw(Graphics2D g, long time) {
-		actualState.draw(g, time);
+	public void render(Graphics2D g, long time) {
+		actualState.render(g, time);
 	}
 	
 	

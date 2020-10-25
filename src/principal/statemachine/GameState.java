@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 
 public interface GameState {
 	
-	void draw(final Graphics2D g,long time);
+	void render(final Graphics2D g, long time);
 
 	void update(long time);
 	

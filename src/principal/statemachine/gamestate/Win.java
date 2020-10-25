@@ -29,7 +29,7 @@ public class Win implements GameState{
 
 	
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		

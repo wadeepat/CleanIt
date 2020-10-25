@@ -85,7 +85,7 @@ public class DrawingSurface extends Canvas {
 		if (GameStatus.actualState instanceof GameManager)
 			g.translate(0, cam.getY());
 		
-		gs.draw(g, time);
+		gs.render(g, time);
 		
 		g.translate(0, -cam.getY());
 		

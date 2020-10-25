@@ -30,7 +30,7 @@ public Rectangle selectButton[] = new Rectangle[15];
         font = new Font("Lucida Sans",Font.PLAIN,13);
     }
     @Override
-    public void draw(Graphics2D g, long time) {
+    public void render(Graphics2D g, long time) {
         g.setFont(font);
         g.setColor(Color.white); //set font color
         g.drawImage(bg.getImage(),0,0,null); //background image

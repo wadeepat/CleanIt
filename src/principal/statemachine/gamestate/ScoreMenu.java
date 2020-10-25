@@ -35,7 +35,7 @@ public class ScoreMenu implements GameState{
 	}
 
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		
 		g.setColor(Color.WHITE);
 	
@@ -43,7 +43,8 @@ public class ScoreMenu implements GameState{
 		g.drawString("HIGHSCORES", 30,  100);
 		
 		g.setFont(font);	
-		for (int i = 0; i < 4; i++){
+		for (int i = 0; i < Score.MAX_SCORE_AMOUNT; i++){
+			if(Score.getScore().getCertainName(i)==null)continue;
 			String scores = Score.getScore().getCertainName(i)+":   "+Score.getScore().getCertainScore(i);
 			g.drawString(scores, 30, 100 + (i+1) * 50);
 		}

@@ -141,7 +141,7 @@ public class PrincipalMenu implements GameState{
 	}
 	
 	@Override
-	public void draw(Graphics2D g, long beforeTime) {
+	public void render(Graphics2D g, long beforeTime) {
 		
 		clean(g);
 		
