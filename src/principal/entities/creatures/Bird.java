@@ -71,7 +71,7 @@ public class Bird extends Creature{
 			setDx(-vel);
 			if (getX() < -20) {
 				side = !side;
-				setY(Random.value(Building.getBuilding().getBotBounds().y, Building.getBuilding().getTopBounds().y));
+				setY(Random.value(Building.getBuilding().getBotBounds().y, Building.getBuilding().getTopBounds().y)+50);
 			}
 			directionX = -1;
 		}
