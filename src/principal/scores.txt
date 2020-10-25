@@ -1,5 +1,5 @@
-asdf,2000
-wadeepat,1700
-a,3
-b,2
-c,1
+wadeepat,7400
+red,5000
+blue,4000
+yellow,3000
+black,2000

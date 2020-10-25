@@ -27,9 +27,9 @@ public class Fixing extends State{
 	@Override
 	public Image getImage(int dir) {
 		if (dir == -1){
-			animation = Game.animations.getFelixFixingLeft();
+			animation = Game.animations.getPlayerCleaningLeft();
 		}else
-			animation = Game.animations.getFelixFixingRight();
+			animation = Game.animations.getPlayerCleaningRight();
 		return animation.getActualFrame();
 	}
 

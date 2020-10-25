@@ -10,7 +10,7 @@ public class Demolishing extends State{
 	private static Demolishing demolishing = new Demolishing();
 
 	private Demolishing(){
-		animation = Game.animations.getRalphDemolition();
+		animation = Game.animations.getMonsterDemolition();
 		animUpdate = 300;
 	}
 	

@@ -13,7 +13,7 @@ public class Moving extends State{
 	
 	
 	private Moving() {
-		animation  = Game.animations.getFelixMoveRight();
+		animation  = Game.animations.getPlayerMoveRight();
 		animUpdate = 200;
 	}
 	
@@ -25,9 +25,9 @@ public class Moving extends State{
 	@Override
 	public Image getImage(int dir) {
 		if (dir == -1){
-			animation = Game.animations.getFelixMoveLeft();
+			animation = Game.animations.getPlayerMoveLeft();
 		}else
-			animation = Game.animations.getFelixMoveRight();
+			animation = Game.animations.getPlayerMoveRight();
 		return animation.getActualFrame();
 	}
 	

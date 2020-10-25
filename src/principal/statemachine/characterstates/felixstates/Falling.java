@@ -16,7 +16,7 @@ public class Falling extends State{
 	private static Falling falling = new Falling();
 	
 	private Falling() {
-		animation  = Game.animations.getFelixFalling();
+		animation  = Game.animations.getPlayerFalling();
 		animUpdate = 300;
 	}
 	

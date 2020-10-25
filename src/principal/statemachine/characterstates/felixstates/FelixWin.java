@@ -10,7 +10,7 @@ public class FelixWin extends State{
 	private static FelixWin felixWin = new FelixWin();
 	
 	private FelixWin() {
-		animation = Game.animations.getFelixWin();
+		animation = Game.animations.getPlayerWin();
 		animUpdate = 800;
 	}
 	

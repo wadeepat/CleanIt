@@ -15,7 +15,7 @@ public class Normal extends State {
 	
 	
 	private Normal(){
-		animation  = Game.animations.getFelixNormalRight();
+		animation  = Game.animations.getPlayerNormalRight();
 		animUpdate = 1;
 	}
 	
@@ -26,9 +26,9 @@ public class Normal extends State {
 	@Override
 	public Image getImage(int dir) {
 		if (dir == -1){
-			animation = Game.animations.getFelixNormalLeft();
+			animation = Game.animations.getPlaterNormalLeft();
 		}else
-			animation = Game.animations.getFelixNormalRight();
+			animation = Game.animations.getPlayerNormalRight();
 		return animation.getActualFrame();
 	}
 

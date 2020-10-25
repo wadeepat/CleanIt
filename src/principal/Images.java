@@ -10,20 +10,19 @@ public class Images {
 	private static String character= "lama";
 
 	// RALPH'S ANIMATIONS
-	private final String[] ralphDemolishing = {
+	private final String[] monsterDemolishing = {
 		"images/ralph/Demolishing/0.png",	
 		"images/ralph/Demolishing/1.png",
 
 	};
-	
-	
-	private final String[] ralphClimbingPath = {
+
+	private final String[] monsterClimbingPath = {
 		"images/ralph/Climbing/0.png",
 		"images/ralph/Climbing/1.png",
 	};
 
 	
-	private final String[] ralphMovePath = {
+	private final String[] monsterMovePath = {
 		"images/ralph/Moving/0.png",
 		"images/ralph/Moving/1.png",
 	};
@@ -45,36 +44,30 @@ public class Images {
 		"images/entities/brick/0.png",
 		"images/entities/brick/1.png"
 	};
-	
-//	private final String[] badlanderPaths = {
-//		"images/entities/badlander/0.png",
-//		"images/entities/badlander/1.png",
-//			"images/entities/badlander/2.png",
-//	};
 
 	private final String[] eggPaths= {
 			"images/entities/egg/0.png",
 	};
 
 	//	Ralph Animations
-	private final Animation ralphClimbing;
-	public final Animation ralphDemolition;
-	public final Animation ralphMove;
+	private final Animation monsterClimbing;
+	public final Animation monsterDemolition;
+	public final Animation monsterMove;
 	
 	
 	// Felix Animations
-	public final Animation felixMoveLeft;
-	private final Animation felixMoveRight;
+	public final Animation playerMoveLeft;
+	private final Animation playerMoveRight;
 
-	private final Animation felixNormalRight;
-	private final Animation felixNormalLeft;
+	private final Animation playerNormalRight;
+	private final Animation platerNormalLeft;
 
-	private final Animation felixFixingRight;
-	private final Animation felixFixingLeft;
+	private final Animation playerCleaningRight;
+	private final Animation playerCleaningLeft;
 
-	private final Animation felixFalling;
+	private final Animation playerFalling;
 
-	private final Animation felixWin;
+	private final Animation playerWin;
 	
 	// OBJECTS
 	private final Sprite flowerPot;
@@ -83,10 +76,8 @@ public class Images {
 	private final Animation brick;
 	private final Animation birdLeft;
 	private final Animation birdRight;
-//	private final Animation badlander;
 	private final Sprite life;
 	private final Sprite bush;
-	private final Sprite cloud;
 	private final Sprite building;
 	private final Sprite menu;
 	private final Sprite config;
@@ -108,28 +99,20 @@ public class Images {
 	public Images(String character) {
 		
 		// Monster's Animations
-		
-		ralphDemolition = new Animation (ralphDemolishing);
-		
-		ralphClimbing = new Animation (ralphClimbingPath);
-		
-		ralphMove = new Animation(ralphMovePath);
+		monsterDemolition = new Animation (monsterDemolishing);
+		monsterClimbing = new Animation (monsterClimbingPath);
+		monsterMove = new Animation(monsterMovePath);
 		
 		// Player's Animations
 		this.character = character;
-		System.out.println(character);
-		felixMoveLeft = new Animation(felixMovingLeftPaths);
-		felixMoveRight = new Animation (felixMovingRightPaths);
-		
-		felixNormalRight = new Animation(felixNormalRightPaths);
-		felixNormalLeft = new Animation(felixNormalLeftPaths);
-		
-		felixFixingLeft = new Animation(felixFixingLeftPaths);
-		felixFixingRight = new Animation(felixFixingRightPaths);
-		
-		felixFalling = new Animation(felixFallingPaths);
-		
-		felixWin = new Animation(felixWinPaths);
+		playerMoveLeft = new Animation(playerMovingLeftPaths);
+		playerMoveRight = new Animation (playerMovingRightPaths);
+		playerNormalRight = new Animation(playerNormalRightPaths);
+		platerNormalLeft = new Animation(playerNormalLeftPaths);
+		playerCleaningLeft = new Animation(playerCleaningLeftPaths);
+		playerCleaningRight = new Animation(playerCleaningRightPaths);
+		playerFalling = new Animation(playerFallingPaths);
+		playerWin = new Animation(playerWinPaths);
 		
 		// OBJECTS
 		flowerPot =  new Sprite(ResourceLoader.getLoader().
@@ -149,25 +132,17 @@ public class Images {
 		
 		buildingRoof = new Sprite(ResourceLoader.getLoader().
 				loadImage("images/sprites_sin_fondo.png"));
-		
-		cloud = new Sprite(ResourceLoader.getLoader().
-				loadImage("images/entities/cloud/0.png"));
-		
+
 		building = new Sprite(ResourceLoader.getLoader().loadImage("images/building/0.png"));
-		
 		brick = new Animation(brickPaths);
 
-		//////////////////////////////////////////////////
+
 		egg = new Animation(eggPaths);
-		
 		birdLeft = new Animation(birdLeftPaths);
 		birdRight = new Animation(birdRightPaths);
-
 		
 		menu = new Sprite (ResourceLoader.getLoader().loadImage("images/initial_menu.png"));
-		
 		config = new Sprite(ResourceLoader.getLoader().loadImage("images/config.png"));
-
 
 		bgShop = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgShop.jpg"));
 		block = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/block.png"));
@@ -181,56 +156,56 @@ public class Images {
 		initshopchar();
 	}
 
-	private final String[] felixMovingLeftPaths = {
-			"images/"+character+"/moving/movingLeft/0.png",
-			"images/"+character+"/moving/movingLeft/1.png",
-			"images/"+character+"/moving/movingLeft/2.png",
-			"images/"+character+"/moving/movingLeft/3.png",
+	private final String[] playerMovingLeftPaths = {
+			"images/character/"+character+"/moving/movingLeft/0.png",
+			"images/character/"+character+"/moving/movingLeft/1.png",
+			"images/character/"+character+"/moving/movingLeft/2.png",
+			"images/character/"+character+"/moving/movingLeft/3.png",
 	};
 
 
-	private final String[] felixMovingRightPaths = {
-			"images/"+character+"/moving/movingRight/0.png",
-			"images/"+character+"/moving/movingRight/1.png",
-			"images/"+character+"/moving/movingRight/2.png",
-			"images/"+character+"/moving/movingRight/3.png",
+	private final String[] playerMovingRightPaths = {
+			"images/character/"+character+"/moving/movingRight/0.png",
+			"images/character/"+character+"/moving/movingRight/1.png",
+			"images/character/"+character+"/moving/movingRight/2.png",
+			"images/character/"+character+"/moving/movingRight/3.png",
 	};
 
 
-	private final String[] felixFixingLeftPaths = {
-			"images/"+character+"/fixing/fixingLeft/0.png",
-			"images/"+character+"/fixing/fixingLeft/1.png",
+	private final String[] playerCleaningLeftPaths = {
+			"images/character/"+character+"/fixing/fixingLeft/0.png",
+			"images/character/"+character+"/fixing/fixingLeft/1.png",
 	};
 
 
-	private String[] felixFixingRightPaths = {
-			"images/"+character+"/fixing/fixingRight/0.png",
-			"images/"+character+"/fixing/fixingRight/1.png",
+	private String[] playerCleaningRightPaths = {
+			"images/character/"+character+"/fixing/fixingRight/0.png",
+			"images/character/"+character+"/fixing/fixingRight/1.png",
 	};
 
 
-	private String[] felixNormalRightPaths = {
-			"images/"+character+"/normal/normalRight/0.png",
+	private String[] playerNormalRightPaths = {
+			"images/character/"+character+"/normal/normalRight/0.png",
 	};
 
 
-	private String[] felixNormalLeftPaths = {
-			"images/"+character+"/normal/normalLeft/0.png",
+	private String[] playerNormalLeftPaths = {
+			"images/character/"+character+"/normal/normalLeft/0.png",
 	};
 
 
-	private String[] felixFallingPaths = {
-			"images/"+character+"/falling/0.png",
-			"images/"+character+"/falling/1.png",
+	private String[] playerFallingPaths = {
+			"images/character/"+character+"/falling/0.png",
+			"images/character/"+character+"/falling/1.png",
 	};
 
-	private String[] felixWinPaths = {
-			"images/"+character+"/win/0.png",
-			"images/"+character+"/win/1.png",
-			"images/"+character+"/win/2.png",
-			"images/"+character+"/win/3.png",
-			"images/"+character+"/win/4.png",
-			"images/"+character+"/win/5.png"
+	private String[] playerWinPaths = {
+			"images/character/"+character+"/win/0.png",
+			"images/character/"+character+"/win/1.png",
+			"images/character/"+character+"/win/2.png",
+			"images/character/"+character+"/win/3.png",
+			"images/character/"+character+"/win/4.png",
+			"images/character/"+character+"/win/5.png"
 	};
 	
 	private void initGlasses() {
@@ -280,47 +255,47 @@ public class Images {
 	
 	// RALPH'S ANIMATION
 	public Animation getClimbing() {
-		return ralphClimbing;
+		return monsterClimbing;
 	}
 	
-	public Animation getRalphDemolition(){
-		return ralphDemolition;
+	public Animation getMonsterDemolition(){
+		return monsterDemolition;
 	}
 	
-	public Animation getRalphMove() {
-		return ralphMove;
+	public Animation getMonsterMove() {
+		return monsterMove;
 	}
 	
 
 	
 	// FELIX'S ANIMATION
-	public Animation getFelixMoveLeft(){
-		return felixMoveLeft;
+	public Animation getPlayerMoveLeft(){
+		return playerMoveLeft;
 	}
 	
-	public Animation getFelixMoveRight(){
-		return felixMoveRight;
+	public Animation getPlayerMoveRight(){
+		return playerMoveRight;
 	}
 	
-	public Animation getFelixNormalLeft(){
-		return felixNormalLeft;
+	public Animation getPlaterNormalLeft(){
+		return platerNormalLeft;
 	}
 	
-	public Animation getFelixNormalRight(){
-		return felixNormalRight;
+	public Animation getPlayerNormalRight(){
+		return playerNormalRight;
 	}
 	
-	public Animation getFelixFixingLeft(){
-		return felixFixingLeft;
+	public Animation getPlayerCleaningLeft(){
+		return playerCleaningLeft;
 	}
 	
-	public Animation getFelixFixingRight(){
-		return felixFixingRight;
+	public Animation getPlayerCleaningRight(){
+		return playerCleaningRight;
 	}
 	
 	
-	public Animation getFelixFalling(){
-		return felixFalling;
+	public Animation getPlayerFalling(){
+		return playerFalling;
 	}
 	
 
@@ -412,8 +387,8 @@ public class Images {
 		return shopchar;
 	}
 
-	public Animation getFelixWin(){
-		return felixWin;
+	public Animation getPlayerWin(){
+		return playerWin;
 	}
 
 	public Animation getBirdMove() {

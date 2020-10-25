@@ -6,10 +6,8 @@ import principal.graphics.Sprite;
 import principal.input.MouseInput;
 import principal.statemachine.GameState;
 import principal.statemachine.GameStatus;
-
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
+
 
 public class Shop implements GameState {
     private Font font;
@@ -18,8 +16,7 @@ public class Shop implements GameState {
     private Sprite block;
 
     public Rectangle backButton = new Rectangle(10,15,40,25);
-
-public Rectangle selectButton[] = new Rectangle[15];
+    public Rectangle selectButton[] = new Rectangle[15];
 
     public Shop(){
 
@@ -48,7 +45,6 @@ public Rectangle selectButton[] = new Rectangle[15];
                 i++;
             }
         }
-
     }
 
     @Override
@@ -66,17 +62,10 @@ public Rectangle selectButton[] = new Rectangle[15];
             }else if (selectButton[3].contains(MouseInput.getPointer())){
                 System.out.println("selected 3");
                 Game.animations = new Images("zombie");
-            }else if (selectButton[4].contains(MouseInput.getPointer())){
+            }else if (selectButton[4].contains(MouseInput.getPointer())) {
                 System.out.println("selected 4");
                 Game.animations = new Images("lama");
-            }else if (selectButton[5].contains(MouseInput.getPointer())){
-                System.out.println("selected 5");
-            }else if (selectButton[6].contains(MouseInput.getPointer())){
-                System.out.println("selected 6");
-            }else if (selectButton[7].contains(MouseInput.getPointer())){
-                System.out.println("selected 7");
             }
-
             if(backButton.contains(MouseInput.getPointer())){ //if pressed back button go to menu
                 GameStatus.changeState(0);
             }

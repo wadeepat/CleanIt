@@ -3,9 +3,7 @@ package principal.statemachine.characterstates.ralphstates;
 import java.awt.Image;
 
 import principal.Game;
-import principal.graphics.Animation;
 import principal.statemachine.characterstates.State;
-import principal.statemachine.gamestate.GameManager;
 
 public class Move extends State{
 
@@ -18,7 +16,7 @@ public class Move extends State{
 	
 	
 	private Move(){
-		animation = Game.animations.getRalphMove();
+		animation = Game.animations.getMonsterMove();
 		animUpdate = 300;
 	}
 	

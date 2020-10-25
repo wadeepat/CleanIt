@@ -52,8 +52,7 @@ public class Score {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
            
             int cont = 0;
-            while((line = bufferedReader.readLine()) != null) {
-            	
+            while((line = bufferedReader.readLine()) != null && cont!=MAX_SCORE_AMOUNT) {
     			String[] result = line.split(",");
     			scoreNames[cont] = result[0];
     			scorePoints[cont] = Integer.parseInt(result[1]);

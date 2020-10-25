@@ -29,6 +29,4 @@ public class BadlanderAnimation extends State{
 	public Image getImage(int dir) {
 		return animation.getActualFrame();
 	}
-	
-	
 }

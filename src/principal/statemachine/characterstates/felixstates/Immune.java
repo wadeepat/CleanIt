@@ -10,7 +10,7 @@ public class Immune extends State{
 private final static Immune inmmune = new Immune();
 	
 	private Immune() {
-		animation  = Game.animations.getFelixMoveRight();
+		animation  = Game.animations.getPlayerMoveRight();
 		animUpdate = 2;
 	}
 	
@@ -22,9 +22,9 @@ private final static Immune inmmune = new Immune();
 	@Override
 	public Image getImage(int dir) {
 		if (dir == -1){
-			animation = Game.animations.getFelixMoveLeft();
+			animation = Game.animations.getPlayerMoveLeft();
 		}else
-			animation = Game.animations.getFelixMoveRight();
+			animation = Game.animations.getPlayerMoveRight();
 		return animation.getActualFrame();
 	}
 	
