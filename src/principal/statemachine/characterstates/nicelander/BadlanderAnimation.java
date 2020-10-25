@@ -9,9 +9,9 @@ public class BadlanderAnimation extends State{
 	
 	
 	private final String[] badlanderPaths = {
-		"images/entities/nicelander/0.png",
-		"images/entities/nicelander/1.png",
-		"images/entities/nicelander/2.png",
+		"images/entities/badlander/0.png",
+		"images/entities/badlander/1.png",
+		"images/entities/badlander/2.png",
 	};
 	
 	private static BadlanderAnimation badlander = new BadlanderAnimation();

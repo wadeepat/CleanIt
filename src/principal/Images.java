@@ -46,11 +46,11 @@ public class Images {
 		"images/entities/brick/1.png"
 	};
 	
-	private final String[] badlanderPaths = {
-		"images/entities/nicelander/0.png",
-		"images/entities/nicelander/1.png",
-			"images/entities/nicelander/2.png",
-	};
+//	private final String[] badlanderPaths = {
+//		"images/entities/badlander/0.png",
+//		"images/entities/badlander/1.png",
+//			"images/entities/badlander/2.png",
+//	};
 
 	private final String[] eggPaths= {
 			"images/entities/egg/0.png",
@@ -83,7 +83,7 @@ public class Images {
 	private final Animation brick;
 	private final Animation birdLeft;
 	private final Animation birdRight;
-	private final Animation badlander;
+//	private final Animation badlander;
 	private final Sprite life;
 	private final Sprite bush;
 	private final Sprite cloud;
@@ -162,9 +162,6 @@ public class Images {
 		
 		birdLeft = new Animation(birdLeftPaths);
 		birdRight = new Animation(birdRightPaths);
-		
-		badlander = new Animation(badlanderPaths);
-		
 
 		
 		menu = new Sprite (ResourceLoader.getLoader().loadImage("images/initial_menu.png"));
@@ -242,9 +239,7 @@ public class Images {
 			glasses[i] = new Sprite(ResourceLoader.getLoader().loadImage("images/window/glasses/"+i+".png"));
 		}
 	}
-	
-	
-	
+
 	private void initDoubleDoor() {
 		doubleDoor = new Sprite[4];
 		for (int i = 0; i < doubleDoor.length; i++){
@@ -262,8 +257,7 @@ public class Images {
 	private void initDoor() {
 		door = new Sprite[5];
 		for (int i = 0; i < door.length; i++) {
-			door[i] = new Sprite(ResourceLoader.getLoader().
-					loadImage("images/window/semicircular/door/"+ i+".png"));
+			door[i] = new Sprite(ResourceLoader.getLoader().loadImage("images/window/semicircular/door/"+ i+".png"));
 		}
 	}
 
@@ -329,9 +323,7 @@ public class Images {
 		return felixFalling;
 	}
 	
-	
-	
-	
+
 	
 	
 	// OBJECTS
@@ -359,11 +351,6 @@ public class Images {
 		return birdRight;
 	}
 
-	
-	public Animation getBadlander() {
-		return badlander;
-	}
-
 
 	public Sprite getTwoPanels() {
 		return twoPanels;
@@ -373,12 +360,7 @@ public class Images {
 	public Sprite getBush() {
 		return bush;
 	}
-	
-	
-	public Sprite getCloud(){
-		return cloud;
-	}
-	
+
 	
 	public Sprite getBuilding() {
 		return building;
