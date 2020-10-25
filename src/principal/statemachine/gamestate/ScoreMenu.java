@@ -44,7 +44,7 @@ public class ScoreMenu implements GameState{
 		
 		g.setFont(font);	
 		for (int i = 0; i < Score.MAX_SCORE_AMOUNT; i++){
-			if(Score.getScore().getCertainName(i)==null)continue;
+			if(Score.getScore().getCertainName(i)==null ||Score.getScore().getCertainName(i).equals("null"))continue;
 			String scores = Score.getScore().getCertainName(i)+":   "+Score.getScore().getCertainScore(i);
 			g.drawString(scores, 30, 100 + (i+1) * 50);
 		}

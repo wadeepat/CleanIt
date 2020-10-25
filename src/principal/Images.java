@@ -7,7 +7,7 @@ import principal.util.ResourceLoader;
 public class Images {
 
 
-	private String character= "lama";
+	private static String character= "lama";
 
 	// RALPH'S ANIMATIONS
 	private final String[] ralphDemolishing = {
@@ -117,6 +117,7 @@ public class Images {
 		
 		// Player's Animations
 		this.character = character;
+		System.out.println(character);
 		felixMoveLeft = new Animation(felixMovingLeftPaths);
 		felixMoveRight = new Animation (felixMovingRightPaths);
 		
