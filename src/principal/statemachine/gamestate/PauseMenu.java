@@ -29,13 +29,10 @@ public class PauseMenu implements GameState{
 			
 	private Font font;
 	private Font font1;
-	private Font font2;
 	
 	public PauseMenu() {
 		font =  new Font("BOLD",Font.PLAIN,60);
 		font1 = new Font("BOLD", Font.PLAIN, 20);
-		font2 = new Font("BOLD", Font.ITALIC, 15);
-
 	}
 	
 	@Override
@@ -79,15 +76,9 @@ public class PauseMenu implements GameState{
 		g.setFont(font1);
 		g.setColor(Color.WHITE);
 		g.drawString("Main Menu", DISP_X, menuButton.y + 35);
-//		g.draw(menuButton);
 		g.drawString("Resume", DISP_X, resumeButton.y + 35);
-//		g.draw(resumeButton);
 		g.drawString("Restart", DISP_X, restartButton.y + 35);
-//		g.draw(restartButton);
 		g.drawString("Quit", DISP_X, exitButton.y + 35);
-		
-		g.setFont(font2);
-		g.drawString("Powered by Bonfils, Suarez and Dominguez Vega", DISP_X, Constant.HEIGHT - 50);
 		
 	}
 

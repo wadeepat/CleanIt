@@ -35,7 +35,6 @@ import principal.input.MouseInput;
 import principal.statemachine.GameState;
 import principal.statemachine.GameStatus;
 import principal.statemachine.gamestate.GameManager;
-import sun.print.PathGraphics;
 
 public class PrincipalMenu implements GameState{
 	
@@ -56,7 +55,7 @@ public class PrincipalMenu implements GameState{
 	private Font font;
 	private Font font2;
 	private Sprite menu;
-	
+	private Sprite[] menuButton;
 	private String[] levels;
 	
 	private boolean barspacePushed;
@@ -72,7 +71,8 @@ public class PrincipalMenu implements GameState{
 		font2 = new Font("arial", Font.ITALIC, 12);
 		
 		menu = Game.animations.getMenu();
-		
+		menuButton = Game.animations.getMenuButton();
+
 		barspacePushed = false;
 		
 		building = Building.getBuilding();
@@ -175,37 +175,12 @@ public class PrincipalMenu implements GameState{
 		g.drawImage(menu.getImage(), Constant.WIDTH/2 - menu.getWidth()/2,
 				Constant.HEIGHT/2 - menu.getHeight()/2 - 100,null);
 		if (barspacePushed){
-			
 			g.drawImage(config.getImage(), Constant.WIDTH - 50, 0, null);
-			
-			g.setColor(Color.BLACK);
-			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 270, 75, 40);
-			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 320, 176, 40);
-			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 370, 98, 40);
-			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 420, 70, 40);
-			g.fillRect(Constant.WIDTH/2 - 100/2 - 18, 470, 70, 40);
-			
-			g.setColor(Color.RED);
-			
-			g.setFont(font);
 
-//			g.drawString("555", playButton.x + 8, playButton.y + 30);
-//			g.draw(playButton);
-			//Image img1 = Toolkit.getDefaultToolkit().getImage("images/bush.png");
-			//g.drawImage(img1,playButton.x + 8, playButton.y + 30, null);
-			//Image img1 = Toolkit.getDefaultToolkit().getImage("images/bush.png");
-			//g.drawImage(img1,Constant.WIDTH/2 - 100/2 - 20 , 270, null);
+			for (int i=0;i<menuButton.length;i++){
+				g.drawImage(menuButton[i].getImage(),playButton.x, playButton.y+(50*i), null);
+			}
 
-			g.drawString("HIGHSCORES", scoreButton.x + 8 , scoreButton.y + 30);
-//			g.draw(scoreButton);
-			
-			g.drawString("RULES", helpButton.x + 8, helpButton.y + 30);
-//			g.draw(helpButton);
-			g.drawString("Shop",shopButton.x + 8, shopButton.y +30);
-
-			g.drawString("QUIT",quitButton.x + 8, quitButton.y + 30);
-			
-			
 		}
 	}
 

@@ -26,7 +26,7 @@ public class Normal extends State {
 	@Override
 	public Image getImage(int dir) {
 		if (dir == -1){
-			animation = Game.animations.getPlaterNormalLeft();
+			animation = Game.animations.getPlayerNormalLeft();
 		}else
 			animation = Game.animations.getPlayerNormalRight();
 		return animation.getActualFrame();

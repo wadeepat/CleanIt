@@ -9,22 +9,21 @@ public class Images {
 
 	private static String character= "lama";
 
-	// RALPH'S ANIMATIONS
+	// monster'S ANIMATIONS
 	private final String[] monsterDemolishing = {
-		"images/ralph/Demolishing/0.png",	
-		"images/ralph/Demolishing/1.png",
-
+            "images/monster/Demolishing/0.png",
+            "images/monster/Demolishing/1.png",
 	};
 
 	private final String[] monsterClimbingPath = {
-		"images/ralph/Climbing/0.png",
-		"images/ralph/Climbing/1.png",
+            "images/monster/Climbing/0.png",
+            "images/monster/Climbing/1.png",
 	};
 
 	
 	private final String[] monsterMovePath = {
-		"images/ralph/Moving/0.png",
-		"images/ralph/Moving/1.png",
+            "images/monster/Moving/0.png",
+            "images/monster/Moving/1.png",
 	};
 	
 	// OBJECTS PATHS
@@ -60,7 +59,7 @@ public class Images {
 	private final Animation playerMoveRight;
 
 	private final Animation playerNormalRight;
-	private final Animation platerNormalLeft;
+	private final Animation playerNormalLeft;
 
 	private final Animation playerCleaningRight;
 	private final Animation playerCleaningLeft;
@@ -96,10 +95,11 @@ public class Images {
 	private Sprite[] semicircular;
 	private Sprite[] door;
 	private Sprite[] shopchar;
+	private Sprite[] menuButton;
 	
 	public Images(String character) {
 		
-		// Monster's Animations
+		// MONSTER's Animations
 		monsterDemolition = new Animation (monsterDemolishing);
 		monsterClimbing = new Animation (monsterClimbingPath);
 		monsterMove = new Animation(monsterMovePath);
@@ -109,7 +109,7 @@ public class Images {
 		playerMoveLeft = new Animation(playerMovingLeftPaths);
 		playerMoveRight = new Animation (playerMovingRightPaths);
 		playerNormalRight = new Animation(playerNormalRightPaths);
-		platerNormalLeft = new Animation(playerNormalLeftPaths);
+		playerNormalLeft = new Animation(playerNormalLeftPaths);
 		playerCleaningLeft = new Animation(playerCleaningLeftPaths);
 		playerCleaningRight = new Animation(playerCleaningRightPaths);
 		playerFalling = new Animation(playerFallingPaths);
@@ -156,6 +156,7 @@ public class Images {
 		initSemicircular();
 		initDoor();
 		initshopchar();
+		initmenuButton();
 	}
 
 	private final String[] playerMovingLeftPaths = {
@@ -246,6 +247,13 @@ public class Images {
 
 	}
 
+	private void initmenuButton(){
+		menuButton = new Sprite[5];
+		for (int i=0;i<menuButton.length;i++){
+			menuButton[i] = new Sprite(ResourceLoader.getLoader().loadImage("images/menu/"+i+".png"));
+		}
+	}
+
 	public Animation getBrick() {
 		return brick;
 	}
@@ -270,7 +278,7 @@ public class Images {
 	
 
 	
-	// FELIX'S ANIMATION
+	// PLAYER'S ANIMATION
 	public Animation getPlayerMoveLeft(){
 		return playerMoveLeft;
 	}
@@ -279,8 +287,8 @@ public class Images {
 		return playerMoveRight;
 	}
 	
-	public Animation getPlaterNormalLeft(){
-		return platerNormalLeft;
+	public Animation getPlayerNormalLeft(){
+		return playerNormalLeft;
 	}
 	
 	public Animation getPlayerNormalRight(){
@@ -390,6 +398,8 @@ public class Images {
 	public Sprite[] getShopchar(){
 		return shopchar;
 	}
+
+	public Sprite[] getMenuButton(){ return menuButton;}
 
 	public Animation getPlayerWin(){
 		return playerWin;
