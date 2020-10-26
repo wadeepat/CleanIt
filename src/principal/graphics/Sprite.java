@@ -14,13 +14,13 @@ public class Sprite {
 		return image;
 	}
 	
-	
+	//Resize start background
 	public int getWidth(){
-		return image.getWidth(null);
+		return 800;
 	}
 	
 	public int getHeight(){
-		return image.getHeight(null);
+		return 400;
 	}
 	
 }
