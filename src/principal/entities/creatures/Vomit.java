@@ -12,27 +12,27 @@ import principal.entities.Entity;
 import principal.entities.ID;
 import principal.graphics.Animation;
 
-public class Brick extends Creature {
+public class Vomit extends Creature {
 	
-	private Animation brick;
+	private Animation vomit;
 	
 	private int actualSector; 
 	
-	public Brick(float x, float y, int actualSector) {
+	public Vomit(float x, float y, int actualSector) {
 		super(x,y);
-		brick = Game.animations.getBrick();
-		vel = Level.getLevel().getBrickVel();
+		vomit = Game.animations.getVomit();
+		vel = Level.getLevel().getVomitVel();
 		this.actualSector = actualSector;
-		id = ID.Brick;
-		brick = Game.animations.getBrick();
+		id = ID.Vomit;
+		vomit = Game.animations.getVomit();
 		Handler.add(this);
 	}
 
 
 	@Override
 	public void draw(Graphics2D g, long time) {
-		brick.update();
-		g.drawImage(brick.getActualFrame(), (int)getX(), (int)getY(), null);
+		vomit.update();
+		g.drawImage(vomit.getActualFrame(), (int)getX(), (int)getY(), null);
 		
 //		g.draw(getBounds());
 	}

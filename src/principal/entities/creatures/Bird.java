@@ -46,8 +46,8 @@ public class Bird extends Creature{
 		g.drawImage(state.getImage(directionX), (int)getX(), (int)getY(), null);
 	}
 		private void throwBrick() {
-			Handler.addBrick(getX()+25, getY() + 70);
-			Handler.addBrick(getX()+50, getY() + 70);
+			Handler.addVomit(getX()+25, getY() + 70);
+			Handler.addVomit(getX()+50, getY() + 70);
 		}
 
 	@Override

@@ -208,7 +208,7 @@ public class Player extends Creature {
 	
 	
 	private void brickCollision(Entity e, long beforeTime) {
-		if (e instanceof Brick) {
+		if (e instanceof Vomit) {
 			if(getTopBounds().intersects(e.getBounds()) && !isImmune) {
 				setY(getY());
 				savePosition(e);

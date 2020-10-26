@@ -4,7 +4,7 @@ public enum ID {
 
 	Player(),
 	Bird(), 
-	Brick(),
+	Vomit(),
 	Ralph(),
 	Building(),
 	DoubleDoor(),

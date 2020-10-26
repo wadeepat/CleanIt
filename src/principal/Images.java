@@ -254,7 +254,7 @@ public class Images {
 		}
 	}
 
-	public Animation getBrick() {
+	public Animation getVomit() {
 		return brick;
 	}
 

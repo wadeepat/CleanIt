@@ -23,7 +23,7 @@ public class monster extends Creature {
 
 	private long time = System.currentTimeMillis();
 
-	private long brickTime;
+	private long vomitTime;
 
 	private boolean prevGM;
 
@@ -34,13 +34,13 @@ public class monster extends Creature {
 
 		vel = Level.getLevel().getRalphVel();
 
-		brickTime = Level.getLevel().getRalphTime();
+		vomitTime = Level.getLevel().getRalphTime();
 
 		setDx(vel);
 		prevGM = false;
 
-		width = 93;
-		height = 84;
+		width = 50;
+		height = 42;
 
 		floor = 0;
 
@@ -52,7 +52,7 @@ public class monster extends Creature {
 	public void draw(Graphics2D g, long time) {
 
 		state.update();
-		g.drawImage(state.getImage(0),(int)getX(), (int)getY() + 10, null);
+		g.drawImage(state.getImage(0),(int)getX(), (int)getY() + 20, null);
 //		g.draw(getBounds());
 
 	}
@@ -100,20 +100,20 @@ public class monster extends Creature {
 
 
 
-		if (elapsedTime - time > brickTime) {
+		if (elapsedTime - time > vomitTime) {
 
 			time = System.currentTimeMillis();
 			state = Demolishing.getDemolishing();
-			throwBrick();
+			throwVomit();
 		}
 
 	}
 
 
 
-	private void throwBrick() {
-		Handler.addBrick(getX()+25, getY() + 70);
-		Handler.addBrick(getX()+50, getY() + 70);
+	private void throwVomit() {
+		Handler.addVomit(getX()+5, getY() + 50);
+		Handler.addVomit(getX()+30, getY() + 50);
 //		int actualSector = Building.getBuilding().getIndexActualSector();
 //		Brick brick = new Brick((int)getX() + 25, (int)getY()+ 70, actualSector);
 //		Handler.add(brick);
@@ -163,13 +163,13 @@ public class monster extends Creature {
 		prevGM = false;
 		setXY(x,y);
 		vel = Level.getLevel().getRalphVel();
-		brickTime = Level.getLevel().getRalphTime();
+		vomitTime = Level.getLevel().getRalphTime();
 
 	}
 
 
-	public void setBrickTime(long time){
-		brickTime = time;
+	public void setVomitTime(long time){
+		vomitTime = time;
 	}
 
 

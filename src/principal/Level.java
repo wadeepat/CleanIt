@@ -71,7 +71,7 @@ public class Level {
 
 
 	// Brick
-	public float getBrickVel() {
+	public float getVomitVel() {
 		return brickVel;
 	}
 
