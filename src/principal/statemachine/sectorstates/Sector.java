@@ -27,8 +27,8 @@ public abstract class Sector {
 		obsCounter = 0;
 	}
 	
-	public abstract void tick(long beforeTime);
-	public abstract void draw(Graphics2D g, long time);
+	public abstract void update(long beforeTime);
+	public abstract void render(Graphics2D g, long time);
 	
 	public abstract boolean  hasBirds();
 	public abstract boolean hasBadlander();
@@ -38,10 +38,6 @@ public abstract class Sector {
 	
 	public Window[] getWindows() {
 		return windows;
-	}
-	
-	public int brokenWinsAmount() {
-		return brokenWindows.size();
 	}
 	
 	public boolean changeSector() {

@@ -30,7 +30,7 @@ public class Vomit extends Creature {
 
 
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		vomit.update();
 		g.drawImage(vomit.getActualFrame(), (int)getX(), (int)getY(), null);
 		

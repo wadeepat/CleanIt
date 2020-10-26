@@ -40,8 +40,8 @@ public class DrawingSurface extends Canvas {
 	
 	public void update() {
 		
-		inputKeys.tick();
-		mouse.tick();
+		inputKeys.update();
+		mouse.update();
 		if (GameStatus.actualState instanceof GameManager){
 			HUD.getHud().update();
 		}

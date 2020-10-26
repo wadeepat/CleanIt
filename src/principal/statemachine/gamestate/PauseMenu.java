@@ -6,14 +6,10 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 
-import principal.Constant;
 import principal.Game;
-import principal.HUD;
-import principal.Level;
 import principal.Score;
 import principal.entities.Building;
 import principal.graphics.DrawingSurface;
-import principal.input.KeyBoard;
 import principal.input.MouseInput;
 import principal.statemachine.GameState;
 import principal.statemachine.GameStatus;
@@ -64,7 +60,7 @@ public class PauseMenu implements GameState{
 
 	@Override
 	public void render(Graphics2D g, long time) {
-		Building.getBuilding().draw(g, time);
+		Building.getBuilding().render(g, time);
 		g.setRenderingHint(
 		        RenderingHints.KEY_TEXT_ANTIALIASING,
 		        RenderingHints.VALUE_TEXT_ANTIALIAS_ON);

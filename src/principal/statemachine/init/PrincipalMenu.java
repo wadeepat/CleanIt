@@ -9,13 +9,6 @@ import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Component;
-import java.awt.Frame;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.image.ImageObserver;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -27,7 +20,6 @@ import principal.Game;
 import principal.Level;
 import principal.Score;
 import principal.entities.Building;
-import principal.entities.windows.parts.GlassAndDisplacement;
 import principal.graphics.DrawingSurface;
 import principal.graphics.Sprite;
 import principal.input.KeyBoard;
@@ -164,7 +156,7 @@ public class PrincipalMenu implements GameState{
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
 		
-		building.draw(g, beforeTime);
+		building.render(g, beforeTime);
 
 		
 		g.setFont(font);

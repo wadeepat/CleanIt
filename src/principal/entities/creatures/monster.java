@@ -49,7 +49,7 @@ public class monster extends Creature {
 
 
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 
 		state.update();
 		g.drawImage(state.getImage(0),(int)getX(), (int)getY() + 20, null);

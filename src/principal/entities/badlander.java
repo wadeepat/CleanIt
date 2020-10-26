@@ -22,7 +22,7 @@ public class badlander extends Entity  {
 
 
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		state.update();
 		g.drawImage(state.getImage(0), (int)getX(), (int)getY(), null);
 	}

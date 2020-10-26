@@ -31,37 +31,26 @@ public class Door extends Window{
 	private void initWindows() {
 		if (strokesRequired > 12){
 			state = 4;
-		}else
-			if (strokesRequired <= 12 && strokesRequired > 8){
-				state = 3;
-			}else
-				if (strokesRequired <= 8 && strokesRequired > 4){
-					state = 2;
-				}else
-					if (strokesRequired <= 4 && strokesRequired > 0){
-						state = 1;
-					}else
-						if (strokesRequired == 0){
-							state = 0;
-						}
+		}else if (strokesRequired <= 12 && strokesRequired > 8){
+			state = 3;
+		}else if (strokesRequired <= 8 && strokesRequired > 4){
+			state = 2;
+		}else if (strokesRequired <= 4 && strokesRequired > 0){
+			state = 1;
+		}else if (strokesRequired == 0){
+			state = 0;
+		}
 	}
 	
 	
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		g.drawImage(images[state].getImage(), (int)getX(), (int)getY(), null);
-//		g.draw(getBounds());
 	}
-	
-//	state = 11;
-//	state = 6;
-//	state = 4;
-	
+
 	@Override
 	public void update(ArrayList<Entity> objects, long beforeTime) {
-//		System.out.println(strokesRequired);
 		initWindows();
-		
 	}
 	
 

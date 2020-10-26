@@ -18,7 +18,7 @@ public class Attack extends Entity{
 	}
 
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 	}
 
 	@Override

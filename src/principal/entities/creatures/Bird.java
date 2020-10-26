@@ -41,7 +41,7 @@ public class Bird extends Creature{
 	}
 
 	@Override
-	public void draw(Graphics2D g, long elapsedTime) {
+	public void render(Graphics2D g, long elapsedTime) {
 		state.update();
 		g.drawImage(state.getImage(directionX), (int)getX(), (int)getY(), null);
 	}

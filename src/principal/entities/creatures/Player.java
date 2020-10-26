@@ -362,7 +362,7 @@ public class Player extends Creature {
 	}
 
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		state.update();
 		g.drawImage(state.getImage(directionX), (int)getX(), (int)getY(), null);
 	}

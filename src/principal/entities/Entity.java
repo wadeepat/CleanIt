@@ -21,7 +21,7 @@ public abstract class Entity{
 		position = new Position(x, y);
 	}
 	
-	public abstract void draw(Graphics2D g, long time);
+	public abstract void render(Graphics2D g, long time);
 	public abstract void update(ArrayList<Entity> objects, long beforeTime);
 	
 

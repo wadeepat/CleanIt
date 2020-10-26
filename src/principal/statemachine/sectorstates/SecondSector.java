@@ -28,11 +28,9 @@ public class SecondSector extends Sector{
 		int i = 0;
 		for (int y = 0; y < ROW; y++) {
 			for (int x = 0; x < COL; x++) {
-				if (obsCounter < MAX_OBSTACLES)
-					setWithObstacles(posX, posY, i);
-				else{
-					setWithoutObstacles(posX, posY, i);
-					}
+				if (obsCounter < MAX_OBSTACLES) setWithObstacles(posX, posY, i);
+				else setWithoutObstacles(posX, posY, i);
+
 				posX += 49;
 				i++;
 			}
@@ -67,8 +65,6 @@ public class SecondSector extends Sector{
 	}
 	
 	
-	
-	
 	private void countBrokenWindows(){
 		for (int i = 0; i < windows.length; i++) {
 			Window w = windows[i];
@@ -81,7 +77,7 @@ public class SecondSector extends Sector{
 	
 	
 	@Override
-	public void tick(long beforeTime) {
+	public void update(long beforeTime) {
 		for (int i = 0; i < windows.length; i++) {
 			Window w = windows[i];
 			w.update(null, beforeTime);
@@ -97,9 +93,9 @@ public class SecondSector extends Sector{
 	
 	
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		for(int i = 0; i < windows.length; i++) {
-			windows[i].draw(g, time);
+			windows[i].render(g, time);
 		}
 	}
 
@@ -115,8 +111,6 @@ public class SecondSector extends Sector{
 		return true;
 	}
 
-
-	// Rectangle(261 + 18, 314 + 779, 278, 6);
 	@Override
 	public Rectangle getBotBounds(){
 		return new Rectangle(POS_X + 18, POS_Y + 778, 278, 8);

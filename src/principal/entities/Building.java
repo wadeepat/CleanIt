@@ -82,7 +82,7 @@ public class Building extends Entity{
 	
 	@Override
 	public void update(ArrayList<Entity> creature, long beforeTime) {
-		sectors[actualSector].tick(beforeTime);
+		sectors[actualSector].update(beforeTime);
 		if(isChangingSector()) globalMovement = true;		
 		generateBird();
 		generateBadlander(beforeTime);
@@ -134,7 +134,7 @@ public class Building extends Entity{
 		}
 	}
 	
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		g.drawImage(sprite.getImage(), POS_X, POS_Y, null);
 		
 		g.setColor(Color.GREEN);
@@ -146,10 +146,10 @@ public class Building extends Entity{
 		}
 		
 		
-		sectors[0].draw(g, time);
-		sectors[1].draw(g, time); 
-		sectors[2].draw(g, time);
-		sectors[3].draw(g, time);
+		sectors[0].render(g, time);
+		sectors[1].render(g, time);
+		sectors[2].render(g, time);
+		sectors[3].render(g, time);
 	}
 	
 	

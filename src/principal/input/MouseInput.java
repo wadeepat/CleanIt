@@ -17,23 +17,17 @@ public class MouseInput extends MouseAdapter{
 	}
 	
 
-	public void tick() {
-		if (leftClick) {		
-			leftClick = !leftClick;
-		}
+	public void update() {
+		if (leftClick) leftClick = !leftClick;
 	}
 	
 	public void mouseClicked(MouseEvent e) {
-		
 		x = e.getX();
 		y = e.getY();
-		
-		leftClick = true;
-		
-	}
-	
 
-	
+		leftClick = true;
+	}
+
 	public static Point getPointer(){
 		return new Point(x,y);
 	}

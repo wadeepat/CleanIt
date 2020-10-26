@@ -61,10 +61,10 @@ public class Handler {
 	
 	
 	public void draw(Graphics2D g, long time) {
-		building.draw(g, time);
+		building.render(g, time);
 		for (int i = 0; i < objects.size(); i++) {
 			tempObject = objects.get(i);
-			tempObject.draw(g, time);
+			tempObject.render(g, time);
 		}
 	}
 	

@@ -37,7 +37,7 @@ public class DoubleDoor extends Window{
 	
 	
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		g.drawImage(img[doors].getImage() ,(int)getX() ,(int)getY(), null);
 		g.setColor(Color.GREEN);
 		

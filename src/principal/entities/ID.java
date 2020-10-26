@@ -1,7 +1,6 @@
 package principal.entities;
 
 public enum ID {
-
 	Player(),
 	Bird(), 
 	Vomit(),

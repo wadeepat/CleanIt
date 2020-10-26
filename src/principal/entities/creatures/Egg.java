@@ -32,7 +32,7 @@ public class Egg extends Creature{
     }
 
 
-    public void draw(Graphics2D g, long time){
+    public void render(Graphics2D g, long time){
         egg.update();
         g.drawImage(egg.getActualFrame(),(int)getX(),(int)getY(),null);
     }

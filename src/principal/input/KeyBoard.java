@@ -23,7 +23,7 @@ public class KeyBoard extends KeyAdapter{
 	}
 	
 	
-	public void tick() {
+	public void update() {
 		up = keys[KeyEvent.VK_UP];
 		down = keys[KeyEvent.VK_DOWN];
 		right = keys[KeyEvent.VK_RIGHT];

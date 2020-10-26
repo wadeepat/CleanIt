@@ -54,7 +54,7 @@ public class FirstSector extends Sector {
 	
 	
 	@Override
-	public void tick(long beforeTime) {
+	public void update(long beforeTime) {
 		for (int i = 0; i < windows.length; i++) {
 			Window w = windows[i];
 			w.update(null, beforeTime);
@@ -69,9 +69,9 @@ public class FirstSector extends Sector {
 	
 	
 	@Override
-	public void draw(Graphics2D g, long time) {
+	public void render(Graphics2D g, long time) {
 		for (int i = 0; i < windows.length; i++){
-			windows[i].draw(g, time);
+			windows[i].render(g,time);
 		}
 	}
 
@@ -81,12 +81,10 @@ public class FirstSector extends Sector {
 		return false;
 	}
 
-
 	@Override
 	public boolean hasBadlander() {
 		return true;
 	}
-
 
 	@Override
 	public Rectangle getBotBounds() {
