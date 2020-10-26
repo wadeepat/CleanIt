@@ -132,8 +132,8 @@ public class GameManager implements GameState {
 		player.resetAll(Constant.WIDTH/2 , Constant.HEIGHT -100);
 		DrawingSurface.resetSurface();
 		Level.getLevel().levelUp();
-		monster.setVelocity(Level.getLevel().getRalphVel());
-		monster.setVomitTime(Level.getLevel().getRalphTime());
+		monster.setVelocity(Level.getLevel().getMonsterVel());
+		monster.setVomitTime(Level.getLevel().getMonsterTime());
 		HUD.getHud().reset();
 		Handler.removeAll();
 	}

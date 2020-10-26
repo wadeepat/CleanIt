@@ -4,11 +4,9 @@ public class Level {
 
 	private int actualLevel;
 
-	private long timer;
-	private float birdVel;
+	private float birdVel; //Vel refers to velocity
 	private float vomitVel;
-	private float ralphVel;
-	//////////////////////////////////
+	private float monsterVel;
 	private float eggVel;
 
 	private long ralphTime;
@@ -23,9 +21,8 @@ public class Level {
 	private void initLevel() {
 		vomitVel = 2.0f;
 		birdVel = 1.5f;
-		ralphVel = 0.8f;
+		monsterVel = 0.8f;
 		ralphTime = 3000;
-		///////////////////////////////////
 		eggVel = 2.0f;
 	}
 	
@@ -35,7 +32,7 @@ public class Level {
 	
 	public void levelUp() {
 		actualLevel++;
-		ralphVel += ralphVel * 15/100;
+		monsterVel += monsterVel * 15/100;
 		birdVel += birdVel * 15/100;
 		vomitVel += vomitVel * 15/100;
 	}
@@ -45,72 +42,28 @@ public class Level {
 		initLevel();
 	}
 
-	
-	// Level
 	public int getActualLevel() {
 		return actualLevel;
 	}
 
-
-	public void setLevel(int level) {
-		actualLevel = level;
-	}
-
-
-	// Bird
 	public float getBirdVel() {
 		return birdVel;
 	}
-
-
-	public void setBirdVel(float birdVel) {
-		this.birdVel = birdVel;
-	}
-
-
-	// Brick
 	public float getVomitVel() {
 		return vomitVel;
 	}
-
-	////////////////////////////////////////////
 	public float getEggVel() {
 		return eggVel;
 	}
 
 
-	public long getRalphTime() {
+	public long getMonsterTime() {
 		return ralphTime;
 	}
-
-	public void setRalphTime(long ralphTime) {
-		this.ralphTime = ralphTime;
+	public float getMonsterVel() {
+		return monsterVel;
 	}
 
-	
-	public void setVomitVel(float vomitVel) {
-		this.vomitVel = vomitVel;
-	}
-
-	///////////////////////////////////////////
-	public void setEggVel(float eggVel) {
-		this.eggVel = eggVel;
-	}
-	
-	// Ralph
-	public float getRalphVel() {
-		return ralphVel;
-	}
-	
-	
-	public void setRalphVel(float vel) {
-		this.ralphVel = ralphVel;
-	}
-
-	
-	public long getTime() {
-		return timer;
-	}
 	
 	
 	public void chooseLevel(String level) {
@@ -167,7 +120,7 @@ public class Level {
 		
 		
 		for (int i = 1; i < level; i++) {
-			ralphVel += ralphVel * 15/100;
+			monsterVel += monsterVel * 15/100;
 			birdVel += birdVel * 15/100;
 			vomitVel += vomitVel * 15/100;
 			ralphTime -= ralphTime*15/100;

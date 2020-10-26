@@ -32,9 +32,9 @@ public class monster extends Creature {
 		id = ID.Ralph;
 		state = Move.getMove();
 
-		vel = Level.getLevel().getRalphVel();
+		vel = Level.getLevel().getMonsterVel();
 
-		vomitTime = Level.getLevel().getRalphTime();
+		vomitTime = Level.getLevel().getMonsterTime();
 
 		setDx(vel);
 		prevGM = false;
@@ -150,8 +150,8 @@ public class monster extends Creature {
 		floor = 0;
 		prevGM = false;
 		setXY(x,y);
-		vel = Level.getLevel().getRalphVel();
-		vomitTime = Level.getLevel().getRalphTime();
+		vel = Level.getLevel().getMonsterVel();
+		vomitTime = Level.getLevel().getMonsterTime();
 
 	}
 
