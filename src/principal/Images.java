@@ -9,6 +9,58 @@ public class Images {
 
 	private static String character= "lama";
 
+	private final String[] playerMovingLeftPaths = {
+			"images/character/"+character+"/moving/movingLeft/0.png",
+			"images/character/"+character+"/moving/movingLeft/1.png",
+			"images/character/"+character+"/moving/movingLeft/2.png",
+			"images/character/"+character+"/moving/movingLeft/3.png",
+	};
+
+
+	private final String[] playerMovingRightPaths = {
+			"images/character/"+character+"/moving/movingRight/0.png",
+			"images/character/"+character+"/moving/movingRight/1.png",
+			"images/character/"+character+"/moving/movingRight/2.png",
+			"images/character/"+character+"/moving/movingRight/3.png",
+	};
+
+
+	private final String[] playerCleaningLeftPaths = {
+			"images/character/"+character+"/fixing/fixingLeft/0.png",
+			"images/character/"+character+"/fixing/fixingLeft/1.png",
+	};
+
+
+	private String[] playerCleaningRightPaths = {
+			"images/character/"+character+"/fixing/fixingRight/0.png",
+			"images/character/"+character+"/fixing/fixingRight/1.png",
+	};
+
+
+	private String[] playerNormalRightPaths = {
+			"images/character/"+character+"/normal/normalRight/0.png",
+	};
+
+
+	private String[] playerNormalLeftPaths = {
+			"images/character/"+character+"/normal/normalLeft/0.png",
+	};
+
+
+	private String[] playerFallingPaths = {
+			"images/character/"+character+"/falling/0.png",
+			"images/character/"+character+"/falling/1.png",
+	};
+
+	private String[] playerWinPaths = {
+			"images/character/"+character+"/win/0.png",
+			"images/character/"+character+"/win/1.png",
+			"images/character/"+character+"/win/2.png",
+			"images/character/"+character+"/win/3.png",
+			"images/character/"+character+"/win/4.png",
+			"images/character/"+character+"/win/5.png"
+	};
+
 	// monster'S ANIMATIONS
 	private final String[] monsterDemolishing = {
             "images/monster/Demolishing/0.png",
@@ -48,13 +100,13 @@ public class Images {
 			"images/entities/egg/0.png",
 	};
 
-	//	Ralph Animations
+	//	Monster Animations
 	private final Animation monsterClimbing;
 	public final Animation monsterDemolition;
 	public final Animation monsterMove;
 	
 	
-	// Felix Animations
+	// Player Animations
 	public final Animation playerMoveLeft;
 	private final Animation playerMoveRight;
 
@@ -161,58 +213,6 @@ public class Images {
 		initmenuButton();
 	}
 
-	private final String[] playerMovingLeftPaths = {
-			"images/character/"+character+"/moving/movingLeft/0.png",
-			"images/character/"+character+"/moving/movingLeft/1.png",
-			"images/character/"+character+"/moving/movingLeft/2.png",
-			"images/character/"+character+"/moving/movingLeft/3.png",
-	};
-
-
-	private final String[] playerMovingRightPaths = {
-			"images/character/"+character+"/moving/movingRight/0.png",
-			"images/character/"+character+"/moving/movingRight/1.png",
-			"images/character/"+character+"/moving/movingRight/2.png",
-			"images/character/"+character+"/moving/movingRight/3.png",
-	};
-
-
-	private final String[] playerCleaningLeftPaths = {
-			"images/character/"+character+"/fixing/fixingLeft/0.png",
-			"images/character/"+character+"/fixing/fixingLeft/1.png",
-	};
-
-
-	private String[] playerCleaningRightPaths = {
-			"images/character/"+character+"/fixing/fixingRight/0.png",
-			"images/character/"+character+"/fixing/fixingRight/1.png",
-	};
-
-
-	private String[] playerNormalRightPaths = {
-			"images/character/"+character+"/normal/normalRight/0.png",
-	};
-
-
-	private String[] playerNormalLeftPaths = {
-			"images/character/"+character+"/normal/normalLeft/0.png",
-	};
-
-
-	private String[] playerFallingPaths = {
-			"images/character/"+character+"/falling/0.png",
-			"images/character/"+character+"/falling/1.png",
-	};
-
-	private String[] playerWinPaths = {
-			"images/character/"+character+"/win/0.png",
-			"images/character/"+character+"/win/1.png",
-			"images/character/"+character+"/win/2.png",
-			"images/character/"+character+"/win/3.png",
-			"images/character/"+character+"/win/4.png",
-			"images/character/"+character+"/win/5.png"
-	};
-	
 	private void initGlasses() {
 		glasses = new Sprite[7];
 		for (int i = 0; i < glasses.length; i++) {
@@ -256,160 +256,87 @@ public class Images {
 		}
 	}
 
-	public Animation getVomit() {
-		return vomit;
-	}
-
-	public Animation getEgg() {
-		return egg;
-	}
 	
-	
-	// RALPH'S ANIMATION
+	// MONSTER & BIRD'S ANIMATION
 	public Animation getClimbing() {
 		return monsterClimbing;
 	}
-	
 	public Animation getMonsterDemolition(){
 		return monsterDemolition;
 	}
-	
 	public Animation getMonsterMove() {
 		return monsterMove;
 	}
-	
+	public Animation getBirdMove() {return birdLeft;}
 
-	
+	public Animation getVomit() {
+		return vomit;
+	}
+	public Animation getEgg() {
+		return egg;
+	}
+
 	// PLAYER'S ANIMATION
 	public Animation getPlayerMoveLeft(){
 		return playerMoveLeft;
 	}
-	
 	public Animation getPlayerMoveRight(){
 		return playerMoveRight;
 	}
-	
 	public Animation getPlayerNormalLeft(){
 		return playerNormalLeft;
 	}
-	
 	public Animation getPlayerNormalRight(){
 		return playerNormalRight;
 	}
-	
 	public Animation getPlayerCleaningLeft(){
 		return playerCleaningLeft;
 	}
-	
 	public Animation getPlayerCleaningRight(){
 		return playerCleaningRight;
 	}
-	
-	
 	public Animation getPlayerFalling(){
 		return playerFalling;
 	}
-	
+	public Animation getPlayerWin(){return playerWin;}
 
-	
 	
 	// OBJECTS
 	public Sprite getBuildingRoof() {
 		return buildingRoof;
 	}
-	
-	
 	public Sprite getFlowerPot() {
 		return flowerPot;
 	}
-	
-	
 	public Sprite getRoof() {
 		return roof;
 	}
-	
+	public Sprite getTwoPanels() {return twoPanels;	}
+	public Sprite getBush() {return bush;}
+	public Sprite getBuilding() {return building;}
 	
 	public Animation getLeftBird(){
 		return birdLeft;
 	}
-	
-	
-	public Animation getRightBird(){
-		return birdRight;
-	}
-
-
-	public Sprite getTwoPanels() {
-		return twoPanels;
-	}
-	
-	
-	public Sprite getBush() {
-		return bush;
-	}
-
-	
-	public Sprite getBuilding() {
-		return building;
-	}
-
-
+	public Animation getRightBird(){return birdRight;}
 
 	public Sprite getBgShop(){return bgShop; }
-
 	public Sprite getBlock() {return  block; }
-
 	public Sprite getIcon(){return icon;}
-
 	public Sprite getBgScore() {return bgScore;}
+	public Sprite getLife() {return life;}
+	public Sprite getMenu(){return menu;}
+	public Sprite getConfig(){return config;}
 
-
-	public Sprite getLife() {
-		return life;
-	}
-
-	
-	public Sprite getMenu(){
-		return menu;
-	}
-	
-	public Sprite getConfig(){
-		return config;
-	}
-	
 	// WINDOWS & PARTS
-	public Sprite getGlass(int i){
-		return glasses[i];
-	}
+	public Sprite getGlass(int i){return glasses[i];}
+	public Sprite[] getDoubleDoor(){return doubleDoor;}
+	public Sprite[] getSemicircular(){return semicircular;}
+	public Sprite[] getDoor(){return door;}
 
-	
-	public Sprite[] getDoubleDoor(){
-		return doubleDoor;
-	}
-	
-	
-	public Sprite[] getSemicircular(){
-		return semicircular;
-	}
-
-
-	public Sprite[] getDoor(){
-		return door;
-	}
-
-	public Sprite[] getShopchar(){
-		return shopchar;
-	}
-
+	public Sprite[] getShopchar(){return shopchar;}
 	public Sprite[] getMenuButton(){ return menuButton;}
 
-	public Animation getPlayerWin(){
-		return playerWin;
-	}
-
-	public Animation getBirdMove() {
-		return birdLeft;
-	}
 
 	
 }
