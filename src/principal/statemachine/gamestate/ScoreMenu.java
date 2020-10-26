@@ -17,13 +17,15 @@ public class ScoreMenu implements GameState{
 	
 	private Font font;
 	private Font font1;
+	private Font font2;
 	private Sprite bg;
 	
-	public Rectangle backButton = new Rectangle(300, 450, 100, 50); // 300,450
+	public Rectangle backButton = new Rectangle(25, 525, 50, 25);
 	
 	public ScoreMenu() {
-		font = new Font("BOLD", Font.PLAIN,15);
-		font1 = new Font("BOLD", Font.PLAIN, 70);
+		font = new Font("BOLD", Font.ITALIC,30);
+		font1 = new Font("BOLD", Font.PLAIN,15);
+		font2 = new Font("BOLD", Font.PLAIN,25);
 		bg = Game.animations.getBgScore();
 	}
 	
@@ -40,21 +42,39 @@ public class ScoreMenu implements GameState{
 
 	@Override
 	public void render(Graphics2D g, long time) {
-		
-		g.setColor(Color.WHITE);
-	
-		g.setFont(font1);
-		g.drawString("HIGHSCORES", 30,  100);
+
 		g.drawImage(bg.getImage(),0,0,null);
-		
-		g.setFont(font);	
+
+
 		for (int i = 0; i < Score.MAX_SCORE_AMOUNT; i++){
 			if(Score.getScore().getCertainName(i)==null ||Score.getScore().getCertainName(i).equals("null"))continue;
-			String scores = Score.getScore().getCertainName(i)+":   "+Score.getScore().getCertainScore(i);
-			g.drawString(scores, 30, 100 + (i+1) * 50);
+			if(i==0){
+				g.setColor(Color.YELLOW);
+				g.setFont(font);
+				String scores = Score.getScore().getCertainName(i)+":   "+Score.getScore().getCertainScore(i);
+				g.drawString(scores, 160, 173 + (i+1) * 50);
+			}else if(i==1){
+				g.setColor(Color.WHITE);
+				g.setFont(font2);
+				String scores = Score.getScore().getCertainName(i)+":   "+Score.getScore().getCertainScore(i);
+				g.drawString(scores, 160, 315);
+			}else if(i==2){
+				g.setFont(font2);
+				String scores = Score.getScore().getCertainName(i)+":   "+Score.getScore().getCertainScore(i);
+				g.drawString(scores, 470, 315);
+			}else if(i==3){
+				g.setFont(font2);
+				String scores = Score.getScore().getCertainName(i)+":   "+Score.getScore().getCertainScore(i);
+				g.drawString(scores, 160, 400);
+			}else if(i==4){
+				g.setFont(font2);
+				String scores = Score.getScore().getCertainName(i)+":   "+Score.getScore().getCertainScore(i);
+				g.drawString(scores, 470, 400);
+			}
+
 		}
-		
-		g.drawString("Back",backButton.x + 19,backButton.y+30);
+		g.setFont(font1);
+		g.drawString("Back",backButton.x + 5,backButton.y+17);
 		g.draw(backButton);
 		
 	}
