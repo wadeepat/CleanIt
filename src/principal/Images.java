@@ -39,9 +39,9 @@ public class Images {
 	};
 	
 	
-	private final String[] brickPaths = {
-		"images/entities/brick/0.png",
-		"images/entities/brick/1.png"
+	private final String[] vomitPaths = {
+			"images/entities/vomit/0.png",
+			"images/entities/vomit/1.png"
 	};
 
 	private final String[] eggPaths= {
@@ -72,7 +72,7 @@ public class Images {
 	private final Sprite flowerPot;
 	private final Sprite roof;
 	private final Sprite twoPanels; 
-	private final Animation brick;
+	private final Animation vomit;
 	private final Animation birdLeft;
 	private final Animation birdRight;
 	private final Sprite life;
@@ -135,7 +135,7 @@ public class Images {
 				loadImage("images/sprites_sin_fondo.png"));
 
 		building = new Sprite(ResourceLoader.getLoader().loadImage("images/building/0.png"));
-		brick = new Animation(brickPaths);
+		vomit = new Animation(vomitPaths);
 
 
 		egg = new Animation(eggPaths);
@@ -255,7 +255,7 @@ public class Images {
 	}
 
 	public Animation getVomit() {
-		return brick;
+		return vomit;
 	}
 
 	public Animation getEgg() {

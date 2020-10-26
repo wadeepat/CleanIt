@@ -114,19 +114,7 @@ public class monster extends Creature {
 	private void throwVomit() {
 		Handler.addVomit(getX()+5, getY() + 50);
 		Handler.addVomit(getX()+30, getY() + 50);
-//		int actualSector = Building.getBuilding().getIndexActualSector();
-//		Brick brick = new Brick((int)getX() + 25, (int)getY()+ 70, actualSector);
-//		Handler.add(brick);
-//		Brick brick1 = new Brick((int)getX() + 50, (int)getY() + 70, actualSector);
-//		Handler.add(brick1);
 	}
-
-
-//	@Override
-//	public String getName() {
-//		return "Ralph";
-//	}
-
 
 	@Override
 	public Rectangle getBounds() {

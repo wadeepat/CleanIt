@@ -1,14 +1,12 @@
 package principal;
 
-import principal.graphics.Animation;
-
 public class Level {
 
 	private int actualLevel;
 
 	private long timer;
 	private float birdVel;
-	private float brickVel;
+	private float vomitVel;
 	private float ralphVel;
 	//////////////////////////////////
 	private float eggVel;
@@ -23,7 +21,7 @@ public class Level {
 	}
 	
 	private void initLevel() {
-		brickVel = 2.0f;
+		vomitVel = 2.0f;
 		birdVel = 1.5f;
 		ralphVel = 0.8f;
 		ralphTime = 3000;
@@ -39,7 +37,7 @@ public class Level {
 		actualLevel++;
 		ralphVel += ralphVel * 15/100;
 		birdVel += birdVel * 15/100;
-		brickVel += brickVel * 15/100;
+		vomitVel += vomitVel * 15/100;
 	}
 	
 	public void resetGame() {
@@ -72,7 +70,7 @@ public class Level {
 
 	// Brick
 	public float getVomitVel() {
-		return brickVel;
+		return vomitVel;
 	}
 
 	////////////////////////////////////////////
@@ -90,8 +88,8 @@ public class Level {
 	}
 
 	
-	public void setBrickVel(float brickVel) {
-		this.brickVel = brickVel;
+	public void setVomitVel(float vomitVel) {
+		this.vomitVel = vomitVel;
 	}
 
 	///////////////////////////////////////////
@@ -171,7 +169,7 @@ public class Level {
 		for (int i = 1; i < level; i++) {
 			ralphVel += ralphVel * 15/100;
 			birdVel += birdVel * 15/100;
-			brickVel += brickVel * 15/100;
+			vomitVel += vomitVel * 15/100;
 			ralphTime -= ralphTime*15/100;
 		}
 
