@@ -155,6 +155,8 @@ public class Images {
 		initDoubleDoor();
 		initSemicircular();
 		initDoor();
+
+
 		initshopchar();
 		initmenuButton();
 	}

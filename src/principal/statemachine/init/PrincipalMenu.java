@@ -35,7 +35,7 @@ public class PrincipalMenu implements GameState{
 	public Rectangle playButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20 , 270, 100, 50);
 	public Rectangle scoreButton = new Rectangle(Constant.WIDTH/2 - 100/2  - 20, 320,100, 50);
 	public Rectangle helpButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 370, 100, 50);
-	public Rectangle configButton = new Rectangle(Constant.WIDTH - 50, 0, 45, 45);
+	public Rectangle configButton = new Rectangle(Constant.WIDTH - 60, 0, 45, 45);
 	public Rectangle shopButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 420, 100, 50);
 	public Rectangle quitButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 470, 100, 50);
 
@@ -45,12 +45,11 @@ public class PrincipalMenu implements GameState{
 	private Building building;
 	
 	private Font font;
-	private Font font2;
 	private Sprite menu;
 	private Sprite[] menuButton;
 	private String[] levels;
 	
-	private boolean barspacePushed;
+	private boolean spacebarPushed;
 	
 	private Sprite config;
 
@@ -60,12 +59,11 @@ public class PrincipalMenu implements GameState{
 	public PrincipalMenu() {
 		
 		font = new Font("arial",Font.ROMAN_BASELINE, 25);
-		font2 = new Font("arial", Font.ITALIC, 12);
 		
 		menu = Game.animations.getMenu();
 		menuButton = Game.animations.getMenuButton();
 
-		barspacePushed = false;
+		spacebarPushed = false;
 		
 		building = Building.getBuilding();
 		config = Game.animations.getConfig();
@@ -83,7 +81,7 @@ public class PrincipalMenu implements GameState{
 	
 	@Override
 	public void update(long beforeTime) {
-		if (barspacePushed){
+		if (spacebarPushed){
 			if (MouseInput.leftClick) {
 				if (playButton.contains(MouseInput.getPointer())){
 					GameManager.getGameManager().resetGameManager();
@@ -131,12 +129,10 @@ public class PrincipalMenu implements GameState{
 				GameManager.setChoose(true);
 				frame.setVisible(false);
 			}
-			
 		});
 		
 	}
-	
-	
+
 
 
 	private void restart() {
@@ -166,8 +162,9 @@ public class PrincipalMenu implements GameState{
 
 		g.drawImage(menu.getImage(), Constant.WIDTH/2 - menu.getWidth()/2,
 				Constant.HEIGHT/2 - menu.getHeight()/2 - 100,null);
-		if (barspacePushed){
-			g.drawImage(config.getImage(), Constant.WIDTH - 50, 0, null);
+
+		if (spacebarPushed){
+			g.drawImage(config.getImage(), Constant.WIDTH - 60, 0, null);
 
 			for (int i=0;i<menuButton.length;i++){
 				g.drawImage(menuButton[i].getImage(),playButton.x, playButton.y+(50*i), null);
@@ -185,7 +182,7 @@ public class PrincipalMenu implements GameState{
 	
 	private void drawPressBar(Graphics2D g) {
 		counter++;
-		if (counter  > 2000 && !barspacePushed){
+		if (counter  > 2000 && !spacebarPushed){
 			counter = 0;
 			drawString = !drawString;
 		}
@@ -193,7 +190,7 @@ public class PrincipalMenu implements GameState{
 			g.drawString("Press spacebar to start", Constant.WIDTH/2 - 135 ,Constant.HEIGHT/2 + 40);
 		}
 		if (KeyBoard.fix){
-			barspacePushed = true;
+			spacebarPushed = true;
 			drawString = false;
 		}
 	}
