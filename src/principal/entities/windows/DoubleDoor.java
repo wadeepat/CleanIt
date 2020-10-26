@@ -51,7 +51,7 @@ public class DoubleDoor extends Window{
 	}
 	
 	@Override
-	public void tick(ArrayList<Entity> objects, long BeforeTime) {	
+	public void update(ArrayList<Entity> objects, long BeforeTime) {
 		
 	}
 	
@@ -90,7 +90,7 @@ public class DoubleDoor extends Window{
 	public Rectangle getBounds() {
 		return new Rectangle((int)getX(), (int)getY(), width, height);
 	}
-	
-	
-	
+
+
+
 }

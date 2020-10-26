@@ -13,7 +13,7 @@ import principal.statemachine.characterstates.monsterstates.Climbing;
 import principal.statemachine.characterstates.monsterstates.Demolishing;
 import principal.statemachine.characterstates.monsterstates.Move;
 
-public class Ralph extends Creature {
+public class monster extends Creature {
 
 	private float CLIMBING = 3.0f;
 
@@ -27,7 +27,7 @@ public class Ralph extends Creature {
 
 	private boolean prevGM;
 
-	public Ralph(float x, float y) {
+	public monster(float x, float y) {
 		super(x, y);
 		id = ID.Ralph;
 		state = Move.getMove();
@@ -59,7 +59,7 @@ public class Ralph extends Creature {
 
 
 	@Override
-	public void tick(ArrayList<Entity> ent, long elapsedTime) {
+	public void update(ArrayList<Entity> ent, long elapsedTime) {
 
 		if (elapsedTime - time > 1500  || Building.getBuilding().isChangingSector()){
 			if (Building.getBuilding().getGM()) {

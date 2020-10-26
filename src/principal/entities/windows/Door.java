@@ -58,7 +58,7 @@ public class Door extends Window{
 //	state = 4;
 	
 	@Override
-	public void tick(ArrayList<Entity> objects, long beforeTime) {	
+	public void update(ArrayList<Entity> objects, long beforeTime) {
 //		System.out.println(strokesRequired);
 		initWindows();
 		

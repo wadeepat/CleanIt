@@ -51,7 +51,7 @@ public class Bird extends Creature{
 		}
 
 	@Override
-	public void tick(ArrayList<Entity> objects, long beforeTime) {
+	public void update(ArrayList<Entity> objects, long beforeTime) {
 
 		if ((System.currentTimeMillis()-time)/1000 >= 5) {
 			time = System.currentTimeMillis();

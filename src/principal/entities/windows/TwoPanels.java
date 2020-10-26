@@ -90,7 +90,7 @@ public class TwoPanels extends Window{
 
 	
 	@Override
-	public void tick(ArrayList<Entity> objects, long beforeTime) {
+	public void update(ArrayList<Entity> objects, long beforeTime) {
 
 		switch(strokesRequired) {
 			case 0:

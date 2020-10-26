@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import principal.physics.Position;
 import principal.statemachine.characterstates.State;
 
-public abstract class Entity {
+public abstract class Entity{
 		
 	protected int width;
 	protected int height;
@@ -22,7 +22,7 @@ public abstract class Entity {
 	}
 	
 	public abstract void draw(Graphics2D g, long time);
-	public abstract void tick(ArrayList<Entity> objects, long beforeTime);
+	public abstract void update(ArrayList<Entity> objects, long beforeTime);
 	
 
 	public abstract Rectangle getBounds();

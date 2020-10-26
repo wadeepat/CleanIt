@@ -84,7 +84,7 @@ public class SecondSector extends Sector{
 	public void tick(long beforeTime) {
 		for (int i = 0; i < windows.length; i++) {
 			Window w = windows[i];
-			w.tick(null, beforeTime);			
+			w.update(null, beforeTime);
 			if (!w.isBroken()) {
 				if(brokenWindows.contains(w)){
 					Score.getScore().fixWindow();

@@ -38,7 +38,7 @@ public class Brick extends Creature {
 	}
 
 	@Override
-	public void tick(ArrayList<Entity> creat, long BeforeTime) {
+	public void update(ArrayList<Entity> creat, long BeforeTime) {
 				
 		Building b = Building.getBuilding();
 		

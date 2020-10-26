@@ -37,7 +37,7 @@ public class Egg extends Creature{
         g.drawImage(egg.getActualFrame(),(int)getX(),(int)getY(),null);
     }
 
-    public void tick(ArrayList<Entity> creat, long BeforeTime){
+    public void update(ArrayList<Entity> creat, long BeforeTime){
         Building b= Building.getBuilding();
 
         setY(getY() + vel);

@@ -14,6 +14,8 @@ public abstract class State {
 	
 	public abstract Image getImage(int dir);
 
+
+
 	public void update(){
 		animationTickCounter++;
 		if (animationTickCounter % animUpdate == 0) {

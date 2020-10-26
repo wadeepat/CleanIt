@@ -66,7 +66,7 @@ public class Player extends Creature {
 		Handler.add(this);
 	}	
 
-	public void tick(ArrayList<Entity> ent, long beforeTime) {
+	public void update(ArrayList<Entity> ent, long beforeTime) {
 		
 		if (!dying){
 			stopFalling();
@@ -132,7 +132,7 @@ public class Player extends Creature {
 		
 		for (int i = 0; i < ent.size(); i++) {
 			Entity e = ent.get(i);
-			ralphCollision(e);
+			monsterCollision(e);
 			brickCollision(e, beforeTime);
 			birdCollision(e, beforeTime);
 			attackCollision(e, beforeTime);
@@ -231,8 +231,8 @@ public class Player extends Creature {
 		}
 	}
 
-	private void ralphCollision(Entity e) {
-		if (e instanceof Ralph){
+	private void monsterCollision(Entity e) {
+		if (e instanceof monster){
 			if (getTopBounds().intersects(e.getBounds())) {
 				setY(e.getY() + 82);
 				max_jump = MAX_JUMP;

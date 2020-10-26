@@ -1,10 +1,10 @@
 package principal.entities;
 
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.ArrayList;
 
 import principal.Handler;
+import principal.graphics.Animation;
 import principal.statemachine.characterstates.badlander.BadlanderAnimation;
 
 
@@ -29,8 +29,8 @@ public class badlander extends Entity  {
 
 	
 	@Override
-	public void tick(ArrayList<Entity> objects, long beforeTime) {
-		if (beforeTime - actionsDelay > 4000) {
+	public void update(ArrayList<Entity> objects, long beforeTime) {
+		if (beforeTime - actionsDelay > 1000) {
 				attack = new Attack((int)getX(),(int)getY());
 				Handler.remove(this);
 		}
@@ -66,5 +66,4 @@ public class badlander extends Entity  {
 		return new Rectangle (0,0,0,0);
 	}
 
-	
 }

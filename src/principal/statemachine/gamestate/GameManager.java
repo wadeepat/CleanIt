@@ -11,7 +11,7 @@ import principal.Score;
 import principal.entities.Building;
 import principal.entities.creatures.Player;
 //import principal.entities.creatures.Ralph;
-import principal.entities.creatures.Ralph;
+import principal.entities.creatures.monster;
 import principal.graphics.DrawingSurface;
 import principal.graphics.Sprite;
 import principal.input.KeyBoard;
@@ -27,7 +27,7 @@ public class GameManager implements GameState {
 	private Building b;
 	
 	private Player player;
-	private Ralph monster;
+	private principal.entities.creatures.monster monster;
 
 	private Sprite bush;
 	
@@ -48,7 +48,7 @@ public class GameManager implements GameState {
 
 		chooseLevel = false;
 		
-		monster = new Ralph(300,240);
+		monster = new monster(300,240);
 	
 		bush = Game.animations.getBush();
 		

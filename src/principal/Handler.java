@@ -4,12 +4,9 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 import principal.entities.Building;
-import principal.entities.ID;
 import principal.entities.Entity;
 import principal.entities.creatures.Bird;
 import principal.entities.creatures.Brick;
-import principal.entities.creatures.Creature;
-import principal.statemachine.gamestate.GameManager;
 
 
 public class Handler {
@@ -54,10 +51,10 @@ public class Handler {
 	}
 	
 	public void update(long time){
-		building.tick(null, time);
+		building.update(null, time);
 		for (int i = 0; i < objects.size(); i++) {
 			tempObject = objects.get(i);
-			tempObject.tick(objects, time);
+			tempObject.update(objects, time);
 		}
 	}
 

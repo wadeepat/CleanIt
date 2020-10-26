@@ -51,7 +51,7 @@ public class Semicircular extends Window{
 	
 	
 	@Override
-	public void tick(ArrayList<Entity> objects, long beforeTime) {	
+	public void update(ArrayList<Entity> objects, long beforeTime) {
 		initWindow();
 	}
 	

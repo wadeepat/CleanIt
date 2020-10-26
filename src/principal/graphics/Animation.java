@@ -41,7 +41,9 @@ public class Animation{
 		framesAmount++;
 	}
 
-	
+	public void setFrames(int n){
+		actualFrame = 0;
+	}
 	
 //	public int getIndexAnimation() {
 //		return actualFrame;
@@ -51,7 +53,7 @@ public class Animation{
 	public Image getActualFrame() {
 		return sprites.get(actualFrame).getImage();
 	}
-	
+	public void setActualFrame(int n){actualFrame=n;}
 	
 	public Image getFrame(int i) {
 		return sprites.get(i).getImage();
@@ -61,7 +63,8 @@ public class Animation{
 	public void update() {
 		if (actualFrame == framesAmount - 1)
 			actualFrame = -1;
-		actualFrame++;	}
+		    actualFrame++;
+	}
 	
 	
 	public ArrayList<Sprite> getAnimation(){

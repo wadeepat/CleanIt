@@ -81,7 +81,7 @@ public class Building extends Entity{
 	
 	
 	@Override
-	public void tick(ArrayList<Entity> creature, long beforeTime) {
+	public void update(ArrayList<Entity> creature, long beforeTime) {
 		sectors[actualSector].tick(beforeTime);
 		if(isChangingSector()) globalMovement = true;		
 		generateBird();
