@@ -71,8 +71,6 @@ public class DrawingSurface extends Canvas {
 	}
 
 	public void render(GameStatus gs, long time) {
-		
-	
 		BufferStrategy bufferStrat = getBufferStrategy();
 		if (bufferStrat == null) {
 			createBufferStrategy(3);
