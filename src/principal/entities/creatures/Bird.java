@@ -45,9 +45,8 @@ public class Bird extends Creature{
 		state.update();
 		g.drawImage(state.getImage(directionX), (int)getX(), (int)getY(), null);
 	}
-		private void throwBrick() {
-			Handler.addVomit(getX()+25, getY() + 70);
-			Handler.addVomit(getX()+50, getY() + 70);
+		private void throwEgg() {
+			Handler.addEgg(getX(), getY() + 70);
 		}
 
 	@Override
@@ -56,7 +55,7 @@ public class Bird extends Creature{
 		if ((System.currentTimeMillis()-time)/1000 >= 5) {
 			time = System.currentTimeMillis();
 			state = BirdMoving.getMoving();
-			throwBrick();
+			throwEgg();
 		}
 
 		setX(getX() + getDx());

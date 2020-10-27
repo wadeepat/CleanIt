@@ -1,5 +1,5 @@
 wadeepat,7400
 red,5000
 blue,4000
+view,3100
 yellow,3000
-black,2000

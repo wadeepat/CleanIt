@@ -7,6 +7,7 @@ import principal.entities.Building;
 import principal.entities.Entity;
 import principal.entities.creatures.Bird;
 import principal.entities.creatures.Vomit;
+import principal.entities.creatures.Egg;
 
 
 public class Handler {
@@ -39,8 +40,12 @@ public class Handler {
 		int actualSector = Building.getBuilding().getIndexActualSector();
 		Vomit vomit = new Vomit((int)x, (int)y , actualSector);
 	}
-	
-	
+
+	public static void addEgg(float x, float y) {
+		int actualSector = Building.getBuilding().getIndexActualSector();
+		Egg egg = new Egg((int)x, (int)y , actualSector);
+	}
+
 	public static void removeAll() {
 		for (int i = 0; i < objects.size(); i++) {
 			Entity e = objects.get(i);
