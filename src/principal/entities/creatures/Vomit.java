@@ -33,8 +33,6 @@ public class Vomit extends Creature {
 	public void render(Graphics2D g, long time) {
 		vomit.update();
 		g.drawImage(vomit.getActualFrame(), (int)getX(), (int)getY(), null);
-		
-		g.draw(getBounds());
 	}
 
 	@Override
