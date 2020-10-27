@@ -9,15 +9,15 @@ import principal.Level;
 import principal.entities.Building;
 import principal.entities.Entity;
 import principal.entities.ID;
-import principal.statemachine.characterstates.monsterstates.Climbing;
+import principal.statemachine.characterstates.monsterstates.Flying;
 import principal.statemachine.characterstates.monsterstates.Demolishing;
 import principal.statemachine.characterstates.monsterstates.Move;
 
 public class monster extends Creature {
 
-	private float CLIMBING = 3.0f;
+	private float FLYING = 3.0f;
 
-	private long DELAY_PER_BRICK = 5000;
+	private long DELAY_PER_VOMIT = 5000;
 
 	private int floor;
 
@@ -39,7 +39,7 @@ public class monster extends Creature {
 		setDx(vel);
 		prevGM = false;
 
-		width = 50;
+		width = 55;
 		height = 42;
 
 		floor = 0;
@@ -52,8 +52,7 @@ public class monster extends Creature {
 	public void render(Graphics2D g, long time) {
 
 		state.update();
-		g.drawImage(state.getImage(0),(int)getX(), (int)getY() + 20, null);
-//		g.draw(getBounds());
+		g.drawImage(state.getImage(0),(int)getX()-20, (int)getY() + 20, null);
 
 	}
 
@@ -63,7 +62,7 @@ public class monster extends Creature {
 
 		if (elapsedTime - time > 1500  || Building.getBuilding().isChangingSector()){
 			if (Building.getBuilding().getGM()) {
-				climbing(floor);
+				flying(floor);
 				prevGM = true;
 				if (getY() == floor - 1)
 				moving(elapsedTime);
@@ -78,9 +77,9 @@ public class monster extends Creature {
 	}
 
 
-	private void climbing(int floor){
-		state = Climbing.getClimbing();
-		setDy(-CLIMBING);
+	private void flying(int floor){
+		state = Flying.getFlying();
+		setDy(-FLYING);
 		if (getY() > floor ){
 			setY(getY() + getDy());
 		}
@@ -112,8 +111,8 @@ public class monster extends Creature {
 
 
 	private void throwVomit() {
-		Handler.addVomit(getX()+5, getY() + 50);
-		Handler.addVomit(getX()+30, getY() + 50);
+		Handler.addVomit(getX()-5, getY() + 50);
+		Handler.addVomit(getX()+20, getY() + 50);
 	}
 
 	@Override

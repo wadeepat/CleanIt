@@ -52,8 +52,8 @@ public class Vomit extends Creature {
 	
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int)getX(), (int)getY(), 18, 12);
-	}
+		return new Rectangle((int)getX(), (int)getY(), 50, 12);
+	}//18
 
 	@Override
 	public Rectangle getTopBounds() {
