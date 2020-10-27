@@ -111,6 +111,8 @@ public class Images {
 			"images/inductions/badrander1.png",
 			"images/inductions/badrander2.png",
 			"images/inductions/bird.png",
+			"images/inductions/finite1.png",
+			"images/inductions/finite2.png",
 
 	};
 

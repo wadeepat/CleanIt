@@ -11,7 +11,7 @@ public class induction extends State {
 
     private induction() {
         animation = Game.animations.getInductions();
-        animUpdate = 500;
+        animUpdate = 400;
     }
 
 
