@@ -173,11 +173,7 @@ public class Building extends Entity{
 	public Window[] getActualWindows() {
 		return sectors[actualSector].getWindows();
 	}
-	
-//	public Window[] getPreviousWindows() {
-//		return sectors[previousSector].getWindows();
-//	}
-	
+
 	
 	public Rectangle getBounds(){
 		return null;

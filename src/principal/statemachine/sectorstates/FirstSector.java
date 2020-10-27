@@ -83,7 +83,7 @@ public class FirstSector extends Sector {
 
 	@Override
 	public boolean hasBadlander() {
-		return true;
+		return false;
 	}
 
 	@Override

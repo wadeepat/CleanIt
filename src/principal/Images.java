@@ -6,7 +6,6 @@ import principal.util.ResourceLoader;
 
 public class Images {
 
-
 	private static String character= "lama";
 
 	private final String[] playerMovingLeftPaths = {
@@ -100,9 +99,6 @@ public class Images {
 			"images/entities/egg/0.png",
 	};
 
-//	private final String[] attackPaths = {
-//		"image/entities/"
-//	};
 
 	//	Monster Animations
 	private final Animation monsterClimbing;
@@ -171,7 +167,6 @@ public class Images {
 		playerCleaningRight = new Animation(playerCleaningRightPaths);
 		playerFalling = new Animation(playerFallingPaths);
 		playerWin = new Animation(playerWinPaths);
-//		attack = new Animation()
 		
 		// OBJECTS
 		flowerPot =  new Sprite(ResourceLoader.getLoader().
