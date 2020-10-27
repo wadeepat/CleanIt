@@ -159,9 +159,7 @@ public class PrincipalMenu implements GameState{
 		g.setColor(Color.YELLOW);
 	
 		drawPressBar(g);
-
-		g.drawImage(menu.getImage(), Constant.WIDTH/2 - menu.getWidth()/2,
-				Constant.HEIGHT/2 - menu.getHeight()/2 - 100,null);
+		g.drawImage(menu.getImage(), 0,0,null);
 
 		if (spacebarPushed){
 			g.drawImage(config.getImage(), Constant.WIDTH - 60, 0, null);
@@ -189,7 +187,7 @@ public class PrincipalMenu implements GameState{
 		if (drawString){
 			g.drawString("Press spacebar to start", Constant.WIDTH/2 - 135 ,Constant.HEIGHT/2 + 40);
 		}
-		if (KeyBoard.fix){
+		if (KeyBoard.clean){
 			spacebarPushed = true;
 			drawString = false;
 		}

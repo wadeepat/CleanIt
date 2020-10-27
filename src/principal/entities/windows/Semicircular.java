@@ -94,7 +94,7 @@ public class Semicircular extends Window{
 	}
 
 	@Override
-	public void getFixed(){
+	public void getCleaned(){
 		if (isBroken()){
 			strokesRequired--;
 		}

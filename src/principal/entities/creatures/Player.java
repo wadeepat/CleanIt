@@ -107,15 +107,15 @@ public class Player extends Creature {
 			state = Falling.getFalling();
 		}
 		
-		if (KeyBoard.fix && onGround && !dying) {
+		if (KeyBoard.clean && onGround && !dying) {
 			state = Cleaning.getFixing();
 		}
 
-		if (isImmune && !KeyBoard.fix && !dying){
+		if (isImmune && !KeyBoard.clean && !dying){
 			state = Immune.getImmune();
 		}
 		
-		if (getDx() == 0 && getDy() == 0 && !KeyBoard.fix && !isImmune && !dying) {
+		if (getDx() == 0 && getDy() == 0 && !KeyBoard.clean && !isImmune && !dying) {
 			state = Normal.getNormal();
 		}
 			
@@ -146,10 +146,10 @@ public class Player extends Creature {
 		for (int i = 0; i < windows.length; i++) {
 			Window w = windows[i];
 
-			if(w.getBounds().contains(getBounds()) && KeyBoard.fix && beforeTime - movDelay > 300) {
+			if(w.getBounds().contains(getBounds()) && KeyBoard.clean && beforeTime - movDelay > 300) {
 				movDelay = System.currentTimeMillis();
-				w.removeNicelander();
-				w.getFixed();
+				w.removeBadlander();
+				w.getCleaned();
 			}
 			
 			if (getBotBounds().intersects(w.getBotBounds()) && !w.hasFlowerPot()) {
@@ -300,12 +300,12 @@ public class Player extends Creature {
 	
 	
 	private float getInputX(ArrayList<Entity> ent) {
-		if (KeyBoard.right && !KeyBoard.fix) {
+		if (KeyBoard.right && !KeyBoard.clean) {
 			directionX = 1;
 			return VEL;
 		}
 
-		if (KeyBoard.left && !KeyBoard.fix){
+		if (KeyBoard.left && !KeyBoard.clean){
 			directionX = -1;
 			return -VEL;
 		}

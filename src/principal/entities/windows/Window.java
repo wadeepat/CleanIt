@@ -26,7 +26,7 @@ public abstract class Window extends Entity{
 	public abstract String getName();
 	
 	
-	public void getFixed() {
+	public void getCleaned() {
 		if (isBroken()){
 			strokesRequired--;
 		}
@@ -52,7 +52,7 @@ public abstract class Window extends Entity{
 	}
 	
 	
-	public void removeNicelander(){
+	public void removeBadlander(){
 		if (badlander != null){
 			Handler.remove(badlander);
 		}

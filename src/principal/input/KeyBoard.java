@@ -13,7 +13,7 @@ public class KeyBoard extends KeyAdapter{
 	public static boolean right;
 	public static boolean left;
 	public static boolean pause;
-	public static boolean fix;
+	public static boolean clean;
 	public static boolean hitBox;
 
 	
@@ -28,7 +28,7 @@ public class KeyBoard extends KeyAdapter{
 		down = keys[KeyEvent.VK_DOWN];
 		right = keys[KeyEvent.VK_RIGHT];
 		left = keys[KeyEvent.VK_LEFT];
-		fix = keys[KeyEvent.VK_SPACE];
+		clean = keys[KeyEvent.VK_SPACE];
 		pause = keys[KeyEvent.VK_ESCAPE];
 		hitBox = keys[KeyEvent.VK_Q];
 	}
