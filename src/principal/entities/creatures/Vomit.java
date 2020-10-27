@@ -34,16 +34,14 @@ public class Vomit extends Creature {
 		vomit.update();
 		g.drawImage(vomit.getActualFrame(), (int)getX(), (int)getY(), null);
 		
-//		g.draw(getBounds());
+		g.draw(getBounds());
 	}
 
 	@Override
 	public void update(ArrayList<Entity> creat, long BeforeTime) {
 				
 		Building b = Building.getBuilding();
-		
 		setY(getY() + vel);
-
 		if (getY() > b.getSector(actualSector).getBotBounds().y + 100) {
 			Handler.remove(this);
 		}
@@ -52,7 +50,7 @@ public class Vomit extends Creature {
 	
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle((int)getX(), (int)getY(), 50, 12);
+		return new Rectangle((int)getX()+40, (int)getY(), 15, 12);
 	}//18
 
 	@Override
