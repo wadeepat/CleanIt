@@ -30,7 +30,7 @@ public class badlander extends Entity  {
 	
 	@Override
 	public void update(ArrayList<Entity> objects, long beforeTime) {
-		if (beforeTime - actionsDelay > 1000) {
+		if (beforeTime - actionsDelay > 2000) {
 				attack = new Attack((int)getX(),(int)getY());
 				Handler.remove(this);
 		}

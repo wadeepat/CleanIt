@@ -100,6 +100,10 @@ public class Images {
 			"images/entities/egg/0.png",
 	};
 
+//	private final String[] attackPaths = {
+//		"image/entities/"
+//	};
+
 	//	Monster Animations
 	private final Animation monsterClimbing;
 	public final Animation monsterDemolition;
@@ -127,6 +131,7 @@ public class Images {
 	private final Animation vomit;
 	private final Animation birdLeft;
 	private final Animation birdRight;
+//	private final Animation attack;
 	private final Sprite life;
 	private final Sprite bush;
 	private final Sprite building;
@@ -166,6 +171,7 @@ public class Images {
 		playerCleaningRight = new Animation(playerCleaningRightPaths);
 		playerFalling = new Animation(playerFallingPaths);
 		playerWin = new Animation(playerWinPaths);
+//		attack = new Animation()
 		
 		// OBJECTS
 		flowerPot =  new Sprite(ResourceLoader.getLoader().

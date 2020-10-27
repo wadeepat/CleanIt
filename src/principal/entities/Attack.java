@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import principal.Handler;
+import principal.statemachine.characterstates.badlander.AttackAnimation;
 
 public class Attack extends Entity{
 
@@ -15,10 +16,13 @@ public class Attack extends Entity{
 		id = ID.Attack;
 		Handler.add(this);
 		attackTime = System.currentTimeMillis();
+		state = AttackAnimation.getAttackAnimation();
 	}
 
 	@Override
 	public void render(Graphics2D g, long time) {
+		state.update();
+		g.drawImage(state.getImage(0), (int)getX(), (int)getY(), null);
 	}
 
 	@Override

@@ -9,9 +9,7 @@ public class BadlanderAnimation extends State{
 	protected State state;
 	
 	private final String[] badlanderPaths = {
-//		"images/entities/badlander/0.png",
-//		"images/entities/badlander/1.png",
-		"images/entities/badlander/2.png",
+		"images/entities/badlander/1.png",
 	};
 	
 	private static BadlanderAnimation badlander = new BadlanderAnimation();
