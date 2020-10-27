@@ -82,26 +82,18 @@ public class Bird extends Creature{
 	public Rectangle getBounds() {
 		return new Rectangle((int)getX(), (int)getY(), 30, 20);
 	}
-
-
 	@Override
 	public Rectangle getTopBounds() {
 		return new Rectangle(0,0,0,0);
 	}
-
-
 	@Override
 	public Rectangle getLeftBounds() {
 		return new Rectangle(0,0,0,0);
 	}
-
-
 	@Override
 	public Rectangle getRightBounds() {
 		return new Rectangle(0,0,0,0);
 	}
-
-
 	@Override
 	public Rectangle getBotBounds() {
 		return new Rectangle(0,0,0,0);

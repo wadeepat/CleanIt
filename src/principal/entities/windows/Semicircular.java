@@ -18,13 +18,9 @@ public class Semicircular extends Window{
 	
 	public Semicircular(float x, float y) {
 		super(x, y);
-		
 		images = Game.animations.getSemicircular();
-		
 		strokesRequired = Random.value(0, 16);
 		initWindow();
-		
-		
 		width = images[0].getImage().getWidth(null);
 		height = images[0].getImage().getHeight(null);
 	}

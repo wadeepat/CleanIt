@@ -15,7 +15,6 @@ import principal.graphics.Animation;
 public class Vomit extends Creature {
 	
 	private Animation vomit;
-	
 	private int actualSector; 
 	
 	public Vomit(float x, float y, int actualSector) {

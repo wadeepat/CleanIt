@@ -66,7 +66,7 @@ public class Images {
             "images/monster/Demolishing/1.png",
 	};
 
-	private final String[] monsterClimbingPath = {
+	private final String[] monsterFlyingPath = {
             "images/monster/Climbing/0.png",
             "images/monster/Climbing/1.png",
 	};
@@ -116,7 +116,7 @@ public class Images {
 
 
 	//	Monster Animations
-	private final Animation monsterClimbing;
+	private final Animation monsterFlying;
 	public final Animation monsterDemolition;
 	public final Animation monsterMove;
 	
@@ -143,7 +143,7 @@ public class Images {
 	private final Animation birdLeft;
 	private final Animation birdRight;
 	private final Animation inductions;
-//	private final Animation attack;
+
 	private final Sprite life;
 	private final Sprite bush;
 	private final Sprite building;
@@ -170,7 +170,7 @@ public class Images {
 		
 		// MONSTER's Animations
 		monsterDemolition = new Animation (monsterDemolishing);
-		monsterClimbing = new Animation (monsterClimbingPath);
+		monsterFlying = new Animation (monsterFlyingPath);
 		monsterMove = new Animation(monsterMovePath);
 		
 		// Player's Animations
@@ -195,29 +195,28 @@ public class Images {
 				loadImage("images/window/0.png"));
 		
 		life = new Sprite(ResourceLoader.getLoader().
-				loadImage("images/life.png"));
+				loadImage("images/blah/life.png"));
 		
 		bush = new Sprite(ResourceLoader.getLoader().
-				loadImage("images/bush.png"));
+				loadImage("images/blah/bush.png"));
 		
 		buildingRoof = new Sprite(ResourceLoader.getLoader().
-				loadImage("images/sprites_sin_fondo.png"));
+				loadImage("images/blah/sprites_sin_fondo.png"));
 
 		building = new Sprite(ResourceLoader.getLoader().loadImage("images/building/0.png"));
+
 		vomit = new Animation(vomitPaths);
-
-
 		egg = new Animation(eggPaths);
 		birdLeft = new Animation(birdLeftPaths);
 		birdRight = new Animation(birdRightPaths);
 		inductions = new Animation(inductionsPaths);
 
-		menu = new Sprite (ResourceLoader.getLoader().loadImage("images/initial_menu.png"));
-		config = new Sprite(ResourceLoader.getLoader().loadImage("images/config.png"));
+		menu = new Sprite (ResourceLoader.getLoader().loadImage("images/blah/initial_menu.png"));
+		config = new Sprite(ResourceLoader.getLoader().loadImage("images/blah/config.png"));
 
 		bgShop = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgShop.jpg"));
 		block = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/block.png"));
-		icon = new Sprite(ResourceLoader.getLoader().loadImage("images/icon.png"));
+		icon = new Sprite(ResourceLoader.getLoader().loadImage("images/blah/icon.png"));
 		bgScore = new Sprite(ResourceLoader.getLoader().loadImage("images/bg/bgScore.png"));
 
 		// WINDOWS & PARTS
@@ -225,8 +224,6 @@ public class Images {
 		initDoubleDoor();
 		initSemicircular();
 		initDoor();
-
-
 		initshopchar();
 		initmenuButton();
 	}
@@ -276,8 +273,8 @@ public class Images {
 
 	
 	// MONSTER & BIRD'S ANIMATION
-	public Animation getClimbing() {
-		return monsterClimbing;
+	public Animation getFlying() {
+		return monsterFlying;
 	}
 	public Animation getMonsterDemolition(){
 		return monsterDemolition;

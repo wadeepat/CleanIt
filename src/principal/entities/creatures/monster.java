@@ -16,15 +16,10 @@ import principal.statemachine.characterstates.monsterstates.Move;
 public class monster extends Creature {
 
 	private float FLYING = 3.0f;
-
 	private long DELAY_PER_VOMIT = 5000;
-
 	private int floor;
-
 	private long time = System.currentTimeMillis();
-
 	private long vomitTime;
-
 	private boolean prevGM;
 
 	public monster(float x, float y) {
@@ -33,7 +28,6 @@ public class monster extends Creature {
 		state = Move.getMove();
 
 		vel = Level.getLevel().getMonsterVel();
-
 		vomitTime = Level.getLevel().getMonsterTime();
 
 		setDx(vel);
@@ -43,14 +37,12 @@ public class monster extends Creature {
 		height = 42;
 
 		floor = 0;
-
 		Handler.add(this);
 	}
 
 
 	@Override
 	public void render(Graphics2D g, long time) {
-
 		state.update();
 		g.drawImage(state.getImage(0),(int)getX()-20, (int)getY() + 20, null);
 
@@ -88,7 +80,6 @@ public class monster extends Creature {
 	private void moving(long elapsedTime){
 
 		state = Move.getMove();
-
 		setX(getX() + getDx());
 
 		if (getBounds().intersects(Building.getBuilding().getLeftBounds())){
@@ -96,8 +87,6 @@ public class monster extends Creature {
 		}else
 			if (getBounds().intersects(Building.getBuilding().getRightBounds()))
 				setDx(-vel);
-
-
 
 		if (elapsedTime - time > vomitTime) {
 
@@ -107,7 +96,6 @@ public class monster extends Creature {
 		}
 
 	}
-
 
 
 	private void throwVomit() {
@@ -120,30 +108,25 @@ public class monster extends Creature {
 		return new Rectangle((int)getX(), (int)getY(), width, height);
 	}
 
-
 	@Override
 	public Rectangle getTopBounds() {
 		return null;
 	}
-
 
 	@Override
 	public Rectangle getLeftBounds() {
 		return null;
 	}
 
-
 	@Override
 	public Rectangle getRightBounds() {
 		return null;
 	}
 
-
 	@Override
 	public Rectangle getBotBounds() {
 		return null;
 	}
-
 
 	public void reset(float x, float y) {
 		floor = 0;
@@ -151,9 +134,7 @@ public class monster extends Creature {
 		setXY(x,y);
 		vel = Level.getLevel().getMonsterVel();
 		vomitTime = Level.getLevel().getMonsterTime();
-
 	}
-
 
 	public void setVomitTime(long time){
 		vomitTime = time;

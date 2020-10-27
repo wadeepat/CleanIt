@@ -21,27 +21,22 @@ public class Player extends Creature {
 
 	private final float JUMP_SPEED = -10f;
 	private final float MAX_JUMP = -80;
-	
 	private final float VEL = 3f;
-	
 	private final long IMMUNE_DEATH = 2000;
 
 	private long immuneDuration;
-	
 	private long movDelay = System.currentTimeMillis();
 	private long delay = System.currentTimeMillis();
 	private long inmTime;
+
 	private float max_jump = 0;
-	
 	private float death_x;
 	private float death_y;
 	
 	private boolean dying;
-	
 	private boolean onObstacle;
 	private boolean onGround;
 	private boolean falling;
-	
 	private boolean isImmune;
 	
 	private int life;

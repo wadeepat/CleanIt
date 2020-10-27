@@ -23,37 +23,21 @@ public class DoubleDoor extends Window{
 
 	public DoubleDoor(float x, float y) {
 		super(x, y);
-		
 		img = Game.animations.getDoubleDoor();
-		
 		width = img[0].getImage().getWidth(null);
 		height = img[0].getImage().getHeight(null);
-		
 		doors = Random.value(0, 3);
-
 	}
 
-
-	
 	
 	@Override
 	public void render(Graphics2D g, long time) {
 		g.drawImage(img[doors].getImage() ,(int)getX() ,(int)getY(), null);
 		g.setColor(Color.GREEN);
-		
-
-		
-//		g.draw(getBounds());
-//		g.draw(getTopBounds());
-//		g.draw(getBotBounds());
-//		g.draw(getLeftBounds());
-//		g.draw(getRightBounds());
 	}
 	
 	@Override
-	public void update(ArrayList<Entity> objects, long BeforeTime) {
-		
-	}
+	public void update(ArrayList<Entity> objects, long BeforeTime) { }
 	
 	@Override
 	public Rectangle getTopBounds() {

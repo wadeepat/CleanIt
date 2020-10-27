@@ -16,7 +16,7 @@ public class Flying extends State{
 
 
 	private Flying(){
-		animation = Game.animations.getClimbing();
+		animation = Game.animations.getFlying();
 		animUpdate = 600;
 	}
 	
