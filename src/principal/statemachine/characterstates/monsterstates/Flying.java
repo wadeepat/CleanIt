@@ -6,21 +6,21 @@ import principal.Game;
 import principal.statemachine.characterstates.State;
 
 
-public class Climbing extends State{
+public class Flying extends State{
 
 //	private String[] ralphClimbing = {
 //	"images/ralph/Climbing/0.png",
 //	"images/ralph/Climbing/1.png",
 //	};	
-	private static Climbing climb = new Climbing();	
+	private static Flying climb = new Flying();
 
 
-	private Climbing(){
+	private Flying(){
 		animation = Game.animations.getClimbing();
 		animUpdate = 600;
 	}
 	
-	public static Climbing getClimbing(){
+	public static Flying getFlying(){
 		return climb;
 	}
 	

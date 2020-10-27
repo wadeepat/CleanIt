@@ -9,7 +9,7 @@ public class Level {
 	private float monsterVel;
 	private float eggVel;
 
-	private long ralphTime;
+	private long monsterTime;
 	
 	private static Level level = new Level();
 	
@@ -22,7 +22,7 @@ public class Level {
 		vomitVel = 2.0f;
 		birdVel = 1.5f;
 		monsterVel = 0.8f;
-		ralphTime = 3000;
+		monsterTime = 3000;
 		eggVel = 2.0f;
 	}
 	
@@ -58,7 +58,7 @@ public class Level {
 
 
 	public long getMonsterTime() {
-		return ralphTime;
+		return monsterTime;
 	}
 	public float getMonsterVel() {
 		return monsterVel;
@@ -117,15 +117,12 @@ public class Level {
 	
 	public void setLevelVelocities(int level) {
 		initLevel();
-		
-		
 		for (int i = 1; i < level; i++) {
 			monsterVel += monsterVel * 15/100;
 			birdVel += birdVel * 15/100;
 			vomitVel += vomitVel * 15/100;
-			ralphTime -= ralphTime*15/100;
+			monsterTime -= monsterTime *15/100;
 		}
-
 	}
 
 	

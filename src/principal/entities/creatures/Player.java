@@ -133,7 +133,7 @@ public class Player extends Creature {
 		for (int i = 0; i < ent.size(); i++) {
 			Entity e = ent.get(i);
 			monsterCollision(e);
-			brickCollision(e, beforeTime);
+			vomitCollision(e, beforeTime);
 			birdCollision(e, beforeTime);
 			attackCollision(e, beforeTime);
 		}
@@ -207,7 +207,7 @@ public class Player extends Creature {
 	
 	
 	
-	private void brickCollision(Entity e, long beforeTime) {
+	private void vomitCollision(Entity e, long beforeTime) {
 		if (e instanceof Vomit) {
 			if(getTopBounds().intersects(e.getBounds()) && !isImmune) {
 				setY(getY());

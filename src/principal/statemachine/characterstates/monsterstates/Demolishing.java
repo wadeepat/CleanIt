@@ -11,7 +11,7 @@ public class Demolishing extends State{
 
 	private Demolishing(){
 		animation = Game.animations.getMonsterDemolition();
-		animUpdate = 300;
+		animUpdate = 3000;
 	}
 	
 	public static Demolishing getDemolishing(){
