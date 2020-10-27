@@ -421,5 +421,4 @@ public class Player extends Creature {
 	public void reset(float x, float y) {
 		setXY(x,y);
 	}
-	
 }

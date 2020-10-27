@@ -57,6 +57,4 @@ public class Attack extends Entity{
 		return new Rectangle(0,0,0,0);
 	}
 
-
-
 }

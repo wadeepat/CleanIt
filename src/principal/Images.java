@@ -99,6 +99,21 @@ public class Images {
 			"images/entities/egg/0.png",
 	};
 
+	private final String[] inductionsPaths= {
+			"images/inductions/clean1.png",
+			"images/inductions/clean2.png",
+			"images/inductions/left.png",
+			"images/inductions/right.png",
+			"images/inductions/top.png",
+			"images/inductions/botton.png",
+			"images/inductions/attacked1.png",
+			"images/inductions/attacked2.png",
+			"images/inductions/badrander1.png",
+			"images/inductions/badrander2.png",
+			"images/inductions/bird.png",
+
+	};
+
 
 	//	Monster Animations
 	private final Animation monsterClimbing;
@@ -127,6 +142,7 @@ public class Images {
 	private final Animation vomit;
 	private final Animation birdLeft;
 	private final Animation birdRight;
+	private final Animation inductions;
 //	private final Animation attack;
 	private final Sprite life;
 	private final Sprite bush;
@@ -194,7 +210,8 @@ public class Images {
 		egg = new Animation(eggPaths);
 		birdLeft = new Animation(birdLeftPaths);
 		birdRight = new Animation(birdRightPaths);
-		
+		inductions = new Animation(inductionsPaths);
+
 		menu = new Sprite (ResourceLoader.getLoader().loadImage("images/initial_menu.png"));
 		config = new Sprite(ResourceLoader.getLoader().loadImage("images/config.png"));
 
@@ -300,8 +317,9 @@ public class Images {
 		return playerFalling;
 	}
 	public Animation getPlayerWin(){return playerWin;}
+	public Animation getInductions() {return inductions;}
 
-	
+
 	// OBJECTS
 	public Sprite getBuildingRoof() {
 		return buildingRoof;
