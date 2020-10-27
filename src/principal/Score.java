@@ -133,14 +133,17 @@ public class Score {
 		asking = true;
 		frame = new JFrame();
 		JPanel newPanel = new JPanel();
-		
+		JLabel label0 = new JLabel("Your score is "+actualScore);
 		JLabel label = new JLabel("Enter your name:");
+		label0.setForeground(Color.WHITE);
 		label.setForeground(Color.WHITE);
-		
 		userName = new JTextField(20);
-		 
+
 		JButton btn = new JButton("Accept");
+
+		newPanel.add(label0, BorderLayout.NORTH);
 		newPanel.add(label, BorderLayout.NORTH);
+
 		newPanel.add(userName, BorderLayout.CENTER);
 		newPanel.setVisible(true);
 		
