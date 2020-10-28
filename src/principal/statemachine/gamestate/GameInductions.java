@@ -15,14 +15,14 @@ import principal.statemachine.GameStatus;
 import principal.statemachine.characterstates.State;
 import principal.statemachine.characterstates.playerstates.induction;
 
-public class GameRules implements GameState{
+public class GameInductions implements GameState{
 
 	public Rectangle backButton = new Rectangle(25, 525, 50, 25);
 	
 	private Font font;
 	private State inducAni = induction.getInduction();
 	
-	public GameRules(){
+	public GameInductions(){
 		font = new Font("Arial",Font.BOLD,15);
 	}
 	

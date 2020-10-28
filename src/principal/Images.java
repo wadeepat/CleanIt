@@ -113,6 +113,8 @@ public class Images {
 			"images/inductions/bird.png",
 			"images/inductions/finite1.png",
 			"images/inductions/finite2.png",
+			"images/inductions/pause0.png",
+			"images/inductions/pause1.png",
 
 	};
 
@@ -134,7 +136,6 @@ public class Images {
 	private final Animation playerCleaningLeft;
 
 	private final Animation playerFalling;
-
 	private final Animation playerWin;
 	
 	// OBJECTS

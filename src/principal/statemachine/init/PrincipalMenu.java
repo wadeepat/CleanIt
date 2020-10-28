@@ -34,7 +34,7 @@ public class PrincipalMenu implements GameState{
 
 	public Rectangle playButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20 , 270, 100, 50);
 	public Rectangle scoreButton = new Rectangle(Constant.WIDTH/2 - 100/2  - 20, 320,100, 50);
-	public Rectangle helpButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 370, 100, 50);
+	public Rectangle helpButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 370, 250, 50);
 	public Rectangle configButton = new Rectangle(Constant.WIDTH - 60, 0, 45, 45);
 	public Rectangle shopButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 420, 100, 50);
 	public Rectangle quitButton = new Rectangle(Constant.WIDTH/2 - 100/2 - 20, 470, 100, 50);
