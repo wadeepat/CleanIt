@@ -86,7 +86,6 @@ public class PrincipalMenu implements GameState{
 				if (playButton.contains(MouseInput.getPointer())){
 					GameManager.getGameManager().resetGameManager();
 					restart();
-
 				}else if (scoreButton.contains(MouseInput.getPointer())){
 					GameStatus.changeState(3);
 				}else if (helpButton.contains(MouseInput.getPointer())){
@@ -143,23 +142,19 @@ public class PrincipalMenu implements GameState{
 	}
 	
 	@Override
-
 	public void render(Graphics2D g, long beforeTime) {
 
 		clean(g);
-		
 		// Anti aliasing
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-
 		
 		building.render(g, beforeTime);
-
 		
 		g.setFont(font);
-		g.setColor(Color.YELLOW);
-	
-		drawPressBar(g);
+		g.setColor(Color.BLACK);
+
 		g.drawImage(menu.getImage(), 0,0,null);
+		drawPressBar(g);
 
 		if (spacebarPushed){
 			g.drawImage(config.getImage(), Constant.WIDTH - 60, 0, null);
@@ -180,7 +175,7 @@ public class PrincipalMenu implements GameState{
 	
 	private void drawPressBar(Graphics2D g) {
 		counter++;
-		if (counter  > 2000 && !spacebarPushed){
+		if (counter  > 500 && !spacebarPushed){
 			counter = 0;
 			drawString = !drawString;
 		}
@@ -192,6 +187,5 @@ public class PrincipalMenu implements GameState{
 			drawString = false;
 		}
 	}
-	
-	
+
 }

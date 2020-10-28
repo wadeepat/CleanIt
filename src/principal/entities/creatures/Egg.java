@@ -11,6 +11,7 @@ import principal.entities.Building;
 import principal.entities.Entity;
 import principal.entities.ID;
 import principal.graphics.Animation;
+import principal.physics.Position;
 
 public class Egg extends Creature{
 

@@ -23,8 +23,6 @@ public abstract class Entity{
 	
 	public abstract void render(Graphics2D g, long time);
 	public abstract void update(ArrayList<Entity> objects, long beforeTime);
-	
-
 	public abstract Rectangle getBounds();
 	public abstract Rectangle getTopBounds();
 	public abstract Rectangle getLeftBounds();
@@ -48,9 +46,7 @@ public abstract class Entity{
 		this.height = height;
 	}
 	
-	public float getX(){
-		return position.getX();
-	}
+	public float getX(){ return position.getX(); }
 	
 	public void setX(float x){
 		position.setX(x);

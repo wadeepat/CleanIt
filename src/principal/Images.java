@@ -100,21 +100,21 @@ public class Images {
 	};
 
 	private final String[] inductionsPaths= {
-			"images/inductions/clean1.png",
-			"images/inductions/clean2.png",
-			"images/inductions/left.png",
-			"images/inductions/right.png",
-			"images/inductions/top.png",
-			"images/inductions/botton.png",
-			"images/inductions/attacked1.png",
-			"images/inductions/attacked2.png",
-			"images/inductions/badrander1.png",
-			"images/inductions/badrander2.png",
-			"images/inductions/bird.png",
-			"images/inductions/finite1.png",
-			"images/inductions/finite2.png",
-			"images/inductions/pause0.png",
-			"images/inductions/pause1.png",
+			"images/instructions/clean1.png",
+			"images/instructions/clean2.png",
+			"images/instructions/left.png",
+			"images/instructions/right.png",
+			"images/instructions/top.png",
+			"images/instructions/botton.png",
+			"images/instructions/attacked1.png",
+			"images/instructions/attacked2.png",
+			"images/instructions/badrander1.png",
+			"images/instructions/badrander2.png",
+			"images/instructions/bird.png",
+			"images/instructions/finite1.png",
+			"images/instructions/finite2.png",
+			"images/instructions/pause0.png",
+			"images/instructions/pause1.png",
 
 	};
 
