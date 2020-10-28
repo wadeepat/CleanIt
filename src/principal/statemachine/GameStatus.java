@@ -23,7 +23,7 @@ public class GameStatus implements GameState{
 		states[1] = GameManager.getGameManager();
 		states[2] = new PauseMenu();
 		states[3] = new ScoreMenu();
-		states[4] = new GameInductions();
+		states[4] = new GameInstructions();
 		states[5] = new Win();
 		states[6] = new Shop();
 	}

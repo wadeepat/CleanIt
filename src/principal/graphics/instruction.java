@@ -1,22 +1,22 @@
-package principal.statemachine.characterstates.playerstates;
+package principal.graphics;
 
 import principal.Game;
 import principal.statemachine.characterstates.State;
 
 import java.awt.*;
 
-public class induction extends State {
+public class instruction extends State {
 
-    private static induction induction = new induction();
+    private static instruction instruction = new instruction();
 
-    private induction() {
+    private instruction() {
         animation = Game.animations.getInductions();
         animUpdate = 400;
     }
 
 
-    public static induction getInduction(){
-        return induction;
+    public static instruction getInstruction(){
+        return instruction;
     }
 
     @Override
